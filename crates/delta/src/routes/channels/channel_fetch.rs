@@ -3,10 +3,10 @@ use upryzing_database::{
     Database, User,
 };
 
+use rocket::{serde::json::Json, State};
 use upryzing_models::v0;
 use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
 use upryzing_result::Result;
-use rocket::{serde::json::Json, State};
 
 /// # Fetch Channel
 ///
@@ -31,9 +31,9 @@ pub async fn fetch(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
+    use rocket::http::{Header, Status};
     use upryzing_database::Channel;
     use upryzing_models::v0;
-    use rocket::http::{Header, Status};
 
     #[rocket::async_test]
     async fn fetch_channel() {

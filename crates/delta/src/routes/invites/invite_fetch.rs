@@ -1,7 +1,7 @@
+use rocket::{serde::json::Json, State};
 use upryzing_database::{util::reference::Reference, Channel, Database, Invite};
 use upryzing_models::v0;
 use upryzing_result::Result;
-use rocket::{serde::json::Json, State};
 
 /// # Fetch Invite
 ///

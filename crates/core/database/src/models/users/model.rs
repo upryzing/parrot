@@ -4,11 +4,11 @@ use crate::{events::client::EventV1, Database, File, RatelimitEvent};
 
 use once_cell::sync::Lazy;
 use rand::seq::SliceRandom;
+use ulid::Ulid;
 use upryzing_config::{config, FeaturesLimits};
 use upryzing_models::v0;
 use upryzing_presence::filter_online;
 use upryzing_result::{create_error, Result};
-use ulid::Ulid;
 
 auto_derived_partial!(
     /// # User

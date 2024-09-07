@@ -1,14 +1,14 @@
-use rocket::Route;
 use revolt_rocket_okapi::revolt_okapi::openapi3::OpenApi;
+use rocket::Route;
 
 mod webhook_delete;
 mod webhook_delete_token;
 mod webhook_edit;
 mod webhook_edit_token;
 mod webhook_execute;
-mod webhook_fetch_token;
-mod webhook_fetch;
 mod webhook_execute_github;
+mod webhook_fetch;
+mod webhook_fetch_token;
 
 pub fn routes() -> (Vec<Route>, OpenApi) {
     openapi_get_routes_spec![

@@ -7,10 +7,10 @@ use base64::{
 };
 use deadqueue::limited::Queue;
 use once_cell::sync::Lazy;
+use serde_json::json;
 use upryzing_config::config;
 use upryzing_models::v0::PushNotification;
 use upryzing_presence::filter_online;
-use serde_json::json;
 use web_push::{
     ContentEncoding, IsahcWebPushClient, SubscriptionInfo, SubscriptionKeys, VapidSignatureBuilder,
     WebPushClient, WebPushMessageBuilder,

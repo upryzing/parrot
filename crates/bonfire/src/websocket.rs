@@ -25,8 +25,8 @@ use async_std::{
     sync::{Mutex, RwLock},
     task::spawn,
 };
-use upryzing_result::create_error;
 use sentry::Level;
+use upryzing_result::create_error;
 
 use crate::config::{ProtocolConfiguration, WebsocketHandshakeCallback};
 use crate::events::state::{State, SubscriptionStateChange};

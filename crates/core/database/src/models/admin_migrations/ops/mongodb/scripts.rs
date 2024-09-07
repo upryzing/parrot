@@ -10,9 +10,9 @@ use crate::{
 use bson::oid::ObjectId;
 use futures::StreamExt;
 use rand::seq::SliceRandom;
-use upryzing_permissions::DEFAULT_WEBHOOK_PERMISSIONS;
 use serde::{Deserialize, Serialize};
 use unicode_segmentation::UnicodeSegmentation;
+use upryzing_permissions::DEFAULT_WEBHOOK_PERMISSIONS;
 
 #[derive(Serialize, Deserialize)]
 struct MigrationInfo {

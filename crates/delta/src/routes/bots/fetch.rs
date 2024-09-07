@@ -1,7 +1,7 @@
+use rocket::{serde::json::Json, State};
 use upryzing_database::{util::reference::Reference, Database, User};
 use upryzing_models::v0::FetchBotResponse;
 use upryzing_result::{create_error, Result};
-use rocket::{serde::json::Json, State};
 
 /// # Fetch Bot
 ///
@@ -31,9 +31,9 @@ pub async fn fetch_bot(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
+    use rocket::http::{Header, Status};
     use upryzing_database::Bot;
     use upryzing_models::v0;
-    use rocket::http::{Header, Status};
 
     #[rocket::async_test]
     async fn fetch_bot() {

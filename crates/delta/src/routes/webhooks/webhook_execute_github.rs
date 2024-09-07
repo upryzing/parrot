@@ -1,6 +1,3 @@
-use upryzing_database::{util::reference::Reference, Database, Message};
-use upryzing_models::v0::{MessageAuthor, SendableEmbed, Webhook};
-use upryzing_result::{create_error, Error, Result};
 use revolt_rocket_okapi::{
     gen::OpenApiGenerator,
     request::{OpenApiFromRequest, RequestHeaderInput},
@@ -11,6 +8,9 @@ use schemars::schema::SchemaObject;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use ulid::Ulid;
+use upryzing_database::{util::reference::Reference, Database, Message};
+use upryzing_models::v0::{MessageAuthor, SendableEmbed, Webhook};
+use upryzing_result::{create_error, Error, Result};
 use validator::Validate;
 
 #[derive(Serialize, Deserialize, Debug, JsonSchema)]
@@ -635,7 +635,10 @@ impl<'r> FromRequest<'r> for EventHeader<'r> {
     async fn from_request(request: &'r Request<'_>) -> rocket::request::Outcome<Self, Self::Error> {
         let headers = request.headers();
         let Some(event) = headers.get_one("X-GitHub-Event") else {
-            return rocket::request::Outcome::Failure((Status::BadRequest, create_error!(InvalidOperation)))
+            return rocket::request::Outcome::Failure((
+                Status::BadRequest,
+                create_error!(InvalidOperation),
+            ));
         };
 
         rocket::request::Outcome::Success(Self(event))
@@ -784,7 +787,9 @@ pub async fn webhook_execute_github(
             r#ref,
             ..
         }) => {
-            let Some(branch) = r#ref.split('/').nth(2) else { return Ok(()) };
+            let Some(branch) = r#ref.split('/').nth(2) else {
+                return Ok(());
+            };
 
             if forced {
                 let description = format!(

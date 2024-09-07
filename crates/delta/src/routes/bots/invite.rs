@@ -1,3 +1,4 @@
+use rocket::State;
 use upryzing_database::util::permissions::DatabasePermissionQuery;
 use upryzing_database::Member;
 use upryzing_database::{util::reference::Reference, Database, User};
@@ -6,7 +7,6 @@ use upryzing_permissions::{
     calculate_channel_permissions, calculate_server_permissions, ChannelPermission,
 };
 use upryzing_result::{create_error, Result};
-use rocket::State;
 
 use rocket::serde::json::Json;
 use rocket_empty::EmptyResponse;
@@ -65,9 +65,9 @@ pub async fn invite_bot(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
+    use rocket::http::{ContentType, Header, Status};
     use upryzing_database::{events::client::EventV1, Bot, Channel, Server};
     use upryzing_models::v0::{self, DataCreateServer};
-    use rocket::http::{ContentType, Header, Status};
 
     #[rocket::async_test]
     async fn invite_bot_to_group() {
@@ -93,9 +93,12 @@ mod test {
             .client
             .post(format!("/bots/{}/invite", bot.id))
             .header(ContentType::JSON)
-            .body(json!(v0::InviteBotDestination::Group {
-                group: group.id().to_string()
-            }).to_string())
+            .body(
+                json!(v0::InviteBotDestination::Group {
+                    group: group.id().to_string()
+                })
+                .to_string(),
+            )
             .header(Header::new("x-session-token", session.token.to_string()))
             .dispatch()
             .await;

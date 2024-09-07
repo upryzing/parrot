@@ -1,3 +1,5 @@
+use rocket::State;
+use rocket_empty::EmptyResponse;
 use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Channel, Database, PartialChannel, User,
@@ -5,8 +7,6 @@ use upryzing_database::{
 use upryzing_models::v0;
 use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
 use upryzing_result::{create_error, Result};
-use rocket::State;
-use rocket_empty::EmptyResponse;
 
 /// # Close Channel
 ///
@@ -52,9 +52,9 @@ pub async fn delete(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
+    use rocket::http::{Header, Status};
     use upryzing_database::{events::client::EventV1, Channel};
     use upryzing_models::v0::DataCreateGroup;
-    use rocket::http::{Header, Status};
 
     #[rocket::async_test]
     async fn success_delete_group() {

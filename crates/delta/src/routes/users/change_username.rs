@@ -1,11 +1,11 @@
 use authifier::models::Account;
 use once_cell::sync::Lazy;
 use regex::Regex;
+use rocket::{serde::json::Json, State};
+use serde::{Deserialize, Serialize};
 use upryzing_database::{Database, User};
 use upryzing_models::v0;
 use upryzing_result::{create_error, Result};
-use rocket::{serde::json::Json, State};
-use serde::{Deserialize, Serialize};
 use validator::Validate;
 
 /// Regex for valid usernames

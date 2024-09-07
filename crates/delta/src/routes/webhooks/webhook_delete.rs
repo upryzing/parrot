@@ -1,11 +1,11 @@
+use rocket::State;
+use rocket_empty::EmptyResponse;
 use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Database, User,
 };
 use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
 use upryzing_result::Result;
-use rocket::State;
-use rocket_empty::EmptyResponse;
 
 /// # Deletes a webhook
 ///

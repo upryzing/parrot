@@ -4,10 +4,10 @@ use upryzing_database::util::reference::Reference;
 use upryzing_database::{Database, User};
 use upryzing_models::v0;
 
-use upryzing_permissions::{calculate_server_permissions, ChannelPermission};
-use upryzing_result::Result;
 use rocket::serde::json::Json;
 use rocket::State;
+use upryzing_permissions::{calculate_server_permissions, ChannelPermission};
+use upryzing_result::Result;
 
 /// # Fetch Bans
 ///

@@ -1,7 +1,7 @@
+use rocket::State;
 use upryzing_database::{util::reference::Reference, Database, RemovalIntention, User};
 use upryzing_models::v0;
 use upryzing_result::Result;
-use rocket::State;
 
 use rocket_empty::EmptyResponse;
 

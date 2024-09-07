@@ -4,9 +4,9 @@ use upryzing_database::{
 };
 use upryzing_models::v0;
 
+use rocket::{serde::json::Json, State};
 use upryzing_permissions::{calculate_user_permissions, UserPermission};
 use upryzing_result::Result;
-use rocket::{serde::json::Json, State};
 
 /// # Fetch User
 ///

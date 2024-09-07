@@ -1,8 +1,8 @@
+use rocket::{serde::json::Json, State};
+use serde::Serialize;
 use upryzing_database::{util::reference::Reference, Database};
 use upryzing_models::v0;
 use upryzing_result::Result;
-use rocket::{serde::json::Json, State};
-use serde::Serialize;
 
 /// # Fetch User Flags
 ///

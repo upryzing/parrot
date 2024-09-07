@@ -7,7 +7,10 @@ use std::{collections::HashMap, time::Duration};
 
 use upryzing_result::Result;
 
-use super::{apple_notifications::{self, ApnJob}, DelayedTask};
+use super::{
+    apple_notifications::{self, ApnJob},
+    DelayedTask,
+};
 
 /// Enumeration of possible events
 #[derive(Debug, Eq, PartialEq)]
@@ -54,7 +57,13 @@ pub async fn queue(channel: String, user: String, event: AckEvent) {
     info!("Queue is using {} slots from {}.", Q.len(), Q.capacity());
 }
 
-pub async fn handle_ack_event(event: &AckEvent, db: &Database, authifier_db: &authifier::Database, user: &str, channel: &str) -> Result<()> {
+pub async fn handle_ack_event(
+    event: &AckEvent,
+    db: &Database,
+    authifier_db: &authifier::Database,
+    user: &str,
+    channel: &str,
+) -> Result<()> {
     match &event {
         #[allow(clippy::disallowed_methods)] // event is sent by higher level function
         AckEvent::AckMessage { id } => {
@@ -72,15 +81,19 @@ pub async fn handle_ack_event(event: &AckEvent, db: &Database, authifier_db: &au
                         for session in sessions {
                             if let Some(sub) = session.subscription {
                                 if sub.endpoint == "apn" {
-                                    apple_notifications::queue(ApnJob::from_ack(session.id, user.to_string(), sub.auth)).await;
+                                    apple_notifications::queue(ApnJob::from_ack(
+                                        session.id,
+                                        user.to_string(),
+                                        sub.auth,
+                                    ))
+                                    .await;
                                 }
                             }
                         }
                     }
                 };
-
             }
-        },
+        }
         AckEvent::AddMention { ids } => {
             db.add_mention_to_unread(channel, user, ids).await?;
         }
@@ -108,7 +121,8 @@ pub async fn worker(db: Database, authifier_db: authifier::Database) {
                 let Task { event } = task.data;
                 let (user, channel) = key;
 
-                if let Err(err) = handle_ack_event(&event, &db, &authifier_db, user, channel).await {
+                if let Err(err) = handle_ack_event(&event, &db, &authifier_db, user, channel).await
+                {
                     error!("{err:?} for {event:?}. ({user}, {channel})");
                 } else {
                     info!("User {user} ack in {channel} with {event:?}");

@@ -53,9 +53,9 @@ pub async fn remove_member(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
+    use rocket::http::{Header, Status};
     use upryzing_database::{events::client::EventV1, Channel, RelationshipStatus};
     use upryzing_models::v0;
-    use rocket::http::{Header, Status};
 
     #[rocket::async_test]
     async fn success_remove_member() {

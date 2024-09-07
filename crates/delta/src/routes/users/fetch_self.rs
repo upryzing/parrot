@@ -1,7 +1,7 @@
+use rocket::serde::json::Json;
 use upryzing_database::User;
 use upryzing_models::v0;
 use upryzing_result::Result;
-use rocket::serde::json::Json;
 
 /// # Fetch Self
 ///

@@ -1,7 +1,7 @@
+use rocket::State;
 use upryzing_database::{util::reference::Reference, Database, PartialBot, User};
 use upryzing_models::v0::{self, DataEditBot};
 use upryzing_result::{create_error, Result};
-use rocket::State;
 
 use rocket::serde::json::Json;
 use validator::Validate;
@@ -80,9 +80,9 @@ pub async fn edit_bot(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
+    use rocket::http::{ContentType, Header, Status};
     use upryzing_database::Bot;
     use upryzing_models::v0::{self, FieldsBot};
-    use rocket::http::{ContentType, Header, Status};
 
     #[rocket::async_test]
     async fn edit_bot() {

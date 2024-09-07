@@ -1,7 +1,7 @@
-use upryzing_config::config;
-use upryzing_result::Result;
 use rocket::serde::json::Json;
 use serde::Serialize;
+use upryzing_config::config;
+use upryzing_result::Result;
 
 /// # hCaptcha Configuration
 #[derive(Serialize, JsonSchema, Debug)]

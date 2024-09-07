@@ -42,9 +42,9 @@ pub async fn create_group(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
+    use rocket::http::{ContentType, Header, Status};
     use upryzing_database::events::client::EventV1;
     use upryzing_models::v0;
-    use rocket::http::{ContentType, Header, Status};
 
     #[rocket::async_test]
     async fn create_group() {

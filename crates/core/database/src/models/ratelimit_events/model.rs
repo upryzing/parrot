@@ -1,7 +1,7 @@
 use std::fmt;
 
-use upryzing_result::Result;
 use ulid::Ulid;
+use upryzing_result::Result;
 
 use crate::Database;
 

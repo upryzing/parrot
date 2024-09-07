@@ -1,7 +1,7 @@
+use rocket::{serde::json::Json, State};
 use upryzing_database::{Database, User};
 use upryzing_models::v0;
 use upryzing_result::Result;
-use rocket::{serde::json::Json, State};
 
 /// # Fetch Direct Message Channels
 ///

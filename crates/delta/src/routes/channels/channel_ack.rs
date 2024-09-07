@@ -1,11 +1,11 @@
+use rocket::State;
+use rocket_empty::EmptyResponse;
 use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Database, User,
 };
 use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
 use upryzing_result::{create_error, Result};
-use rocket::State;
-use rocket_empty::EmptyResponse;
 
 /// # Acknowledge Message
 ///
@@ -37,9 +37,9 @@ pub async fn ack(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
+    use rocket::http::{Header, Status};
     use upryzing_database::{events::client::EventV1, Channel};
     use upryzing_models::v0::DataCreateGroup;
-    use rocket::http::{Header, Status};
 
     #[rocket::async_test]
     async fn success_ack_channel() {

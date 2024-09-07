@@ -3,10 +3,10 @@ use upryzing_database::util::reference::Reference;
 use upryzing_database::{Database, User};
 use upryzing_models::v0;
 
-use upryzing_permissions::{calculate_user_permissions, UserPermission};
-use upryzing_result::{create_error, Result};
 use rocket::serde::json::Json;
 use rocket::State;
+use upryzing_permissions::{calculate_user_permissions, UserPermission};
+use upryzing_result::{create_error, Result};
 
 /// # Fetch Mutual Friends And Servers
 ///

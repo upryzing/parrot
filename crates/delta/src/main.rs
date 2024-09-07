@@ -8,14 +8,14 @@ extern crate serde_json;
 pub mod routes;
 pub mod util;
 
-use upryzing_config::config;
-use upryzing_database::events::client::EventV1;
-use upryzing_database::{Database, MongoDb};
 use rocket::{Build, Rocket};
 use rocket_cors::{AllowedOrigins, CorsOptions};
 use rocket_prometheus::PrometheusMetrics;
 use std::net::Ipv4Addr;
 use std::str::FromStr;
+use upryzing_config::config;
+use upryzing_database::events::client::EventV1;
+use upryzing_database::{Database, MongoDb};
 
 use async_std::channel::unbounded;
 use authifier::config::{
@@ -33,7 +33,10 @@ pub async fn web() -> Rocket<Build> {
     config.preflight_checks();
 
     // Setup database
-    let db = upryzing_database::DatabaseInfo::Auto.connect().await.unwrap();
+    let db = upryzing_database::DatabaseInfo::Auto
+        .connect()
+        .await
+        .unwrap();
     db.migrate_database().await.unwrap();
 
     // Setup Authifier event channel

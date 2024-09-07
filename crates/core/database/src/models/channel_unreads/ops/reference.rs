@@ -1,5 +1,5 @@
-use upryzing_result::Result;
 use ulid::Ulid;
+use upryzing_result::Result;
 
 use crate::{ChannelCompositeKey, ChannelUnread, ReferenceDb};
 
@@ -92,9 +92,11 @@ impl AbstractChannelUnreads for ReferenceDb {
     async fn fetch_unread(&self, user_id: &str, channel_id: &str) -> Result<Option<ChannelUnread>> {
         let unreads = self.channel_unreads.lock().await;
 
-        Ok(unreads.get(&ChannelCompositeKey {
-            channel: channel_id.to_string(),
-            user: user_id.to_string()
-        }).cloned())
+        Ok(unreads
+            .get(&ChannelCompositeKey {
+                channel: channel_id.to_string(),
+                user: user_id.to_string(),
+            })
+            .cloned())
     }
 }

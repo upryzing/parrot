@@ -10,8 +10,8 @@ use async_lock::Semaphore;
 use async_std::task::spawn;
 use deadqueue::limited::Queue;
 use once_cell::sync::Lazy;
-use upryzing_models::v0::Embed;
 use std::{collections::HashSet, sync::Arc};
+use upryzing_models::v0::Embed;
 
 use isahc::prelude::*;
 
