@@ -3592,201 +3592,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "upryzing-bonfire"
-version = "0.0.1"
-dependencies = [
- "async-channel 2.3.1",
- "async-std",
- "async-tungstenite",
- "authifier",
- "bincode",
- "fred",
- "futures",
- "log",
- "lru 0.7.6",
- "lru_time_cache",
- "once_cell",
- "querystring",
- "redis-kiss",
- "upryzing-config",
- "upryzing-database",
- "upryzing-models",
- "upryzing-permissions",
- "upryzing-presence",
- "upryzing-result",
- "rmp-serde",
- "sentry",
- "serde",
- "serde_json",
- "ulid 0.5.0",
-]
-
-[[package]]
-name = "upryzing-config"
-version = "0.0.1"
-dependencies = [
- "async-std",
- "cached",
- "config",
- "dotenv",
- "futures-locks",
- "log",
- "once_cell",
- "pretty_env_logger",
- "sentry",
- "serde",
-]
-
-[[package]]
-name = "upryzing-database"
-version = "0.0.1"
-dependencies = [
- "async-lock",
- "async-recursion",
- "async-std",
- "async-trait",
- "authifier",
- "base64 0.21.3",
- "bson",
- "deadqueue",
- "decancer",
- "fcm",
- "futures",
- "indexmap 1.9.3",
- "isahc",
- "iso8601-timestamp 0.2.11",
- "linkify 0.8.1",
- "log",
- "lru 0.11.0",
- "mongodb",
- "nanoid",
- "once_cell",
- "rand 0.8.5",
- "redis-kiss",
- "regex",
- "upryzing-config",
- "upryzing-models",
- "upryzing-permissions",
- "upryzing-presence",
- "upryzing-result",
- "revolt_a2",
- "revolt_okapi",
- "revolt_optional_struct",
- "revolt_rocket_okapi",
- "rocket",
- "schemars",
- "serde",
- "serde_json",
- "ulid 1.0.0",
- "unicode-segmentation",
- "url-escape",
- "validator 0.16.0",
- "web-push",
-]
-
-[[package]]
-name = "upryzing-delta"
-version = "0.0.1"
-dependencies = [
- "async-channel 1.6.1",
- "async-std",
- "authifier",
- "bitfield",
- "chrono",
- "dashmap",
- "dotenv",
- "env_logger",
- "futures",
- "impl_ops",
- "iso8601-timestamp 0.2.11",
- "lettre",
- "linkify 0.6.0",
- "log",
- "lru 0.7.6",
- "nanoid",
- "num_enum 0.5.7",
- "once_cell",
- "rand 0.8.5",
- "redis-kiss",
- "regex",
- "reqwest",
- "upryzing-config",
- "upryzing-database",
- "upryzing-models",
- "upryzing-permissions",
- "upryzing-presence",
- "upryzing-result",
- "revolt_rocket_okapi",
- "rocket",
- "rocket_authifier",
- "rocket_cors",
- "rocket_empty",
- "rocket_prometheus",
- "schemars",
- "serde",
- "serde_json",
- "ulid 0.4.1",
- "url",
- "validator 0.16.0",
- "vergen",
-]
-
-[[package]]
-name = "upryzing-models"
-version = "0.0.1"
-dependencies = [
- "indexmap 1.9.3",
- "iso8601-timestamp 0.2.11",
- "once_cell",
- "regex",
- "upryzing-config",
- "upryzing-permissions",
- "revolt_optional_struct",
- "rocket",
- "schemars",
- "serde",
- "validator 0.16.0",
-]
-
-[[package]]
-name = "upryzing-permissions"
-version = "0.0.1"
-dependencies = [
- "async-std",
- "async-trait",
- "auto_ops",
- "bson",
- "num_enum 0.6.1",
- "once_cell",
- "upryzing-result",
- "schemars",
- "serde",
-]
-
-[[package]]
-name = "upryzing-presence"
-version = "0.0.1"
-dependencies = [
- "async-std",
- "log",
- "once_cell",
- "rand 0.8.5",
- "redis-kiss",
-]
-
-[[package]]
-name = "upryzing-result"
-version = "0.0.1"
-dependencies = [
- "revolt_okapi",
- "revolt_rocket_okapi",
- "rocket",
- "schemars",
- "serde",
- "serde_json",
-]
-
-[[package]]
 name = "revolt_a2"
 version = "0.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5365,6 +5170,201 @@ name = "untrusted"
 version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8ecb6da28b8a351d773b68d5825ac39017e680750f980f3a1a85cd8dd28a47c1"
+
+[[package]]
+name = "upryzing-bonfire"
+version = "0.0.1"
+dependencies = [
+ "async-channel 2.3.1",
+ "async-std",
+ "async-tungstenite",
+ "authifier",
+ "bincode",
+ "fred",
+ "futures",
+ "log",
+ "lru 0.7.6",
+ "lru_time_cache",
+ "once_cell",
+ "querystring",
+ "redis-kiss",
+ "rmp-serde",
+ "sentry",
+ "serde",
+ "serde_json",
+ "ulid 0.5.0",
+ "upryzing-config",
+ "upryzing-database",
+ "upryzing-models",
+ "upryzing-permissions",
+ "upryzing-presence",
+ "upryzing-result",
+]
+
+[[package]]
+name = "upryzing-config"
+version = "0.0.1"
+dependencies = [
+ "async-std",
+ "cached",
+ "config",
+ "dotenv",
+ "futures-locks",
+ "log",
+ "once_cell",
+ "pretty_env_logger",
+ "sentry",
+ "serde",
+]
+
+[[package]]
+name = "upryzing-database"
+version = "0.0.1"
+dependencies = [
+ "async-lock",
+ "async-recursion",
+ "async-std",
+ "async-trait",
+ "authifier",
+ "base64 0.21.3",
+ "bson",
+ "deadqueue",
+ "decancer",
+ "fcm",
+ "futures",
+ "indexmap 1.9.3",
+ "isahc",
+ "iso8601-timestamp 0.2.11",
+ "linkify 0.8.1",
+ "log",
+ "lru 0.11.0",
+ "mongodb",
+ "nanoid",
+ "once_cell",
+ "rand 0.8.5",
+ "redis-kiss",
+ "regex",
+ "revolt_a2",
+ "revolt_okapi",
+ "revolt_optional_struct",
+ "revolt_rocket_okapi",
+ "rocket",
+ "schemars",
+ "serde",
+ "serde_json",
+ "ulid 1.0.0",
+ "unicode-segmentation",
+ "upryzing-config",
+ "upryzing-models",
+ "upryzing-permissions",
+ "upryzing-presence",
+ "upryzing-result",
+ "url-escape",
+ "validator 0.16.0",
+ "web-push",
+]
+
+[[package]]
+name = "upryzing-delta"
+version = "0.0.1"
+dependencies = [
+ "async-channel 1.6.1",
+ "async-std",
+ "authifier",
+ "bitfield",
+ "chrono",
+ "dashmap",
+ "dotenv",
+ "env_logger",
+ "futures",
+ "impl_ops",
+ "iso8601-timestamp 0.2.11",
+ "lettre",
+ "linkify 0.6.0",
+ "log",
+ "lru 0.7.6",
+ "nanoid",
+ "num_enum 0.5.7",
+ "once_cell",
+ "rand 0.8.5",
+ "redis-kiss",
+ "regex",
+ "reqwest",
+ "revolt_rocket_okapi",
+ "rocket",
+ "rocket_authifier",
+ "rocket_cors",
+ "rocket_empty",
+ "rocket_prometheus",
+ "schemars",
+ "serde",
+ "serde_json",
+ "ulid 0.4.1",
+ "upryzing-config",
+ "upryzing-database",
+ "upryzing-models",
+ "upryzing-permissions",
+ "upryzing-presence",
+ "upryzing-result",
+ "url",
+ "validator 0.16.0",
+ "vergen",
+]
+
+[[package]]
+name = "upryzing-models"
+version = "0.0.1"
+dependencies = [
+ "indexmap 1.9.3",
+ "iso8601-timestamp 0.2.11",
+ "once_cell",
+ "regex",
+ "revolt_optional_struct",
+ "rocket",
+ "schemars",
+ "serde",
+ "upryzing-config",
+ "upryzing-permissions",
+ "validator 0.16.0",
+]
+
+[[package]]
+name = "upryzing-permissions"
+version = "0.0.1"
+dependencies = [
+ "async-std",
+ "async-trait",
+ "auto_ops",
+ "bson",
+ "num_enum 0.6.1",
+ "once_cell",
+ "schemars",
+ "serde",
+ "upryzing-result",
+]
+
+[[package]]
+name = "upryzing-presence"
+version = "0.0.1"
+dependencies = [
+ "async-std",
+ "log",
+ "once_cell",
+ "rand 0.8.5",
+ "redis-kiss",
+]
+
+[[package]]
+name = "upryzing-result"
+version = "0.0.1"
+dependencies = [
+ "revolt_okapi",
+ "revolt_rocket_okapi",
+ "rocket",
+ "schemars",
+ "serde",
+ "serde_json",
+]
 
 [[package]]
 name = "ureq"
