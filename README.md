@@ -129,7 +129,7 @@ Tag and push a new release by running:
 just release
 ```
 
-If you have bumped the crate versions, proceed to [GitHub releases](https://github.com/revoltchat/backend/releases/new) to create a changelog.
+If you have bumped the crate versions, proceed to [GitHub releases](https://github.com/upryzing/parrot/releases/new) to create a changelog.
 
 ## Testing
 
@@ -148,6 +148,6 @@ TEST_DB=MONGODB cargo nextest run
 
 ## License
 
-The Revolt backend is generally licensed under the [GNU Affero General Public License v3.0](https://github.com/revoltchat/backend/blob/master/LICENSE).
+Upryzing's backend is generally licensed under the [GNU Affero General Public License v3.0](https://github.com/upryzing/parrot/blob/master/LICENSE).
 
 **Individual crates may supply their own licenses!**
