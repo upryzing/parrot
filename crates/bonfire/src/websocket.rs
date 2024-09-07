@@ -14,18 +14,18 @@ use futures::{
     FutureExt, SinkExt, StreamExt, TryStreamExt,
 };
 use redis_kiss::{PayloadType, REDIS_PAYLOAD_TYPE, REDIS_URI};
-use revolt_database::{
+use upryzing_database::{
     events::{client::EventV1, server::ClientMessage},
     Database, User, UserHint,
 };
-use revolt_presence::{create_session, delete_session};
+use upryzing_presence::{create_session, delete_session};
 
 use async_std::{
     net::TcpStream,
     sync::{Mutex, RwLock},
     task::spawn,
 };
-use revolt_result::create_error;
+use upryzing_result::create_error;
 use sentry::Level;
 
 use crate::config::{ProtocolConfiguration, WebsocketHandshakeCallback};

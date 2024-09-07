@@ -1,4 +1,4 @@
-use revolt_result::Result;
+use upryzing_result::Result;
 
 use crate::events::client::EventV1;
 use crate::{Database, File};

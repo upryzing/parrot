@@ -1,14 +1,14 @@
 use std::collections::HashSet;
 
-use revolt_database::{
+use upryzing_database::{
     events::client::{EventV1, ReadyPayloadFields},
     util::permissions::DatabasePermissionQuery,
     Channel, Database, Member, MemberCompositeKey, Presence, RelationshipStatus,
 };
-use revolt_models::v0;
-use revolt_permissions::{calculate_channel_permissions, ChannelPermission};
-use revolt_presence::filter_online;
-use revolt_result::Result;
+use upryzing_models::v0;
+use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
+use upryzing_presence::filter_online;
+use upryzing_result::Result;
 
 use super::state::{Cache, State};
 

@@ -5,8 +5,8 @@ use authifier::{
 use futures::StreamExt;
 use rand::Rng;
 use redis_kiss::redis::aio::PubSub;
-use revolt_database::{events::client::EventV1, Database, User};
-use revolt_models::v0;
+use upryzing_database::{events::client::EventV1, Database, User};
+use upryzing_models::v0;
 use rocket::local::asynchronous::Client;
 
 pub struct TestHarness {

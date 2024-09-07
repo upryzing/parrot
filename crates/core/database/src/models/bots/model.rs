@@ -1,5 +1,5 @@
-use revolt_config::config;
-use revolt_result::Result;
+use upryzing_config::config;
+use upryzing_result::Result;
 use ulid::Ulid;
 
 use crate::{events::client::EventV1, BotInformation, Database, PartialUser, User};

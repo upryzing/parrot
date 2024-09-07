@@ -1,7 +1,7 @@
 use ::mongodb::options::{Collation, CollationStrength, FindOneOptions, FindOptions};
 use authifier::models::Session;
 use futures::StreamExt;
-use revolt_result::Result;
+use upryzing_result::Result;
 
 use crate::DocumentId;
 use crate::IntoDocumentPath;

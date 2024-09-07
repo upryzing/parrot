@@ -3,7 +3,7 @@ use std::time::SystemTime;
 use indexmap::{IndexMap, IndexSet};
 use once_cell::sync::Lazy;
 use regex::Regex;
-use revolt_config::config;
+use upryzing_config::config;
 
 #[cfg(feature = "validator")]
 use validator::Validate;
@@ -76,7 +76,7 @@ auto_derived_partial!(
 
         /// Bitfield of message flags
         ///
-        /// https://docs.rs/revolt-models/latest/revolt_models/v0/enum.MessageFlags.html
+        /// https://docs.rs/upryzing-models/latest/upryzing_models/v0/enum.MessageFlags.html
         #[cfg_attr(
             feature = "serde",
             serde(skip_serializing_if = "crate::if_zero_u32", default)
@@ -268,7 +268,7 @@ auto_derived!(
 
         /// Bitfield of message flags
         ///
-        /// https://docs.rs/revolt-models/latest/revolt_models/v0/enum.MessageFlags.html
+        /// https://docs.rs/upryzing-models/latest/upryzing_models/v0/enum.MessageFlags.html
         pub flags: Option<u32>,
     }
 

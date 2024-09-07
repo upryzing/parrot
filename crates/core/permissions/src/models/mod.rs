@@ -3,7 +3,7 @@ mod server;
 mod user;
 
 pub use channel::*;
-use revolt_result::{create_error, Result};
+use upryzing_result::{create_error, Result};
 pub use server::*;
 pub use user::*;
 

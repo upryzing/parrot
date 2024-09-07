@@ -36,8 +36,8 @@ Before getting started, you'll want to install:
 Now you can clone and build the project:
 
 ```bash
-git clone https://github.com/revoltchat/backend revolt-backend
-cd revolt-backend
+git clone https://github.com/upryzing/parrot parrot
+cd parrot
 cargo build
 ```
 
@@ -77,9 +77,9 @@ Then continue:
 docker compose up -d
 
 # run the API server
-cargo run --bin revolt-delta
+cargo run --bin upryzing-delta
 # run the events server
-cargo run --bin revolt-bonfire
+cargo run --bin upryzing-bonfire
 
 # hint:
 # mold -run <cargo build, cargo run, etc...>

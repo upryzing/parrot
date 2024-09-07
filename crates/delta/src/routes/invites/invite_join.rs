@@ -1,6 +1,6 @@
-use revolt_database::{util::reference::Reference, Channel, Database, Invite, Member, User};
-use revolt_models::v0::{self, InviteJoinResponse};
-use revolt_result::{create_error, Result};
+use upryzing_database::{util::reference::Reference, Channel, Database, Invite, Member, User};
+use upryzing_models::v0::{self, InviteJoinResponse};
+use upryzing_result::{create_error, Result};
 use rocket::{serde::json::Json, State};
 
 /// # Join Invite

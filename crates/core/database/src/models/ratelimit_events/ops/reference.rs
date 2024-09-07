@@ -6,7 +6,7 @@ use super::AbstractRatelimitEvents;
 use crate::RatelimitEvent;
 use crate::RatelimitEventType;
 use crate::ReferenceDb;
-use revolt_result::Result;
+use upryzing_result::Result;
 use ulid::Ulid;
 
 #[async_trait]

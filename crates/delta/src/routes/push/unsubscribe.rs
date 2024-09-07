@@ -1,6 +1,6 @@
 use authifier::{models::Session, Authifier};
 
-use revolt_result::{create_database_error, Result};
+use upryzing_result::{create_database_error, Result};
 use rocket_empty::EmptyResponse;
 
 use rocket::State;

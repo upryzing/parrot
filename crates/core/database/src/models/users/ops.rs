@@ -1,5 +1,5 @@
 use authifier::models::Session;
-use revolt_result::Result;
+use upryzing_result::Result;
 
 use crate::{FieldsUser, PartialUser, RelationshipStatus, User};
 

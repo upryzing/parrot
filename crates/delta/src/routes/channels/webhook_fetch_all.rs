@@ -1,10 +1,10 @@
-use revolt_database::{
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Database, User,
 };
-use revolt_models::v0::Webhook;
-use revolt_permissions::{calculate_channel_permissions, ChannelPermission};
-use revolt_result::Result;
+use upryzing_models::v0::Webhook;
+use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
+use upryzing_result::Result;
 use rocket::{serde::json::Json, State};
 
 /// # Gets all webhooks

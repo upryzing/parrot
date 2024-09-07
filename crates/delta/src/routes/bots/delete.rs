@@ -1,5 +1,5 @@
-use revolt_database::{util::reference::Reference, Database, User};
-use revolt_result::{create_error, Result};
+use upryzing_database::{util::reference::Reference, Database, User};
+use upryzing_result::{create_error, Result};
 use rocket::State;
 use rocket_empty::EmptyResponse;
 
@@ -24,7 +24,7 @@ pub async fn delete_bot(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
-    use revolt_database::{events::client::EventV1, Bot};
+    use upryzing_database::{events::client::EventV1, Bot};
     use rocket::http::{Header, Status};
 
     #[rocket::async_test]

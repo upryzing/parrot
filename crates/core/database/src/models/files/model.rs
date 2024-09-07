@@ -1,6 +1,6 @@
 use crate::Database;
 
-use revolt_result::Result;
+use upryzing_result::Result;
 
 auto_derived_partial!(
     /// File

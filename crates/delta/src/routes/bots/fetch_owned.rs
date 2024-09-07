@@ -1,7 +1,7 @@
 use futures::future::join_all;
-use revolt_database::{Database, User};
-use revolt_models::v0::OwnedBotsResponse;
-use revolt_result::Result;
+use upryzing_database::{Database, User};
+use upryzing_models::v0::OwnedBotsResponse;
+use upryzing_result::Result;
 use rocket::serde::json::Json;
 use rocket::State;
 
@@ -32,8 +32,8 @@ pub async fn fetch_owned_bots(db: &State<Database>, user: User) -> Result<Json<O
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
-    use revolt_database::Bot;
-    use revolt_models::v0;
+    use upryzing_database::Bot;
+    use upryzing_models::v0;
     use rocket::http::{Header, Status};
 
     #[rocket::async_test]

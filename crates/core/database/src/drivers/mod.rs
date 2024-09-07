@@ -2,7 +2,7 @@ mod mongodb;
 mod reference;
 
 use rand::Rng;
-use revolt_config::config;
+use upryzing_config::config;
 
 pub use self::mongodb::*;
 pub use self::reference::*;

@@ -1,5 +1,5 @@
-use crate::{revolt_result::Result, Channel, FieldsChannel, PartialChannel};
-use revolt_permissions::OverrideField;
+use crate::{upryzing_result::Result, Channel, FieldsChannel, PartialChannel};
+use upryzing_permissions::OverrideField;
 mod mongodb;
 mod reference;
 

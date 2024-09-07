@@ -13,8 +13,8 @@ use revolt_a2::{
     },
     Client, ClientConfig, Endpoint, Error, ErrorBody, ErrorReason, Priority, PushType, Response,
 };
-use revolt_config::config;
-use revolt_models::v0::{Message, PushNotification};
+use upryzing_config::config;
+use upryzing_models::v0::{Message, PushNotification};
 
 use crate::Database;
 
@@ -300,11 +300,11 @@ pub async fn worker(db: Database) {
                         })
                         .await
                     {
-                        revolt_config::capture_error(&err);
+                        upryzing_config::capture_error(&err);
                     }
                 }
                 err => {
-                    revolt_config::capture_error(&err);
+                    upryzing_config::capture_error(&err);
                 }
             }
         }

@@ -1,4 +1,4 @@
-use revolt_models::v0::{ReportStatus, ReportedContent};
+use upryzing_models::v0::{ReportStatus, ReportedContent};
 
 auto_derived!(
     /// User-generated platform moderation report

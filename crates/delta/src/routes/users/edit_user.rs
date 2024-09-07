@@ -1,7 +1,7 @@
-use revolt_database::FieldsUser;
-use revolt_database::{util::reference::Reference, Database, File, PartialUser, User};
-use revolt_models::v0;
-use revolt_result::{create_error, Result};
+use upryzing_database::FieldsUser;
+use upryzing_database::{util::reference::Reference, Database, File, PartialUser, User};
+use upryzing_models::v0;
+use upryzing_result::{create_error, Result};
 use rocket::serde::json::Json;
 use rocket::State;
 use validator::Validate;

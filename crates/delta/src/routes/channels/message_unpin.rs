@@ -1,9 +1,9 @@
-use revolt_database::{
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference}, Database, FieldsMessage, PartialMessage, SystemMessage, User
 };
-use revolt_models::v0::MessageAuthor;
-use revolt_permissions::{calculate_channel_permissions, ChannelPermission};
-use revolt_result::{create_error, Result};
+use upryzing_models::v0::MessageAuthor;
+use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
+use upryzing_result::{create_error, Result};
 use rocket::State;
 use rocket_empty::EmptyResponse;
 
@@ -56,8 +56,8 @@ pub async fn message_unpin(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
-    use revolt_database::{events::client::EventV1, util::{idempotency::IdempotencyKey, reference::Reference}, Member, Message, PartialMessage, Server};
-    use revolt_models::v0::{self, FieldsMessage, SystemMessage};
+    use upryzing_database::{events::client::EventV1, util::{idempotency::IdempotencyKey, reference::Reference}, Member, Message, PartialMessage, Server};
+    use upryzing_models::v0::{self, FieldsMessage, SystemMessage};
     use rocket::http::{Header, Status};
 
     #[rocket::async_test]

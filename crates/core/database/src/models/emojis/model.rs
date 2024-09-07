@@ -2,7 +2,7 @@ use std::collections::HashSet;
 use std::str::FromStr;
 
 use once_cell::sync::Lazy;
-use revolt_result::Result;
+use upryzing_result::Result;
 use ulid::Ulid;
 
 use crate::events::client::EventV1;

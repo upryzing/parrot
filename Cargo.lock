@@ -3592,8 +3592,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "revolt-bonfire"
-version = "0.7.15"
+name = "upryzing-bonfire"
+version = "0.0.1"
 dependencies = [
  "async-channel 2.3.1",
  "async-std",
@@ -3608,12 +3608,12 @@ dependencies = [
  "once_cell",
  "querystring",
  "redis-kiss",
- "revolt-config",
- "revolt-database",
- "revolt-models",
- "revolt-permissions",
- "revolt-presence",
- "revolt-result",
+ "upryzing-config",
+ "upryzing-database",
+ "upryzing-models",
+ "upryzing-permissions",
+ "upryzing-presence",
+ "upryzing-result",
  "rmp-serde",
  "sentry",
  "serde",
@@ -3622,8 +3622,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "revolt-config"
-version = "0.7.15"
+name = "upryzing-config"
+version = "0.0.1"
 dependencies = [
  "async-std",
  "cached",
@@ -3638,8 +3638,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "revolt-database"
-version = "0.7.15"
+name = "upryzing-database"
+version = "0.0.1"
 dependencies = [
  "async-lock",
  "async-recursion",
@@ -3664,11 +3664,11 @@ dependencies = [
  "rand 0.8.5",
  "redis-kiss",
  "regex",
- "revolt-config",
- "revolt-models",
- "revolt-permissions",
- "revolt-presence",
- "revolt-result",
+ "upryzing-config",
+ "upryzing-models",
+ "upryzing-permissions",
+ "upryzing-presence",
+ "upryzing-result",
  "revolt_a2",
  "revolt_okapi",
  "revolt_optional_struct",
@@ -3685,8 +3685,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "revolt-delta"
-version = "0.7.15"
+name = "upryzing-delta"
+version = "0.0.1"
 dependencies = [
  "async-channel 1.6.1",
  "async-std",
@@ -3710,12 +3710,12 @@ dependencies = [
  "redis-kiss",
  "regex",
  "reqwest",
- "revolt-config",
- "revolt-database",
- "revolt-models",
- "revolt-permissions",
- "revolt-presence",
- "revolt-result",
+ "upryzing-config",
+ "upryzing-database",
+ "upryzing-models",
+ "upryzing-permissions",
+ "upryzing-presence",
+ "upryzing-result",
  "revolt_rocket_okapi",
  "rocket",
  "rocket_authifier",
@@ -3732,15 +3732,15 @@ dependencies = [
 ]
 
 [[package]]
-name = "revolt-models"
-version = "0.7.15"
+name = "upryzing-models"
+version = "0.0.1"
 dependencies = [
  "indexmap 1.9.3",
  "iso8601-timestamp 0.2.11",
  "once_cell",
  "regex",
- "revolt-config",
- "revolt-permissions",
+ "upryzing-config",
+ "upryzing-permissions",
  "revolt_optional_struct",
  "rocket",
  "schemars",
@@ -3749,8 +3749,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "revolt-permissions"
-version = "0.7.15"
+name = "upryzing-permissions"
+version = "0.0.1"
 dependencies = [
  "async-std",
  "async-trait",
@@ -3758,14 +3758,14 @@ dependencies = [
  "bson",
  "num_enum 0.6.1",
  "once_cell",
- "revolt-result",
+ "upryzing-result",
  "schemars",
  "serde",
 ]
 
 [[package]]
-name = "revolt-presence"
-version = "0.7.15"
+name = "upryzing-presence"
+version = "0.0.1"
 dependencies = [
  "async-std",
  "log",
@@ -3775,8 +3775,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "revolt-result"
-version = "0.7.15"
+name = "upryzing-result"
+version = "0.0.1"
 dependencies = [
  "revolt_okapi",
  "revolt_rocket_okapi",

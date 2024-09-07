@@ -2,13 +2,13 @@ use std::collections::HashSet;
 
 use indexmap::{IndexMap, IndexSet};
 use iso8601_timestamp::Timestamp;
-use revolt_config::{config, FeaturesLimits};
-use revolt_models::v0::{
+use upryzing_config::{config, FeaturesLimits};
+use upryzing_models::v0::{
     self, BulkMessageResponse, DataMessageSend, Embed, MessageAuthor, MessageFlags, MessageSort,
     MessageWebhook, PushNotification, ReplyIntent, SendableEmbed, Text, RE_MENTION,
 };
-use revolt_permissions::{ChannelPermission, PermissionValue};
-use revolt_result::Result;
+use upryzing_permissions::{ChannelPermission, PermissionValue};
+use upryzing_result::Result;
 use ulid::Ulid;
 use validator::Validate;
 

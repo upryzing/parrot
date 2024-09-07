@@ -2,7 +2,7 @@ use ::mongodb::options::FindOneOptions;
 use bson::to_bson;
 use bson::Document;
 use mongodb::options::UpdateOptions;
-use revolt_result::Result;
+use upryzing_result::Result;
 
 use crate::MongoDb;
 use crate::UserSettings;

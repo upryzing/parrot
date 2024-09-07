@@ -1,11 +1,11 @@
-use revolt_database::{
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Database, User,
 };
 
-use revolt_models::v0;
-use revolt_permissions::{calculate_channel_permissions, ChannelPermission};
-use revolt_result::Result;
+use upryzing_models::v0;
+use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
+use upryzing_result::Result;
 use rocket::{serde::json::Json, State};
 
 /// # Fetch Channel
@@ -31,8 +31,8 @@ pub async fn fetch(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
-    use revolt_database::Channel;
-    use revolt_models::v0;
+    use upryzing_database::Channel;
+    use upryzing_models::v0;
     use rocket::http::{Header, Status};
 
     #[rocket::async_test]

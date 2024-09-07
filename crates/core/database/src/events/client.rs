@@ -1,10 +1,10 @@
 use authifier::AuthifierEvent;
 use serde::{Deserialize, Serialize};
 
-use revolt_models::v0::{
+use upryzing_models::v0::{
     AppendMessage, Channel, ChannelUnread, Emoji, FieldsChannel, FieldsMember, FieldsMessage, FieldsRole, FieldsServer, FieldsUser, FieldsWebhook, Member, MemberCompositeKey, Message, PartialChannel, PartialMember, PartialMessage, PartialRole, PartialServer, PartialUser, PartialWebhook, RemovalIntention, Report, Server, User, UserSettings, Webhook
 };
-use revolt_result::Error;
+use upryzing_result::Error;
 
 use crate::Database;
 

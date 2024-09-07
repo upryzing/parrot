@@ -1,8 +1,8 @@
 use bson::{to_bson, Document};
 use futures::try_join;
 use mongodb::options::FindOptions;
-use revolt_models::v0::MessageSort;
-use revolt_result::Result;
+use upryzing_models::v0::MessageSort;
+use upryzing_result::Result;
 
 use crate::{
     AppendMessage, DocumentId, FieldsMessage, IntoDocumentPath, Message, MessageQuery,

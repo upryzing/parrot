@@ -1,7 +1,7 @@
 use std::env;
 
 use async_std::net::TcpListener;
-use revolt_presence::clear_region;
+use upryzing_presence::clear_region;
 
 #[macro_use]
 extern crate log;
@@ -15,7 +15,7 @@ mod websocket;
 #[async_std::main]
 async fn main() {
     // Configure requirements for Bonfire.
-    revolt_config::configure!(events);
+    upryzing_config::configure!(events);
     database::connect().await;
 
     // Clean up the current region information.

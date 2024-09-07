@@ -1,6 +1,6 @@
-use revolt_database::{util::reference::Reference, Database};
-use revolt_models::v0::Webhook;
-use revolt_result::Result;
+use upryzing_database::{util::reference::Reference, Database};
+use upryzing_models::v0::Webhook;
+use upryzing_result::Result;
 use rocket::{serde::json::Json, State};
 
 /// # Gets a webhook

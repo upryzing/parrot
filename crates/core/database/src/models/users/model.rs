@@ -4,10 +4,10 @@ use crate::{events::client::EventV1, Database, File, RatelimitEvent};
 
 use once_cell::sync::Lazy;
 use rand::seq::SliceRandom;
-use revolt_config::{config, FeaturesLimits};
-use revolt_models::v0;
-use revolt_presence::filter_online;
-use revolt_result::{create_error, Result};
+use upryzing_config::{config, FeaturesLimits};
+use upryzing_models::v0;
+use upryzing_presence::filter_online;
+use upryzing_result::{create_error, Result};
 use ulid::Ulid;
 
 auto_derived_partial!(

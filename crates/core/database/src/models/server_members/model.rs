@@ -1,6 +1,6 @@
 use iso8601_timestamp::Timestamp;
-use revolt_permissions::{calculate_channel_permissions, ChannelPermission};
-use revolt_result::{create_error, Result};
+use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
+use upryzing_result::{create_error, Result};
 
 use crate::{
     events::client::EventV1, util::permissions::DatabasePermissionQuery, Channel, Database, File,

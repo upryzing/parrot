@@ -1,6 +1,6 @@
 use super::File;
 
-use revolt_permissions::{Override, OverrideField};
+use upryzing_permissions::{Override, OverrideField};
 use std::collections::{HashMap, HashSet};
 
 #[cfg(feature = "rocket")]

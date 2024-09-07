@@ -8,9 +8,9 @@ extern crate serde_json;
 pub mod routes;
 pub mod util;
 
-use revolt_config::config;
-use revolt_database::events::client::EventV1;
-use revolt_database::{Database, MongoDb};
+use upryzing_config::config;
+use upryzing_database::events::client::EventV1;
+use upryzing_database::{Database, MongoDb};
 use rocket::{Build, Rocket};
 use rocket_cors::{AllowedOrigins, CorsOptions};
 use rocket_prometheus::PrometheusMetrics;
@@ -33,7 +33,7 @@ pub async fn web() -> Rocket<Build> {
     config.preflight_checks();
 
     // Setup database
-    let db = revolt_database::DatabaseInfo::Auto.connect().await.unwrap();
+    let db = upryzing_database::DatabaseInfo::Auto.connect().await.unwrap();
     db.migrate_database().await.unwrap();
 
     // Setup Authifier event channel
@@ -68,7 +68,7 @@ pub async fn web() -> Rocket<Build> {
     });
 
     // Launch background task workers
-    async_std::task::spawn(revolt_database::tasks::start_workers(
+    async_std::task::spawn(upryzing_database::tasks::start_workers(
         db.clone(),
         authifier.database.clone(),
     ));
@@ -193,7 +193,7 @@ pub async fn authifier_config() -> AuthifierConfig {
 #[launch]
 async fn rocket() -> _ {
     // Configure logging and environment
-    revolt_config::configure!(api);
+    upryzing_config::configure!(api);
 
     // Start web server
     web().await

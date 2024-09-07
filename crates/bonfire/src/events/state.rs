@@ -7,7 +7,7 @@ use std::{
 use async_std::sync::{Mutex, RwLock};
 use lru::LruCache;
 use lru_time_cache::{LruCache as LruTimeCache, TimedEntry};
-use revolt_database::{Channel, Member, Server, User};
+use upryzing_database::{Channel, Member, Server, User};
 
 /// Enumeration representing some change in subscriptions
 pub enum SubscriptionStateChange {

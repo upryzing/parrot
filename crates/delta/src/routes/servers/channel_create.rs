@@ -1,8 +1,8 @@
-use revolt_database::util::permissions::DatabasePermissionQuery;
-use revolt_database::{util::reference::Reference, Channel, Database, User};
-use revolt_models::v0;
-use revolt_permissions::{calculate_server_permissions, ChannelPermission};
-use revolt_result::{create_error, Result};
+use upryzing_database::util::permissions::DatabasePermissionQuery;
+use upryzing_database::{util::reference::Reference, Channel, Database, User};
+use upryzing_models::v0;
+use upryzing_permissions::{calculate_server_permissions, ChannelPermission};
+use upryzing_result::{create_error, Result};
 
 use rocket::serde::json::Json;
 use rocket::State;

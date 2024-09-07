@@ -5,7 +5,7 @@ use deadqueue::limited::Queue;
 use once_cell::sync::Lazy;
 use std::{collections::HashMap, time::Duration};
 
-use revolt_result::Result;
+use upryzing_result::Result;
 
 use super::{apple_notifications::{self, ApnJob}, DelayedTask};
 

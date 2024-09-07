@@ -2,8 +2,8 @@ use super::AbstractChannels;
 use crate::{AbstractServers, Channel, FieldsChannel, IntoDocumentPath, MongoDb, PartialChannel};
 use bson::{Bson, Document};
 use futures::StreamExt;
-use revolt_permissions::OverrideField;
-use revolt_result::Result;
+use upryzing_permissions::OverrideField;
+use upryzing_result::Result;
 
 static COL: &str = "channels";
 

@@ -3,14 +3,14 @@ use crate::{models::Message, AppendMessage, Database};
 use futures::future::join_all;
 use linkify::{LinkFinder, LinkKind};
 use regex::Regex;
-use revolt_config::config;
-use revolt_result::Result;
+use upryzing_config::config;
+use upryzing_result::Result;
 
 use async_lock::Semaphore;
 use async_std::task::spawn;
 use deadqueue::limited::Queue;
 use once_cell::sync::Lazy;
-use revolt_models::v0::Embed;
+use upryzing_models::v0::Embed;
 use std::{collections::HashSet, sync::Arc};
 
 use isahc::prelude::*;

@@ -1,5 +1,5 @@
 use bson::Document;
-use revolt_result::Result;
+use upryzing_result::Result;
 
 use crate::File;
 use crate::MongoDb;

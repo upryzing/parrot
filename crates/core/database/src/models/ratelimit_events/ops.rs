@@ -1,6 +1,6 @@
 use std::time::Duration;
 
-use crate::{revolt_result::Result, RatelimitEvent, RatelimitEventType};
+use crate::{upryzing_result::Result, RatelimitEvent, RatelimitEventType};
 mod mongodb;
 mod reference;
 

@@ -1,5 +1,5 @@
-use revolt_models::v0::MessageSort;
-use revolt_result::Result;
+use upryzing_models::v0::MessageSort;
+use upryzing_result::Result;
 
 use crate::{Database, Message, MessageFilter, MessageQuery, MessageTimePeriod, Server, User};
 

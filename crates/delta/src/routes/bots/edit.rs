@@ -1,6 +1,6 @@
-use revolt_database::{util::reference::Reference, Database, PartialBot, User};
-use revolt_models::v0::{self, DataEditBot};
-use revolt_result::{create_error, Result};
+use upryzing_database::{util::reference::Reference, Database, PartialBot, User};
+use upryzing_models::v0::{self, DataEditBot};
+use upryzing_result::{create_error, Result};
 use rocket::State;
 
 use rocket::serde::json::Json;
@@ -80,8 +80,8 @@ pub async fn edit_bot(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
-    use revolt_database::Bot;
-    use revolt_models::v0::{self, FieldsBot};
+    use upryzing_database::Bot;
+    use upryzing_models::v0::{self, FieldsBot};
     use rocket::http::{ContentType, Header, Status};
 
     #[rocket::async_test]

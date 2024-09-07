@@ -7,9 +7,9 @@ use base64::{
 };
 use deadqueue::limited::Queue;
 use once_cell::sync::Lazy;
-use revolt_config::config;
-use revolt_models::v0::PushNotification;
-use revolt_presence::filter_online;
+use upryzing_config::config;
+use upryzing_models::v0::PushNotification;
+use upryzing_presence::filter_online;
 use serde_json::json;
 use web_push::{
     ContentEncoding, IsahcWebPushClient, SubscriptionInfo, SubscriptionKeys, VapidSignatureBuilder,
