@@ -6,9 +6,9 @@ use rocket::serde::json::Json;
 use rocket::State;
 use validator::Validate;
 
-/// # Create Server
+/// # Create Space
 ///
-/// Create a new server.
+/// Create a new space.
 #[openapi(tag = "Server Information")]
 #[post("/create", data = "<data>")]
 pub async fn create_server(

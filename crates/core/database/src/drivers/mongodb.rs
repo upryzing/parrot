@@ -25,7 +25,7 @@ impl Deref for MongoDb {
 
 #[allow(dead_code)]
 impl MongoDb {
-    /// Get the Revolt database
+    /// Get the Upryzing database
     pub fn db(&self) -> mongodb::Database {
         self.database(&self.1)
     }

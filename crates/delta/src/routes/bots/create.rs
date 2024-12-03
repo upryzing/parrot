@@ -7,7 +7,7 @@ use validator::Validate;
 
 /// # Create Bot
 ///
-/// Create a new Revolt bot.
+/// Create a new Upryzing bot.
 #[openapi(tag = "Bots")]
 #[post("/create", data = "<info>")]
 pub async fn create_bot(

@@ -114,7 +114,7 @@ pub enum EventV1 {
     /// Bulk delete messages
     BulkMessageDelete { channel: String, ids: Vec<String> },
 
-    /// New server
+    /// New space
     ServerCreate {
         id: String,
         server: Server,
@@ -122,7 +122,7 @@ pub enum EventV1 {
         emojis: Vec<Emoji>,
     },
 
-    /// Update existing server
+    /// Update existing space
     ServerUpdate {
         id: String,
         data: PartialServer,
@@ -130,10 +130,10 @@ pub enum EventV1 {
         clear: Vec<FieldsServer>,
     },
 
-    /// Delete server
+    /// Delete space
     ServerDelete { id: String },
 
-    /// Update existing server member
+    /// Update existing space member
     ServerMemberUpdate {
         id: MemberCompositeKey,
         data: PartialMember,
@@ -141,17 +141,17 @@ pub enum EventV1 {
         clear: Vec<FieldsMember>,
     },
 
-    /// User joins server
+    /// User joins space
     ServerMemberJoin { id: String, user: String },
 
-    /// User left server
+    /// User left space
     ServerMemberLeave {
         id: String,
         user: String,
         reason: RemovalIntention,
     },
 
-    /// Server role created or updated
+    /// Space role created or updated
     ServerRoleUpdate {
         id: String,
         role_id: String,
@@ -160,7 +160,7 @@ pub enum EventV1 {
         clear: Vec<FieldsRole>,
     },
 
-    /// Server role deleted
+    /// Space role deleted
     ServerRoleDelete { id: String, role_id: String },
 
     /// Update existing user
@@ -183,7 +183,7 @@ pub enum EventV1 {
     /// - Messages
     /// - DM Channels
     /// - Relationships
-    /// - Server Memberships
+    /// - Space Memberships
     ///
     /// User flags are specified to explain why a wipe is occurring though not all reasons will necessarily ever appear.
     UserPlatformWipe { user_id: String, flags: i32 },

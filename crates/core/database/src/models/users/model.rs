@@ -284,7 +284,7 @@ impl User {
         }
 
         // Ensure the username itself isn't blocked
-        const BLOCKED_USERNAMES: &[&str] = &["admin", "revolt"];
+        const BLOCKED_USERNAMES: &[&str] = &["admin", "uprzying"];
 
         for username in BLOCKED_USERNAMES {
             if username_lowercase == *username {

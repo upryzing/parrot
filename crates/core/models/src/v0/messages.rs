@@ -494,7 +494,7 @@ impl PushNotification {
         Self {
             author: author
                 .map(|x| x.username().to_string())
-                .unwrap_or_else(|| "Revolt".to_string()),
+                .unwrap_or_else(|| "Upryzing".to_string()),
             icon,
             image,
             body,

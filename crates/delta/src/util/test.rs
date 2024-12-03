@@ -80,7 +80,7 @@ impl TestHarness {
     pub async fn new_user(&self) -> (Account, Session, User) {
         let account = Account::new(
             &self.authifier,
-            format!("{}@revolt.chat", TestHarness::rand_string()),
+            format!("{}@upryzing.app", TestHarness::rand_string()),
             "password".to_string(),
             false,
         )
