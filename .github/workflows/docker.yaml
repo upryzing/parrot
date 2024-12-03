@@ -70,13 +70,13 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      # Authenticate with Docker Hub and GHCR
-      - name: Login to DockerHub
-        uses: docker/login-action@v2
-        with:
-          registry: docker.io
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      # Authenticate with ~~Docker Hub and~~ GHCR
+      # - name: Login to DockerHub
+      #   uses: docker/login-action@v2
+      #   with:
+      #     registry: docker.io
+      #     username: ${{ secrets.DOCKERHUB_USERNAME }}
+      #     password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Login to Github Container Registry
         uses: docker/login-action@v2
         with:
@@ -119,8 +119,8 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
+          # removed docker.io/${{ steps.export.outputs.tag }}; re-add for dockerhub
           images: |
-            docker.io/${{ steps.export.outputs.tag }}
             ghcr.io/${{ steps.export.outputs.tag }}
 
       # Build crate image
