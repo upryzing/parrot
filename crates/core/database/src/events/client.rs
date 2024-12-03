@@ -1,8 +1,8 @@
 use authifier::AuthifierEvent;
-use revolt_result::Error;
 use serde::{Deserialize, Serialize};
+use upryzing_result::Error;
 
-use revolt_models::v0::{
+use upryzing_models::v0::{
     AppendMessage, Channel, ChannelUnread, Emoji, FieldsChannel, FieldsMember, FieldsMessage,
     FieldsRole, FieldsServer, FieldsUser, FieldsWebhook, Member, MemberCompositeKey, Message,
     PartialChannel, PartialMember, PartialMessage, PartialRole, PartialServer, PartialUser,

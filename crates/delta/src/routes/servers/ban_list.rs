@@ -1,13 +1,13 @@
 use futures::future::join_all;
-use revolt_database::util::permissions::DatabasePermissionQuery;
-use revolt_database::util::reference::Reference;
-use revolt_database::{Database, User};
-use revolt_models::v0;
+use upryzing_database::util::permissions::DatabasePermissionQuery;
+use upryzing_database::util::reference::Reference;
+use upryzing_database::{Database, User};
+use upryzing_models::v0;
 
-use revolt_permissions::{calculate_server_permissions, ChannelPermission};
-use revolt_result::Result;
 use rocket::serde::json::Json;
 use rocket::State;
+use upryzing_permissions::{calculate_server_permissions, ChannelPermission};
+use upryzing_result::Result;
 
 /// # Fetch Bans
 ///

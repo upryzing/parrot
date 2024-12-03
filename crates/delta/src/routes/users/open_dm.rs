@@ -1,11 +1,11 @@
-use revolt_database::{
+use rocket::{serde::json::Json, State};
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Channel, Database, User,
 };
-use revolt_models::v0;
-use revolt_permissions::{calculate_user_permissions, UserPermission};
-use revolt_result::Result;
-use rocket::{serde::json::Json, State};
+use upryzing_models::v0;
+use upryzing_permissions::{calculate_user_permissions, UserPermission};
+use upryzing_result::Result;
 
 /// # Open Direct Message
 ///

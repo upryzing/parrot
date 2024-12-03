@@ -1,7 +1,7 @@
-use revolt_database::{util::reference::Reference, Database};
-use revolt_result::Result;
 use rocket::State;
 use rocket_empty::EmptyResponse;
+use upryzing_database::{util::reference::Reference, Database};
+use upryzing_result::Result;
 
 /// # Deletes a webhook
 ///

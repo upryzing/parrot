@@ -14,7 +14,7 @@ pub(crate) trait Channeled {
 }
 
 pub(crate) async fn make_channel<T: Channeled>(consumer: &mut T) {
-    let config = revolt_config::config().await;
+    let config = upryzing_config::config().await;
 
     let args = OpenConnectionArguments::new(
         &config.rabbit.host,

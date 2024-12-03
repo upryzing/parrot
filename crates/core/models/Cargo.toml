@@ -1,6 +1,6 @@
 [package]
-name = "revolt-models"
-version = "0.8.0"
+name = "upryzing-models"
+version = "0.1.0"
 edition = "2021"
 license = "MIT"
 authors = ["Paul Makles <me@insrt.uk>"]
@@ -9,8 +9,8 @@ description = "Revolt Backend: API Models"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
-serde = ["dep:serde", "revolt-permissions/serde", "indexmap/serde"]
-schemas = ["dep:schemars", "revolt-permissions/schemas"]
+serde = ["dep:serde", "upryzing-permissions/serde", "indexmap/serde"]
+schemas = ["dep:schemars", "upryzing-permissions/schemas"]
 utoipa = ["dep:utoipa"]
 validator = ["dep:validator"]
 rocket = ["dep:rocket"]
@@ -20,8 +20,8 @@ default = ["serde", "partials", "rocket"]
 
 [dependencies]
 # Core
-revolt-config = { version = "0.8.0", path = "../config" }
-revolt-permissions = { version = "0.8.0", path = "../permissions" }
+upryzing-config = { version = "0.1.0", path = "../config" }
+upryzing-permissions = { version = "0.1.0", path = "../permissions" }
 
 # Utility
 regex = "1"

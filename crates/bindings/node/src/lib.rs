@@ -4,19 +4,19 @@ extern crate serde;
 use std::sync::OnceLock;
 
 use neon::prelude::*;
-use revolt_database::{Database, DatabaseInfo};
+use upryzing_database::{Database, DatabaseInfo};
 
 fn js_init(mut cx: FunctionContext) -> JsResult<JsUndefined> {
     // static INIT: OnceLock<()> = OnceLock::new();
     // if INIT.get().is_none() {
     //     INIT.get_or_init(|| {
     //         async_std::task::block_on(async {
-    //             revolt_config::configure!(api);
+    //             upryzing_config::configure!(api);
 
     //             match DatabaseInfo::Auto.connect().await {
     //                 Ok(db) => {
     //                     let authifier_db = db.clone().to_authifier().await.database;
-    //                     revolt_database::tasks::start_workers(db, authifier_db);
+    //                     upryzing_database::tasks::start_workers(db, authifier_db);
     //                     Ok(())
     //                 }
     //                 Err(err) => Err(err),
@@ -50,8 +50,8 @@ fn js_database(mut cx: FunctionContext) -> JsResult<JsBox<DatabaseBinding>> {
 #[derive(Clone)]
 #[allow(clippy::large_enum_variant)]
 enum Model {
-    User(revolt_database::User),
-    Error(revolt_result::Error),
+    User(upryzing_database::User),
+    Error(upryzing_result::Error),
 }
 
 impl Model {
@@ -111,7 +111,7 @@ fn js_error(mut cx: FunctionContext) -> JsResult<JsValue> {
 struct ResultBinding<T> {
     #[serde(flatten)]
     value: Option<T>,
-    error: Option<revolt_result::Error>,
+    error: Option<upryzing_result::Error>,
 }
 
 macro_rules! shim {
@@ -199,7 +199,7 @@ fn main(mut cx: ModuleContext) -> NeonResult<()> {
         |db| async move {
             let user_a = db.fetch_user(&user_a).await?;
             let user_b = db.fetch_user(&user_b).await?;
-            revolt_database::Channel::create_dm(&db, &user_a, &user_b).await
+            upryzing_database::Channel::create_dm(&db, &user_a, &user_b).await
         },
         &userA, &userB,
     );

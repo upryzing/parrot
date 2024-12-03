@@ -1,11 +1,11 @@
-use revolt_database::{
+use rocket::State;
+use rocket_empty::EmptyResponse;
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Database, Invite, User,
 };
-use revolt_permissions::{calculate_server_permissions, ChannelPermission};
-use revolt_result::Result;
-use rocket::State;
-use rocket_empty::EmptyResponse;
+use upryzing_permissions::{calculate_server_permissions, ChannelPermission};
+use upryzing_result::Result;
 
 /// # Delete Invite
 ///

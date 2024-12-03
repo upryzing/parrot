@@ -7,8 +7,8 @@ use base64::{
     engine::{self},
     Engine as _,
 };
-use revolt_database::{events::rabbit::*, Database};
-// use revolt_models::v0::{Channel, PushNotification};
+use upryzing_database::{events::rabbit::*, Database};
+// use upryzing_models::v0::{Channel, PushNotification};
 use web_push::{
     ContentEncoding, IsahcWebPushClient, SubscriptionInfo, SubscriptionKeys, VapidSignatureBuilder,
     WebPushClient, WebPushError, WebPushMessageBuilder,
@@ -22,7 +22,7 @@ pub struct VapidOutboundConsumer {
 
 impl VapidOutboundConsumer {
     pub async fn new(db: Database) -> Result<VapidOutboundConsumer, &'static str> {
-        let config = revolt_config::config().await;
+        let config = upryzing_config::config().await;
 
         if config.pushd.vapid.private_key.is_empty() | config.pushd.vapid.public_key.is_empty() {
             return Err("No Vapid keys present");
@@ -53,7 +53,7 @@ impl AsyncConsumer for VapidOutboundConsumer {
         let content = String::from_utf8(content).unwrap();
         let payload: PayloadToService = serde_json::from_str(content.as_str()).unwrap();
 
-        let config = revolt_config::config().await;
+        let config = upryzing_config::config().await;
 
         let subscription = SubscriptionInfo {
             endpoint: payload.extras.get("endpoint").unwrap().clone(),
@@ -127,22 +127,22 @@ impl AsyncConsumer for VapidOutboundConsumer {
                                         .remove_push_subscription_by_session_id(&payload.session_id)
                                         .await
                                     {
-                                        revolt_config::capture_error(&err);
+                                        upryzing_config::capture_error(&err);
                                     }
                                 }
                             }
                         }
                         Err(err) => {
-                            revolt_config::capture_error(&err);
+                            upryzing_config::capture_error(&err);
                         }
                     }
                 }
                 Err(err) => {
-                    revolt_config::capture_error(&err);
+                    upryzing_config::capture_error(&err);
                 }
             },
             Err(err) => {
-                revolt_config::capture_error(&err);
+                upryzing_config::capture_error(&err);
             }
         }
     }

@@ -1,14 +1,14 @@
 use chrono::Utc;
-use revolt_database::{
-    util::{permissions::DatabasePermissionQuery, reference::Reference},
-    Database, Message, User,
-};
-use revolt_models::v0;
-use revolt_permissions::{calculate_channel_permissions, ChannelPermission};
-use revolt_result::{create_error, Result};
 use rocket::{serde::json::Json, State};
 use rocket_empty::EmptyResponse;
 use serde::Deserialize;
+use upryzing_database::{
+    util::{permissions::DatabasePermissionQuery, reference::Reference},
+    Database, Message, User,
+};
+use upryzing_models::v0;
+use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
+use upryzing_result::{create_error, Result};
 use validator::Validate;
 
 /// # Bulk Delete Messages

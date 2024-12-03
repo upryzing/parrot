@@ -1,6 +1,6 @@
 [package]
-name = "revolt-result"
-version = "0.8.0"
+name = "upryzing-result"
+version = "0.1.0"
 edition = "2021"
 license = "MIT"
 authors = ["Paul Makles <me@insrt.uk>"]

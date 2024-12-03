@@ -1,5 +1,5 @@
 use futures::StreamExt;
-use revolt_result::Result;
+use upryzing_result::Result;
 
 use crate::{FieldsMember, Member, MemberCompositeKey, PartialMember};
 use crate::{IntoDocumentPath, MongoDb};

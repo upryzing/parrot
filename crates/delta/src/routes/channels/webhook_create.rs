@@ -1,14 +1,14 @@
-use revolt_database::{
+use rocket::{serde::json::Json, State};
+use ulid::Ulid;
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Channel, Database, File, User, Webhook,
 };
-use revolt_models::v0;
-use revolt_permissions::{
+use upryzing_models::v0;
+use upryzing_permissions::{
     calculate_channel_permissions, ChannelPermission, DEFAULT_WEBHOOK_PERMISSIONS,
 };
-use revolt_result::{create_error, Result};
-use rocket::{serde::json::Json, State};
-use ulid::Ulid;
+use upryzing_result::{create_error, Result};
 use validator::Validate;
 
 /// # Creates a webhook

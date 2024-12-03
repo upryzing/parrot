@@ -1,8 +1,8 @@
 use async_tungstenite::tungstenite::{handshake, Message};
 use futures::channel::oneshot::Sender;
-use revolt_database::events::client::ReadyPayloadFields;
-use revolt_result::{create_error, Result};
 use serde::{Deserialize, Serialize};
+use upryzing_database::events::client::ReadyPayloadFields;
+use upryzing_result::{create_error, Result};
 
 /// Enumeration of supported protocol formats
 #[derive(Debug)]

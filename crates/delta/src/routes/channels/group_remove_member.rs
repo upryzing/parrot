@@ -1,6 +1,6 @@
-use revolt_database::{util::reference::Reference, Channel, Database, User, AMQP};
-use revolt_permissions::ChannelPermission;
-use revolt_result::{create_error, Result};
+use upryzing_database::{util::reference::Reference, Channel, Database, User, AMQP};
+use upryzing_permissions::ChannelPermission;
+use upryzing_result::{create_error, Result};
 
 use rocket::State;
 use rocket_empty::EmptyResponse;
@@ -54,9 +54,9 @@ pub async fn remove_member(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
-    use revolt_database::{events::client::EventV1, Channel, RelationshipStatus};
-    use revolt_models::v0;
     use rocket::http::{Header, Status};
+    use upryzing_database::{events::client::EventV1, Channel, RelationshipStatus};
+    use upryzing_models::v0;
 
     #[rocket::async_test]
     async fn success_remove_member() {

@@ -1,5 +1,5 @@
-use revolt_models::v0::*;
-use revolt_permissions::{calculate_user_permissions, UserPermission};
+use upryzing_models::v0::*;
+use upryzing_permissions::{calculate_user_permissions, UserPermission};
 
 use crate::{util::permissions::DatabasePermissionQuery, Database, FileUsedFor};
 
@@ -1012,7 +1012,7 @@ impl crate::User {
             },
             badges: self.badges.unwrap_or_default() as u32,
             online: can_see_profile
-                && revolt_presence::is_online(&self.id).await
+                && upryzing_presence::is_online(&self.id).await
                 && !matches!(
                     self.status,
                     Some(crate::UserStatus {
@@ -1137,7 +1137,7 @@ impl crate::User {
                 })
                 .unwrap_or_default(),
             badges: self.badges.unwrap_or_default() as u32,
-            online: (force_online || revolt_presence::is_online(&self.id).await)
+            online: (force_online || upryzing_presence::is_online(&self.id).await)
                 && !matches!(
                     self.status,
                     Some(crate::UserStatus {

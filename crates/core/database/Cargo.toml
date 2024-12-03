@@ -1,6 +1,6 @@
 [package]
-name = "revolt-database"
-version = "0.8.0"
+name = "upryzing-database"
+version = "0.1.0"
 edition = "2021"
 license = "AGPL-3.0-or-later"
 authors = ["Paul Makles <me@insrt.uk>"]
@@ -17,22 +17,22 @@ tasks = ["isahc", "linkify", "url-escape"]
 async-std-runtime = ["async-std"]
 rocket-impl = ["rocket", "schemars", "revolt_okapi", "revolt_rocket_okapi"]
 axum-impl = ["axum"]
-redis-is-patched = ["revolt-presence/redis-is-patched"]
+redis-is-patched = ["upryzing-presence/redis-is-patched"]
 
 # Default Features
 default = ["mongodb", "async-std-runtime", "tasks"]
 
 [dependencies]
 # Core
-revolt-config = { version = "0.8.0", path = "../config", features = [
+upryzing-config = { version = "0.1.0", path = "../config", features = [
     "report-macros",
 ] }
-revolt-result = { version = "0.8.0", path = "../result" }
-revolt-models = { version = "0.8.0", path = "../models", features = [
+upryzing-result = { version = "0.1.0", path = "../result" }
+upryzing-models = { version = "0.1.0", path = "../models", features = [
     "validator",
 ] }
-revolt-presence = { version = "0.8.0", path = "../presence" }
-revolt-permissions = { version = "0.8.0", path = "../permissions", features = [
+upryzing-presence = { version = "0.1.0", path = "../presence" }
+upryzing-permissions = { version = "0.1.0", path = "../permissions", features = [
     "serde",
     "bson",
 ] }

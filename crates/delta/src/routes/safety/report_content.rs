@@ -1,8 +1,10 @@
-use revolt_database::{events::client::EventV1, Database, Report, Snapshot, SnapshotContent, User};
-use revolt_models::v0::{ReportStatus, ReportedContent};
-use revolt_result::{create_error, Result};
 use serde::Deserialize;
 use ulid::Ulid;
+use upryzing_database::{
+    events::client::EventV1, Database, Report, Snapshot, SnapshotContent, User,
+};
+use upryzing_models::v0::{ReportStatus, ReportedContent};
+use upryzing_result::{create_error, Result};
 use validator::Validate;
 
 use rocket::{serde::json::Json, State};

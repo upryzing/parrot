@@ -13,9 +13,9 @@ use revolt_a2::{
     },
     Client, ClientConfig, Endpoint, Error, ErrorBody, ErrorReason, Priority, PushType, Response,
 };
-use revolt_database::{events::rabbit::*, Database};
-use revolt_models::v0::{Channel, Message, PushNotification};
 use serde::Serialize;
+use upryzing_database::{events::rabbit::*, Database};
+use upryzing_models::v0::{Channel, Message, PushNotification};
 
 // region: payload
 
@@ -91,7 +91,7 @@ impl ApnsOutboundConsumer {
 
 impl ApnsOutboundConsumer {
     pub async fn new(db: Database) -> Result<ApnsOutboundConsumer, &'static str> {
-        let config = revolt_config::config().await;
+        let config = upryzing_config::config().await;
 
         if config.pushd.apn.pkcs8.is_empty()
             || config.pushd.apn.key_id.is_empty()
@@ -326,11 +326,11 @@ impl AsyncConsumer for ApnsOutboundConsumer {
                         .remove_push_subscription_by_session_id(&payload.session_id)
                         .await
                     {
-                        revolt_config::capture_error(&err);
+                        upryzing_config::capture_error(&err);
                     }
                 }
                 err => {
-                    revolt_config::capture_error(&err);
+                    upryzing_config::capture_error(&err);
                 }
             }
         }

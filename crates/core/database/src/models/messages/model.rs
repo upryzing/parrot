@@ -2,14 +2,14 @@ use std::{collections::HashSet, hash::RandomState};
 
 use indexmap::{IndexMap, IndexSet};
 use iso8601_timestamp::Timestamp;
-use revolt_config::{config, FeaturesLimits};
-use revolt_models::v0::{
+use ulid::Ulid;
+use upryzing_config::{config, FeaturesLimits};
+use upryzing_models::v0::{
     self, BulkMessageResponse, DataMessageSend, Embed, MessageAuthor, MessageFlags, MessageSort,
     MessageWebhook, PushNotification, ReplyIntent, SendableEmbed, Text, RE_MENTION,
 };
-use revolt_permissions::{ChannelPermission, PermissionValue};
-use revolt_result::Result;
-use ulid::Ulid;
+use upryzing_permissions::{ChannelPermission, PermissionValue};
+use upryzing_result::Result;
 use validator::Validate;
 
 use crate::{
@@ -372,7 +372,7 @@ impl Message {
                                 .retain(|m| *member_channel_view_perms.get(m).unwrap_or(&false));
                         }
                     } else {
-                        revolt_config::capture_error(&valid_members.unwrap_err());
+                        upryzing_config::capture_error(&valid_members.unwrap_err());
                         return Err(create_error!(InternalError));
                     }
                 }

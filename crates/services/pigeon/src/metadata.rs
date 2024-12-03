@@ -1,8 +1,8 @@
 use std::io::Cursor;
 
-use revolt_database::Metadata;
-use revolt_files::{image_size, video_size};
 use tempfile::NamedTempFile;
+use upryzing_database::Metadata;
+use upryzing_files::{image_size, video_size};
 
 /// Intersection of what infer can detect and what image-rs supports
 ///

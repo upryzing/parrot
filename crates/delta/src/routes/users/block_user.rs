@@ -1,9 +1,9 @@
-use revolt_database::util::reference::Reference;
-use revolt_database::{Database, User};
-use revolt_models::v0;
-use revolt_result::Result;
 use rocket::serde::json::Json;
 use rocket::State;
+use upryzing_database::util::reference::Reference;
+use upryzing_database::{Database, User};
+use upryzing_models::v0;
+use upryzing_result::Result;
 
 /// # Block User
 ///

@@ -1,9 +1,9 @@
 use authifier::models::Session;
 use once_cell::sync::Lazy;
 use regex::Regex;
-use revolt_database::{Database, User};
-use revolt_models::v0;
-use revolt_result::{create_error, Result};
+use upryzing_database::{Database, User};
+use upryzing_models::v0;
+use upryzing_result::{create_error, Result};
 
 use rocket::{serde::json::Json, State};
 use serde::{Deserialize, Serialize};

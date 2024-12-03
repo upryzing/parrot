@@ -14,7 +14,7 @@ extern crate log;
 extern crate revolt_optional_struct;
 
 #[macro_use]
-extern crate revolt_result;
+extern crate upryzing_result;
 
 pub use iso8601_timestamp;
 

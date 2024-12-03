@@ -7,8 +7,8 @@ use amqprs::{
     consumer::AsyncConsumer,
     FieldTable,
 };
-use revolt_config::{config, Settings};
 use tokio::sync::Notify;
+use upryzing_config::{config, Settings};
 
 mod consumers;
 use consumers::{
@@ -24,12 +24,15 @@ async fn main() {
     let config = config().await;
 
     // Setup database
-    let db = revolt_database::DatabaseInfo::Auto.connect().await.unwrap();
+    let db = upryzing_database::DatabaseInfo::Auto
+        .connect()
+        .await
+        .unwrap();
     let authifier: authifier::Database;
 
     if let Some(client) = match &db {
-        revolt_database::Database::Reference(_) => None,
-        revolt_database::Database::MongoDb(mongo) => Some(mongo),
+        upryzing_database::Database::Reference(_) => None,
+        upryzing_database::Database::MongoDb(mongo) => Some(mongo),
     } {
         authifier =
             authifier::Database::MongoDb(authifier::database::MongoDb(client.database("revolt")));

@@ -10,10 +10,10 @@ use crate::{
 use bson::oid::ObjectId;
 use futures::StreamExt;
 use rand::seq::SliceRandom;
-use revolt_permissions::DEFAULT_WEBHOOK_PERMISSIONS;
-use revolt_result::{Error, ErrorType};
 use serde::{Deserialize, Serialize};
 use unicode_segmentation::UnicodeSegmentation;
+use upryzing_permissions::DEFAULT_WEBHOOK_PERMISSIONS;
+use upryzing_result::{Error, ErrorType};
 
 #[derive(Serialize, Deserialize)]
 struct MigrationInfo {

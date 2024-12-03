@@ -1,11 +1,11 @@
-use revolt_database::{
+use rocket::State;
+use rocket_empty::EmptyResponse;
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Database, User,
 };
-use revolt_permissions::PermissionQuery;
-use revolt_result::{create_error, Result};
-use rocket::State;
-use rocket_empty::EmptyResponse;
+use upryzing_permissions::PermissionQuery;
+use upryzing_result::{create_error, Result};
 
 /// # Mark Server As Read
 ///

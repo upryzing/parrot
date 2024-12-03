@@ -19,7 +19,7 @@ macro_rules! report_error {
                     $crate::Level::Error,
                 );
             })
-            .map_err(|_| ::revolt_result::create_error!($error))
+            .map_err(|_| ::upryzing_result::create_error!($error))
     };
 }
 
@@ -34,7 +34,7 @@ macro_rules! report_internal_error {
                     $crate::Level::Error,
                 );
             })
-            .map_err(|_| ::revolt_result::create_error!(InternalError))
+            .map_err(|_| ::upryzing_result::create_error!(InternalError))
     };
 }
 
@@ -92,8 +92,8 @@ pub struct Hosts {
     pub app: String,
     pub api: String,
     pub events: String,
-    pub autumn: String,
-    pub january: String,
+    pub pigeon: String,
+    pub dove: String,
     pub voso_legacy: String,
     pub voso_legacy_ws: String,
 }
@@ -341,7 +341,7 @@ impl Settings {
 
 pub async fn init() {
     println!(
-        ":: Revolt Configuration ::\n\x1b[32m{:?}\x1b[0m",
+        ":: Upryzing Configuration ::\n\x1b[32m{:?}\x1b[0m",
         config().await
     );
 }

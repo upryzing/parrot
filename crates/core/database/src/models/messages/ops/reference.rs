@@ -1,6 +1,6 @@
 use futures::future::try_join_all;
 use indexmap::IndexSet;
-use revolt_result::Result;
+use upryzing_result::Result;
 
 use crate::{AppendMessage, FieldsMessage, Message, MessageQuery, PartialMessage, ReferenceDb};
 
@@ -58,7 +58,7 @@ impl AbstractMessages for ReferenceDb {
 
                 if let Some(pinned) = query.filter.pinned {
                     if message.pinned.unwrap_or_default() == pinned {
-                        return false
+                        return false;
                     }
                 }
 
@@ -189,7 +189,12 @@ impl AbstractMessages for ReferenceDb {
     }
 
     /// Update a given message with new information
-    async fn update_message(&self, id: &str, message: &PartialMessage, remove: Vec<FieldsMessage>) -> Result<()> {
+    async fn update_message(
+        &self,
+        id: &str,
+        message: &PartialMessage,
+        remove: Vec<FieldsMessage>,
+    ) -> Result<()> {
         let mut messages = self.messages.lock().await;
         if let Some(message_data) = messages.get_mut(id) {
             message_data.apply_options(message.to_owned());

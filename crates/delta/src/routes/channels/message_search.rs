@@ -1,11 +1,11 @@
-use revolt_database::{
+use rocket::{serde::json::Json, State};
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Channel, Database, Message, MessageFilter, MessageQuery, MessageTimePeriod, User,
 };
-use revolt_models::v0;
-use revolt_permissions::{calculate_channel_permissions, ChannelPermission};
-use revolt_result::{create_error, Result};
-use rocket::{serde::json::Json, State};
+use upryzing_models::v0;
+use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
+use upryzing_result::{create_error, Result};
 use validator::Validate;
 
 /// # Search for Messages
@@ -31,7 +31,7 @@ pub async fn search(
     })?;
 
     if options.query.is_some() && options.pinned.is_some() {
-        return Err(create_error!(InvalidOperation))
+        return Err(create_error!(InvalidOperation));
     }
 
     let channel = target.as_channel(db).await?;

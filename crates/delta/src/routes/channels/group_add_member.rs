@@ -1,9 +1,9 @@
-use revolt_database::{
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Channel, Database, User, AMQP,
 };
-use revolt_permissions::{calculate_channel_permissions, ChannelPermission};
-use revolt_result::{create_error, Result};
+use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
+use upryzing_result::{create_error, Result};
 
 use rocket::State;
 use rocket_empty::EmptyResponse;
@@ -50,9 +50,9 @@ pub async fn add_member(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
-    use revolt_database::{events::client::EventV1, Channel, RelationshipStatus};
-    use revolt_models::v0;
     use rocket::http::{Header, Status};
+    use upryzing_database::{events::client::EventV1, Channel, RelationshipStatus};
+    use upryzing_models::v0;
 
     #[rocket::async_test]
     async fn success_add_member() {

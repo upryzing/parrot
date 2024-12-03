@@ -20,17 +20,17 @@ fi
 
 TAG=$1-debug
 echo "Building images, will tag for ghcr.io with $TAG!"
-docker build -t ghcr.io/revoltchat/base:latest -f Dockerfile.useCurrentArch .
-docker build -t ghcr.io/revoltchat/server:$TAG - < crates/delta/Dockerfile
-docker build -t ghcr.io/revoltchat/bonfire:$TAG - < crates/bonfire/Dockerfile
-docker build -t ghcr.io/revoltchat/autumn:$TAG - < crates/services/autumn/Dockerfile
-docker build -t ghcr.io/revoltchat/january:$TAG - < crates/services/january/Dockerfile
+docker build -t ghcr.io/upryzing/base:latest -f Dockerfile.useCurrentArch .
+docker build -t ghcr.io/upryzing/server:$TAG - < crates/delta/Dockerfile
+docker build -t ghcr.io/upryzing/bonfire:$TAG - < crates/bonfire/Dockerfile
+docker build -t ghcr.io/upryzing/pigeon:$TAG - < crates/services/pigeon/Dockerfile
+docker build -t ghcr.io/upryzing/dove:$TAG - < crates/services/dove/Dockerfile
 
 if [ "$DEBUG" = "true" ]; then
   git restore Cargo.toml
 fi
 
-docker push ghcr.io/revoltchat/server:$TAG
-docker push ghcr.io/revoltchat/bonfire:$TAG
-docker push ghcr.io/revoltchat/autumn:$TAG
-docker push ghcr.io/revoltchat/january:$TAG
+docker push ghcr.io/upryzing/server:$TAG
+docker push ghcr.io/upryzing/bonfire:$TAG
+docker push ghcr.io/upryzing/pigeon:$TAG
+docker push ghcr.io/upryzing/dove:$TAG

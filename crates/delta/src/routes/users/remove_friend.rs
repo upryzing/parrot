@@ -1,9 +1,9 @@
-use revolt_database::util::reference::Reference;
-use revolt_database::{Database, User};
-use revolt_models::v0;
-use revolt_result::{create_error, Result};
 use rocket::serde::json::Json;
 use rocket::State;
+use upryzing_database::util::reference::Reference;
+use upryzing_database::{Database, User};
+use upryzing_models::v0;
+use upryzing_result::{create_error, Result};
 
 /// # Deny Friend Request / Remove Friend
 ///

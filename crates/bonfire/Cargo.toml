@@ -1,6 +1,6 @@
 [package]
-name = "revolt-bonfire"
-version = "0.8.0"
+name = "upryzing-bonfire"
+version = "0.1.0"
 license = "AGPL-3.0-or-later"
 edition = "2021"
 
@@ -37,12 +37,12 @@ async-std = { version = "1.8.0", features = [
 
 # core
 authifier = { version = "1.0.9" }
-revolt-result = { path = "../core/result" }
-revolt-models = { path = "../core/models" }
-revolt-config = { path = "../core/config" }
-revolt-database = { path = "../core/database" }
-revolt-permissions = { version = "0.8.0", path = "../core/permissions" }
-revolt-presence = { path = "../core/presence", features = ["redis-is-patched"] }
+upryzing-result = { path = "../core/result" }
+upryzing-models = { path = "../core/models" }
+upryzing-config = { path = "../core/config" }
+upryzing-database = { path = "../core/database" }
+upryzing-permissions = { version = "0.1.0", path = "../core/permissions" }
+upryzing-presence = { path = "../core/presence", features = ["redis-is-patched"] }
 
 # redis
 fred = { version = "8.0.1", features = ["subscriber-client"] }

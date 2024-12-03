@@ -2,8 +2,8 @@ use std::time::{Duration, SystemTime};
 
 use super::AbstractRatelimitEvents;
 use crate::{MongoDb, RatelimitEvent, RatelimitEventType};
-use revolt_result::Result;
 use ulid::Ulid;
+use upryzing_result::Result;
 
 static COL: &str = "ratelimit_events";
 

@@ -1,11 +1,11 @@
-use revolt_database::{
+use rocket::State;
+use rocket_empty::EmptyResponse;
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Database, PartialMessage, User,
 };
-use revolt_permissions::{calculate_channel_permissions, ChannelPermission};
-use revolt_result::Result;
-use rocket::State;
-use rocket_empty::EmptyResponse;
+use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
+use upryzing_result::Result;
 
 /// # Remove All Reactions from Message
 ///
@@ -37,7 +37,7 @@ pub async fn clear_reactions(
                 reactions: Some(Default::default()),
                 ..Default::default()
             },
-            vec![]
+            vec![],
         )
         .await
         .map(|_| EmptyResponse)

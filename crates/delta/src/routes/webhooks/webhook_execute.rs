@@ -1,12 +1,12 @@
-use revolt_config::config;
-use revolt_database::{
+use rocket::{serde::json::Json, State};
+use upryzing_config::config;
+use upryzing_database::{
     util::{idempotency::IdempotencyKey, reference::Reference},
     Database, Message, AMQP,
 };
-use revolt_models::v0;
-use revolt_permissions::{ChannelPermission, PermissionValue};
-use revolt_result::{create_error, Result};
-use rocket::{serde::json::Json, State};
+use upryzing_models::v0;
+use upryzing_permissions::{ChannelPermission, PermissionValue};
+use upryzing_result::{create_error, Result};
 
 use validator::Validate;
 

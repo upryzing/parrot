@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use crate::{events::client::EventV1, Database};
 
-use revolt_result::Result;
+use upryzing_result::Result;
 
 pub type UserSettings = HashMap<String, (i64, String)>;
 

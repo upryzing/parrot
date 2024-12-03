@@ -43,7 +43,7 @@ auto_derived_partial!(
 
         /// Bitfield of user badges
         ///
-        /// https://docs.rs/revolt-models/latest/revolt_models/v0/enum.UserBadges.html
+        /// https://docs.rs/upryzing-models/latest/upryzing_models/v0/enum.UserBadges.html
         #[cfg_attr(
             feature = "serde",
             serde(skip_serializing_if = "crate::if_zero_u32", default)
@@ -55,7 +55,7 @@ auto_derived_partial!(
 
         /// Enum of user flags
         ///
-        /// https://docs.rs/revolt-models/latest/revolt_models/v0/enum.UserFlags.html
+        /// https://docs.rs/upryzing-models/latest/upryzing_models/v0/enum.UserFlags.html
         #[cfg_attr(
             feature = "serde",
             serde(skip_serializing_if = "crate::if_zero_u32", default)

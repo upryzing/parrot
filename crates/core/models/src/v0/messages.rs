@@ -3,7 +3,7 @@ use std::time::SystemTime;
 use indexmap::{IndexMap, IndexSet};
 use once_cell::sync::Lazy;
 use regex::Regex;
-use revolt_config::config;
+use upryzing_config::config;
 
 #[cfg(feature = "validator")]
 use validator::Validate;
@@ -76,7 +76,7 @@ auto_derived_partial!(
 
         /// Bitfield of message flags
         ///
-        /// https://docs.rs/revolt-models/latest/revolt_models/v0/enum.MessageFlags.html
+        /// https://docs.rs/upryzing-models/latest/upryzing_models/v0/enum.MessageFlags.html
         #[cfg_attr(
             feature = "serde",
             serde(skip_serializing_if = "crate::if_zero_u32", default)
@@ -270,7 +270,7 @@ auto_derived!(
 
         /// Bitfield of message flags
         ///
-        /// https://docs.rs/revolt-models/latest/revolt_models/v0/enum.MessageFlags.html
+        /// https://docs.rs/upryzing-models/latest/upryzing_models/v0/enum.MessageFlags.html
         pub flags: Option<u32>,
     }
 
@@ -449,7 +449,7 @@ impl PushNotification {
 
         let icon = if let Some(author) = &author {
             if let Some(avatar) = author.avatar() {
-                format!("{}/avatars/{}", config.hosts.autumn, avatar)
+                format!("{}/avatars/{}", config.hosts.pigeon, avatar)
             } else {
                 format!("{}/users/{}/default_avatar", config.hosts.api, author.id())
             }
@@ -460,7 +460,7 @@ impl PushNotification {
         let image = msg.attachments.as_ref().and_then(|attachments| {
             attachments
                 .first()
-                .map(|v| format!("{}/attachments/{}", config.hosts.autumn, v.id))
+                .map(|v| format!("{}/attachments/{}", config.hosts.pigeon, v.id))
         });
 
         let body = if let Some(ref sys) = msg.system {

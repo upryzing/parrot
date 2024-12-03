@@ -1,32 +1,33 @@
+<!-- TODO: fully update for upryzing -->
 <div align="center">
 <h1>
-  Revolt Backend
+  Upryzing's Backend (Parrot)
   
-  [![Stars](https://img.shields.io/github/stars/revoltchat/backend?style=flat-square&logoColor=white)](https://github.com/revoltchat/backend/stargazers)
-  [![Forks](https://img.shields.io/github/forks/revoltchat/backend?style=flat-square&logoColor=white)](https://github.com/revoltchat/backend/network/members)
-  [![Pull Requests](https://img.shields.io/github/issues-pr/revoltchat/backend?style=flat-square&logoColor=white)](https://github.com/revoltchat/backend/pulls)
-  [![Issues](https://img.shields.io/github/issues/revoltchat/backend?style=flat-square&logoColor=white)](https://github.com/revoltchat/backend/issues)
-  [![Contributors](https://img.shields.io/github/contributors/revoltchat/backend?style=flat-square&logoColor=white)](https://github.com/revoltchat/backend/graphs/contributors)
-  [![License](https://img.shields.io/github/license/revoltchat/backend?style=flat-square&logoColor=white)](https://github.com/revoltchat/backend/blob/main/LICENSE)
+  [![Stars](https://img.shields.io/github/stars/upryzing/parrot?style=flat-square&logoColor=white)](https://github.com/upryzing/parrot/stargazers)
+  [![Forks](https://img.shields.io/github/forks/upryzing/parrot?style=flat-square&logoColor=white)](https://github.com/upryzing/parrot/network/members)
+  [![Pull Requests](https://img.shields.io/github/issues-pr/upryzing/parrot?style=flat-square&logoColor=white)](https://github.com/upryzing/parrot/pulls)
+  [![Issues](https://img.shields.io/github/issues/upryzing/parrot?style=flat-square&logoColor=white)](https://github.com/upryzing/parrot/issues)
+  [![Contributors](https://img.shields.io/github/contributors/upryzing/parrot?style=flat-square&logoColor=white)](https://github.com/upryzing/parrot/graphs/contributors)
+  [![License](https://img.shields.io/github/license/upryzing/parrot?style=flat-square&logoColor=white)](https://github.com/upryzing/parrot/blob/main/LICENSE)
 </h1>
 The services and libraries that power the Revolt service.<br/>
 <br/>
 
-| Crate              | Path                                               | Description                              |                                                                                                                                                                                                                                                                                                           |
-| ------------------ | -------------------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `core/config`      | [crates/core/config](crates/core/config)           | Core: Configuration                      | ![Crates.io Version](https://img.shields.io/crates/v/revolt-config) ![Crates.io Version](https://img.shields.io/crates/msrv/revolt-config) ![Crates.io Version](https://img.shields.io/crates/size/revolt-config) ![Crates.io License](https://img.shields.io/crates/l/revolt-config)                     |
-| `core/database`    | [crates/core/database](crates/core/database)       | Core: Database Implementation            | ![Crates.io Version](https://img.shields.io/crates/v/revolt-database) ![Crates.io Version](https://img.shields.io/crates/msrv/revolt-database) ![Crates.io Version](https://img.shields.io/crates/size/revolt-database) ![Crates.io License](https://img.shields.io/crates/l/revolt-database)             |
-| `core/files`       | [crates/core/files](crates/core/files)             | Core: S3 and encryption subroutines      | ![Crates.io Version](https://img.shields.io/crates/v/revolt-files) ![Crates.io Version](https://img.shields.io/crates/msrv/revolt-files) ![Crates.io Version](https://img.shields.io/crates/size/revolt-files) ![Crates.io License](https://img.shields.io/crates/l/revolt-files)                         |
-| `core/models`      | [crates/core/models](crates/core/models)           | Core: API Models                         | ![Crates.io Version](https://img.shields.io/crates/v/revolt-models) ![Crates.io Version](https://img.shields.io/crates/msrv/revolt-models) ![Crates.io Version](https://img.shields.io/crates/size/revolt-models) ![Crates.io License](https://img.shields.io/crates/l/revolt-models)                     |
-| `core/permissions` | [crates/core/permissions](crates/core/permissions) | Core: Permission Logic                   | ![Crates.io Version](https://img.shields.io/crates/v/revolt-permissions) ![Crates.io Version](https://img.shields.io/crates/msrv/revolt-permissions) ![Crates.io Version](https://img.shields.io/crates/size/revolt-permissions) ![Crates.io License](https://img.shields.io/crates/l/revolt-permissions) |
-| `core/presence`    | [crates/core/presence](crates/core/presence)       | Core: User Presence                      | ![Crates.io Version](https://img.shields.io/crates/v/revolt-presence) ![Crates.io Version](https://img.shields.io/crates/msrv/revolt-presence) ![Crates.io Version](https://img.shields.io/crates/size/revolt-presence) ![Crates.io License](https://img.shields.io/crates/l/revolt-presence)             |
-| `core/result`      | [crates/core/result](crates/core/result)           | Core: Result and Error types             | ![Crates.io Version](https://img.shields.io/crates/v/revolt-result) ![Crates.io Version](https://img.shields.io/crates/msrv/revolt-result) ![Crates.io Version](https://img.shields.io/crates/size/revolt-result) ![Crates.io License](https://img.shields.io/crates/l/revolt-result)                     |
-| `delta`            | [crates/delta](crates/delta)                       | REST API server                          | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
-| `bonfire`          | [crates/bonfire](crates/bonfire)                   | WebSocket events server                  | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
-| `services/january` | [crates/services/january](crates/services/january) | Proxy server                             | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
-| `services/autumn`  | [crates/services/autumn](crates/services/autumn)   | File server                              | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
-| `bindings/node`    | [crates/bindings/node](crates/bindings/node)       | Node.js bindings for the Revolt software | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
-| `daemons/pushd`    | [crates/daemons/pushd](crates/daemons/pushd)       | Push notification daemon server          | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
+| Crate              | Path                                               | Description                              |                                                                                                                                                                                                                                                                                                                   |
+| ------------------ | -------------------------------------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `core/config`      | [crates/core/config](crates/core/config)           | Core: Configuration                      | ![Crates.io Version](https://img.shields.io/crates/v/upryzing-config) ![Crates.io Version](https://img.shields.io/crates/msrv/upryzing-config) ![Crates.io Version](https://img.shields.io/crates/size/upryzing-config) ![Crates.io License](https://img.shields.io/crates/l/upryzing-config)                     |
+| `core/database`    | [crates/core/database](crates/core/database)       | Core: Database Implementation            | ![Crates.io Version](https://img.shields.io/crates/v/upryzing-database) ![Crates.io Version](https://img.shields.io/crates/msrv/upryzing-database) ![Crates.io Version](https://img.shields.io/crates/size/upryzing-database) ![Crates.io License](https://img.shields.io/crates/l/upryzing-database)             |
+| `core/files`       | [crates/core/files](crates/core/files)             | Core: S3 and encryption subroutines      | ![Crates.io Version](https://img.shields.io/crates/v/upryzing-files) ![Crates.io Version](https://img.shields.io/crates/msrv/upryzing-files) ![Crates.io Version](https://img.shields.io/crates/size/upryzing-files) ![Crates.io License](https://img.shields.io/crates/l/upryzing-files)                         |
+| `core/models`      | [crates/core/models](crates/core/models)           | Core: API Models                         | ![Crates.io Version](https://img.shields.io/crates/v/upryzing-models) ![Crates.io Version](https://img.shields.io/crates/msrv/upryzing-models) ![Crates.io Version](https://img.shields.io/crates/size/upryzing-models) ![Crates.io License](https://img.shields.io/crates/l/upryzing-models)                     |
+| `core/permissions` | [crates/core/permissions](crates/core/permissions) | Core: Permission Logic                   | ![Crates.io Version](https://img.shields.io/crates/v/upryzing-permissions) ![Crates.io Version](https://img.shields.io/crates/msrv/upryzing-permissions) ![Crates.io Version](https://img.shields.io/crates/size/upryzing-permissions) ![Crates.io License](https://img.shields.io/crates/l/upryzing-permissions) |
+| `core/presence`    | [crates/core/presence](crates/core/presence)       | Core: User Presence                      | ![Crates.io Version](https://img.shields.io/crates/v/upryzing-presence) ![Crates.io Version](https://img.shields.io/crates/msrv/upryzing-presence) ![Crates.io Version](https://img.shields.io/crates/size/upryzing-presence) ![Crates.io License](https://img.shields.io/crates/l/upryzing-presence)             |
+| `core/result`      | [crates/core/result](crates/core/result)           | Core: Result and Error types             | ![Crates.io Version](https://img.shields.io/crates/v/upryzing-result) ![Crates.io Version](https://img.shields.io/crates/msrv/upryzing-result) ![Crates.io Version](https://img.shields.io/crates/size/upryzing-result) ![Crates.io License](https://img.shields.io/crates/l/upryzing-result)                     |
+| `delta`            | [crates/delta](crates/delta)                       | REST API server                          | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                        |
+| `bonfire`          | [crates/bonfire](crates/bonfire)                   | WebSocket events server                  | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                        |
+| `services/dove`    | [crates/services/dove](crates/services/dove)       | Proxy server                             | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                        |
+| `services/pigeon`  | [crates/services/pigeon](crates/services/pigeon)   | File server                              | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                        |
+| `bindings/node`    | [crates/bindings/node](crates/bindings/node)       | Node.js bindings for the Revolt software | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                        |
+| `daemons/pushd`    | [crates/daemons/pushd](crates/daemons/pushd)       | Push notification daemon server          | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                        |
 
 </div>
 <br/>
@@ -36,7 +37,7 @@ The services and libraries that power the Revolt service.<br/>
 Rust 1.76 or higher.
 
 > [!CAUTION]
-> The events server has a significant performance regression between Rust 1.77.2 and 1.78.0 onwards, see [issue #341](https://github.com/revoltchat/backend/issues/341).
+> The events server has a significant performance regression between Rust 1.77.2 and 1.78.0 onwards, see [issue #341](https://github.com/upryzing/parrot/issues/341).
 
 ## Development Guide
 
@@ -54,24 +55,24 @@ Before getting started, you'll want to install:
 
 As a heads-up, the development environment uses the following ports:
 
-| Service                   |      Port      |
-| ------------------------- | :------------: |
-| MongoDB                   |     27017      |
-| Redis                     |      6379      |
-| MinIO                     |     14009      |
-| Maildev                   | 14025<br>14080 |
-| Revolt Web App            |     14701      |
-| RabbitMQ                  |  5672<br>15672 |
-| `crates/delta`            |     14702      |
-| `crates/bonfire`          |     14703      |
-| `crates/services/autumn`  |     14704      |
-| `crates/services/january` |     14705      |
+| Service                  |      Port      |
+| ------------------------ | :------------: |
+| MongoDB                  |     27017      |
+| Redis                    |      6379      |
+| MinIO                    |     14009      |
+| Maildev                  | 14025<br>14080 |
+| Revolt Web App           |     14701      |
+| RabbitMQ                 | 5672<br>15672  |
+| `crates/delta`           |     14702      |
+| `crates/bonfire`         |     14703      |
+| `crates/services/pigeon` |     14704      |
+| `crates/services/dove`   |     14705      |
 
 Now you can clone and build the project:
 
 ```bash
-git clone https://github.com/revoltchat/backend revolt-backend
-cd revolt-backend
+git clone https://github.com/upryzing/parrot upryzing-backend
+cd upryzing-backend
 cargo build
 ```
 
@@ -101,15 +102,15 @@ docker compose up -d
 ./scripts/start.sh
 # .. or individually
 # run the API server
-cargo run --bin revolt-delta
+cargo run --bin upryzing-delta
 # run the events server
-cargo run --bin revolt-bonfire
+cargo run --bin upryzing-bonfire
 # run the file server
-cargo run --bin revolt-autumn
+cargo run --bin upryzing-pigeon
 # run the proxy server
-cargo run --bin revolt-january
+cargo run --bin upryzing-dove
 # run the push daemon (not usually needed in regular development)
-cargo run --bin revolt-pushd
+cargo run --bin upryzing-pushd
 
 # hint:
 # mold -run <cargo build, cargo run, etc...>
@@ -163,7 +164,7 @@ Tag and push a new release by running:
 just release
 ```
 
-If you have bumped the crate versions, proceed to [GitHub releases](https://github.com/revoltchat/backend/releases/new) to create a changelog.
+If you have bumped the crate versions, proceed to [GitHub releases](https://github.com/upryzing/parrot/releases/new) to create a changelog.
 
 ## Testing
 
@@ -182,6 +183,6 @@ TEST_DB=MONGODB cargo nextest run
 
 ## License
 
-The Revolt backend is generally licensed under the [GNU Affero General Public License v3.0](https://github.com/revoltchat/backend/blob/master/LICENSE).
+Upryzing's backend is generally licensed under the [GNU Affero General Public License v3.0](https://github.com/upryzing/parrot/blob/main/LICENSE).
 
 **Individual crates may supply their own licenses!**

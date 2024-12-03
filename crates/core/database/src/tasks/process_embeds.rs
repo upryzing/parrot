@@ -3,15 +3,15 @@ use crate::{models::Message, AppendMessage, Database};
 use futures::future::join_all;
 use linkify::{LinkFinder, LinkKind};
 use regex::Regex;
-use revolt_config::config;
-use revolt_result::Result;
+use upryzing_config::config;
+use upryzing_result::Result;
 
 use async_lock::Semaphore;
 use async_std::task::spawn;
 use deadqueue::limited::Queue;
 use once_cell::sync::Lazy;
-use revolt_models::v0::Embed;
 use std::{collections::HashSet, sync::Arc};
+use upryzing_models::v0::Embed;
 
 use isahc::prelude::*;
 
@@ -55,7 +55,7 @@ pub async fn worker(db: Database) {
             let config = config().await;
             let embeds = generate(
                 task.content,
-                &config.hosts.january,
+                &config.hosts.dove,
                 config.features.limits.global.message_embeds,
                 semaphore,
             )
@@ -132,7 +132,7 @@ pub async fn generate(
         return Err(create_error!(LabelMe));
     }
 
-    // TODO: batch request to january
+    // TODO: batch request to dove
     let mut tasks = Vec::new();
 
     for link in links {

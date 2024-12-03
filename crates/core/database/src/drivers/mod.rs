@@ -10,7 +10,7 @@ use authifier::config::Template;
 use authifier::config::Templates;
 use authifier::Authifier;
 use rand::Rng;
-use revolt_config::config;
+use upryzing_config::config;
 
 pub use self::mongodb::*;
 pub use self::reference::*;
@@ -48,7 +48,7 @@ impl DatabaseInfo {
             DatabaseInfo::Auto => {
                 if std::env::var("TEST_DB").is_ok() {
                     DatabaseInfo::Test(format!(
-                        "revolt_test_{}",
+                        "upryzing_test_{}",
                         rand::thread_rng().gen_range(1_000_000..10_000_000)
                     ))
                     .connect()

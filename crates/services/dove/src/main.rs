@@ -16,7 +16,7 @@ pub mod website_embed;
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {
     // Configure logging and environment
-    revolt_config::configure!(proxy);
+    upryzing_config::configure!(proxy);
 
     // Configure API schema
     #[derive(OpenApi)]
@@ -30,18 +30,18 @@ async fn main() -> Result<(), std::io::Error> {
         components(
             schemas(
                 api::RootResponse,
-                revolt_result::Error,
-                revolt_result::ErrorType,
-                revolt_models::v0::ImageSize,
-                revolt_models::v0::Image,
-                revolt_models::v0::Video,
-                revolt_models::v0::TwitchType,
-                revolt_models::v0::LightspeedType,
-                revolt_models::v0::BandcampType,
-                revolt_models::v0::Special,
-                revolt_models::v0::WebsiteMetadata,
-                revolt_models::v0::Text,
-                revolt_models::v0::Embed
+                upryzing_result::Error,
+                upryzing_result::ErrorType,
+                upryzing_models::v0::ImageSize,
+                upryzing_models::v0::Image,
+                upryzing_models::v0::Video,
+                upryzing_models::v0::TwitchType,
+                upryzing_models::v0::LightspeedType,
+                upryzing_models::v0::BandcampType,
+                upryzing_models::v0::Special,
+                upryzing_models::v0::WebsiteMetadata,
+                upryzing_models::v0::Text,
+                upryzing_models::v0::Embed
             )
         )
     )]

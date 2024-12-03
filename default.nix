@@ -5,7 +5,7 @@ let
   # Rolling updates, not deterministic.
   # pkgs = import (fetchTarball("channel:nixpkgs-unstable")) {};
 in pkgs.mkShell {
-  name = "revoltEnv";
+  name = "upryzingEnv";
 
   # LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
   #   pkgs.gcc-unwrapped

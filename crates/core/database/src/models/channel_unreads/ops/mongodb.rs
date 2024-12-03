@@ -2,8 +2,8 @@ use bson::Document;
 use mongodb::options::FindOneAndUpdateOptions;
 use mongodb::options::ReturnDocument;
 use mongodb::options::UpdateOptions;
-use revolt_result::Result;
 use ulid::Ulid;
+use upryzing_result::Result;
 
 use crate::ChannelUnread;
 use crate::MongoDb;

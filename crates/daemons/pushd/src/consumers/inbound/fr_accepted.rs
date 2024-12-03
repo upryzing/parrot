@@ -9,7 +9,7 @@ use amqprs::{
 };
 use async_trait::async_trait;
 use log::debug;
-use revolt_database::{events::rabbit::*, Database};
+use upryzing_database::{events::rabbit::*, Database};
 
 pub struct FRAcceptedConsumer {
     #[allow(dead_code)]
@@ -73,7 +73,7 @@ impl AsyncConsumer for FRAcceptedConsumer {
         debug!("Received FR accept event");
 
         if let Ok(sessions) = self.authifier_db.find_sessions(&payload.user).await {
-            let config = revolt_config::config().await;
+            let config = upryzing_config::config().await;
             for session in sessions {
                 if let Some(sub) = session.subscription {
                     let mut sendable = PayloadToService {

@@ -1,9 +1,9 @@
-use revolt_database::util::reference::Reference;
-use revolt_database::{Database, File, PartialWebhook};
-use revolt_models::v0::{DataEditWebhook, Webhook};
-use revolt_models::validator::Validate;
-use revolt_result::{create_error, Result};
 use rocket::{serde::json::Json, State};
+use upryzing_database::util::reference::Reference;
+use upryzing_database::{Database, File, PartialWebhook};
+use upryzing_models::v0::{DataEditWebhook, Webhook};
+use upryzing_models::validator::Validate;
+use upryzing_result::{create_error, Result};
 
 /// # Edits a webhook
 ///

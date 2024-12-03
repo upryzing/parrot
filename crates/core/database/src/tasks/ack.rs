@@ -3,15 +3,15 @@ use crate::{Database, Message, AMQP};
 
 use deadqueue::limited::Queue;
 use once_cell::sync::Lazy;
-use revolt_models::v0::PushNotification;
 use rocket::form::validate::Contains;
 use std::{
     collections::{HashMap, HashSet},
     time::Duration,
 };
+use upryzing_models::v0::PushNotification;
 use validator::HasLen;
 
-use revolt_result::Result;
+use upryzing_result::Result;
 
 use super::DelayedTask;
 
@@ -106,7 +106,7 @@ pub async fn handle_ack_event(
                         .ack_message(user.to_string(), channel.to_string(), id.to_owned())
                         .await
                     {
-                        revolt_config::capture_error(&err);
+                        upryzing_config::capture_error(&err);
                     }
                 };
             }
@@ -160,7 +160,7 @@ pub async fn handle_ack_event(
                     .message_sent(recipients.clone(), push.clone().unwrap())
                     .await
                 {
-                    revolt_config::capture_error(&err);
+                    upryzing_config::capture_error(&err);
                 }
             }
         }
@@ -189,7 +189,7 @@ pub async fn worker(db: Database, amqp: AMQP) {
                 let (user, channel, _) = key;
 
                 if let Err(err) = handle_ack_event(&event, &db, &amqp, user, channel).await {
-                    revolt_config::capture_error(&err);
+                    upryzing_config::capture_error(&err);
                     error!("{err:?} for {event:?}. ({user:?}, {channel})");
                 } else {
                     info!("User {user:?} ack in {channel} with {event:?}");
@@ -226,7 +226,7 @@ pub async fn worker(db: Database, amqp: AMQP) {
 
                             // put a cap on the amount of messages that can be queued, for particularly active channels
                             if (existing.length() as u16)
-                                < revolt_config::config()
+                                < upryzing_config::config()
                                     .await
                                     .features
                                     .advanced

@@ -1,12 +1,12 @@
-use revolt_database::util::permissions::DatabasePermissionQuery;
-use revolt_database::util::reference::Reference;
-use revolt_database::{Database, User};
-use revolt_models::v0;
+use upryzing_database::util::permissions::DatabasePermissionQuery;
+use upryzing_database::util::reference::Reference;
+use upryzing_database::{Database, User};
+use upryzing_models::v0;
 
-use revolt_permissions::{calculate_user_permissions, UserPermission};
-use revolt_result::{create_error, Result};
 use rocket::serde::json::Json;
 use rocket::State;
+use upryzing_permissions::{calculate_user_permissions, UserPermission};
+use upryzing_result::{create_error, Result};
 
 /// # Fetch Mutual Friends And Servers
 ///

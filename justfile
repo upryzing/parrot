@@ -1,11 +1,11 @@
 publish:
-    cargo publish --package revolt-config
-    cargo publish --package revolt-result
-    cargo publish --package revolt-files
-    cargo publish --package revolt-permissions
-    cargo publish --package revolt-models
-    cargo publish --package revolt-presence
-    cargo publish --package revolt-database
+    cargo publish --package upryzing-config
+    cargo publish --package upryzing-result
+    cargo publish --package upryzing-files
+    cargo publish --package upryzing-permissions
+    cargo publish --package upryzing-models
+    cargo publish --package upryzing-presence
+    cargo publish --package upryzing-database
 
 patch:
     cargo release version patch --execute

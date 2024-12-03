@@ -6,8 +6,8 @@ use super::AbstractRatelimitEvents;
 use crate::RatelimitEvent;
 use crate::RatelimitEventType;
 use crate::ReferenceDb;
-use revolt_result::Result;
 use ulid::Ulid;
+use upryzing_result::Result;
 
 #[async_trait]
 impl AbstractRatelimitEvents for ReferenceDb {

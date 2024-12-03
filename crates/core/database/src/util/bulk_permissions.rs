@@ -1,6 +1,6 @@
 use std::{collections::HashMap, hash::RandomState};
 
-use revolt_permissions::{
+use upryzing_permissions::{
     ChannelPermission, ChannelType, Override, OverrideField, PermissionValue, ALLOW_IN_TIMEOUT,
     DEFAULT_PERMISSION_DIRECT_MESSAGE,
 };

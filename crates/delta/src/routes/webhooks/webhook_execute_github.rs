@@ -1,6 +1,3 @@
-use revolt_database::{util::reference::Reference, Database, Message, AMQP};
-use revolt_models::v0::{MessageAuthor, SendableEmbed, Webhook};
-use revolt_result::{create_error, Error, Result};
 use revolt_rocket_okapi::{
     gen::OpenApiGenerator,
     request::{OpenApiFromRequest, RequestHeaderInput},
@@ -11,6 +8,9 @@ use schemars::schema::SchemaObject;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use ulid::Ulid;
+use upryzing_database::{util::reference::Reference, Database, Message, AMQP};
+use upryzing_models::v0::{MessageAuthor, SendableEmbed, Webhook};
+use upryzing_result::{create_error, Error, Result};
 use validator::Validate;
 
 #[derive(Serialize, Deserialize, Debug, JsonSchema)]

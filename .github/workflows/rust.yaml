@@ -61,7 +61,7 @@ jobs:
         env:
           TEST_DB: REFERENCE
         run: |
-          cargo build --bin revolt-delta && (cargo run --bin revolt-delta &)
+          cargo build --bin upryzing-delta && (cargo run --bin upryzing-delta &)
 
       - name: Wait for API to go up
         if: github.event_name != 'pull_request' && github.ref_name == 'main'
@@ -73,7 +73,7 @@ jobs:
         if: github.event_name != 'pull_request' && github.ref_name == 'main'
         uses: actions/checkout@v3
         with:
-          repository: revoltchat/api
+          repository: upryzing/api-typescript
           path: api
           token: ${{ secrets.PAT }}
 
@@ -87,6 +87,6 @@ jobs:
         with:
           cwd: "api"
           add: "*.json"
-          author_name: Revolt CI
-          author_email: revolt-ci@users.noreply.github.com
+          author_name: Upryzing CI
+          author_email: upryzing-ci@users.noreply.github.com
           message: "chore: generate OpenAPI specification"

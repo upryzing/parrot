@@ -1,4 +1,4 @@
-use revolt_result::Result;
+use upryzing_result::Result;
 
 use crate::Invite;
 use crate::ReferenceDb;

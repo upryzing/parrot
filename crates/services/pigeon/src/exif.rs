@@ -2,11 +2,11 @@ use std::io::{Cursor, Read};
 
 use exif::Reader;
 use image::{ImageFormat, ImageReader};
-use revolt_config::report_internal_error;
-use revolt_database::Metadata;
-use revolt_result::{create_error, Result};
 use tempfile::NamedTempFile;
 use tokio::process::Command;
+use upryzing_config::report_internal_error;
+use upryzing_database::Metadata;
+use upryzing_result::{create_error, Result};
 
 /// Strip EXIF data from given file and produce new file and metadata
 pub async fn strip_metadata(

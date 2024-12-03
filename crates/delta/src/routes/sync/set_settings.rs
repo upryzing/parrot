@@ -1,11 +1,11 @@
-use revolt_database::{Database, User, UserSettingsImpl};
-use revolt_models::v0;
+use upryzing_database::{Database, User, UserSettingsImpl};
+use upryzing_models::v0;
 
 use chrono::prelude::*;
-use revolt_result::Result;
 use rocket::{serde::json::Json, State};
 use rocket_empty::EmptyResponse;
 use std::collections::HashMap;
+use upryzing_result::Result;
 
 type Data = HashMap<String, String>;
 

@@ -1,12 +1,12 @@
-use revolt_database::{
+use rocket::State;
+use rocket_empty::EmptyResponse;
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Database, User,
 };
-use revolt_models::v0;
-use revolt_permissions::{calculate_channel_permissions, ChannelPermission};
-use revolt_result::Result;
-use rocket::State;
-use rocket_empty::EmptyResponse;
+use upryzing_models::v0;
+use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
+use upryzing_result::Result;
 
 /// # Remove Reaction(s) to Message
 ///

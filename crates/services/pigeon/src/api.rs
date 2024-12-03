@@ -12,17 +12,17 @@ use axum::{
 };
 use axum_typed_multipart::{FieldData, TryFromMultipart, TypedMultipart};
 use lazy_static::lazy_static;
-use revolt_config::{config, report_internal_error};
-use revolt_database::{iso8601_timestamp::Timestamp, Database, FileHash, Metadata, User};
-use revolt_files::{
-    create_thumbnail, decode_image, fetch_from_s3, upload_to_s3, AUTHENTICATION_TAG_SIZE_BYTES,
-};
-use revolt_result::{create_error, Error, Result};
 use serde::{Deserialize, Serialize};
 use sha2::Digest;
 use tempfile::NamedTempFile;
 use tokio::time::Instant;
 use tower_http::cors::{AllowHeaders, Any, CorsLayer};
+use upryzing_config::{config, report_internal_error};
+use upryzing_database::{iso8601_timestamp::Timestamp, Database, FileHash, Metadata, User};
+use upryzing_files::{
+    create_thumbnail, decode_image, fetch_from_s3, upload_to_s3, AUTHENTICATION_TAG_SIZE_BYTES,
+};
+use upryzing_result::{create_error, Error, Result};
 use utoipa::ToSchema;
 
 use crate::{exif::strip_metadata, metadata::generate_metadata, mime_type::determine_mime_type};
@@ -83,7 +83,7 @@ async fn retrieve_file_by_hash(hash: &FileHash) -> Result<Vec<u8>> {
 /// Successful root response
 #[derive(Serialize, Debug, ToSchema)]
 pub struct RootResponse {
-    autumn: &'static str,
+    pigeon: &'static str,
     version: &'static str,
 }
 
@@ -100,7 +100,7 @@ static CRATE_VERSION: &str = env!("CARGO_PKG_VERSION");
 )]
 async fn root() -> Json<RootResponse> {
     Json(RootResponse {
-        autumn: "Hello, I am a file server!",
+        pigeon: "Hello, I am a file server!",
         version: CRATE_VERSION,
     })
 }

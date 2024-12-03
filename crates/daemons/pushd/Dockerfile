@@ -1,9 +1,9 @@
 # Build Stage
-FROM ghcr.io/revoltchat/base:latest AS builder
+FROM ghcr.io/upryzing/base:latest AS builder
 
 # Bundle Stage
 FROM gcr.io/distroless/cc-debian12:nonroot
-COPY --from=builder /home/rust/src/target/release/revolt-pushd ./
+COPY --from=builder /home/rust/src/target/release/upryzing-pushd ./
 
 USER nonroot
-CMD ["./revolt-pushd"]
+CMD ["./upryzing-pushd"]

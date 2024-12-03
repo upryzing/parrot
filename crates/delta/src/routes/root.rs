@@ -1,7 +1,7 @@
-use revolt_config::config;
-use revolt_result::Result;
 use rocket::serde::json::Json;
 use serde::Serialize;
+use upryzing_config::config;
+use upryzing_result::Result;
 
 /// # hCaptcha Configuration
 #[derive(Serialize, JsonSchema, Debug)]
@@ -42,9 +42,9 @@ pub struct RevoltFeatures {
     /// Whether this server is invite only
     pub invite_only: bool,
     /// File server service configuration
-    pub autumn: Feature,
+    pub pigeon: Feature,
     /// Proxy service configuration
-    pub january: Feature,
+    pub dove: Feature,
     /// Voice server configuration
     pub voso: VoiceFeature,
 }
@@ -98,13 +98,13 @@ pub async fn root() -> Result<Json<RevoltConfig>> {
             },
             email: !config.api.smtp.host.is_empty(),
             invite_only: config.api.registration.invite_only,
-            autumn: Feature {
-                enabled: !config.hosts.autumn.is_empty(),
-                url: config.hosts.autumn,
+            pigeon: Feature {
+                enabled: !config.hosts.pigeon.is_empty(),
+                url: config.hosts.pigeon,
             },
-            january: Feature {
-                enabled: !config.hosts.january.is_empty(),
-                url: config.hosts.january,
+            dove: Feature {
+                enabled: !config.hosts.dove.is_empty(),
+                url: config.hosts.dove,
             },
             voso: VoiceFeature {
                 enabled: !config.hosts.voso_legacy.is_empty(),

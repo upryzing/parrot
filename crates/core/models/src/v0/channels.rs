@@ -1,7 +1,7 @@
 use super::File;
 
-use revolt_permissions::{Override, OverrideField};
 use std::collections::{HashMap, HashSet};
+use upryzing_permissions::{Override, OverrideField};
 
 #[cfg(feature = "rocket")]
 use rocket::FromForm;
@@ -195,7 +195,7 @@ auto_derived!(
 
         /// Icon
         ///
-        /// Provide an Autumn attachment Id.
+        /// Provide an Pigeon attachment Id.
         #[cfg_attr(feature = "validator", validate(length(min = 1, max = 128)))]
         pub icon: Option<String>,
 

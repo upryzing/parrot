@@ -1,4 +1,4 @@
-use revolt_result::Result;
+use upryzing_result::Result;
 
 use crate::{AppendMessage, FieldsMessage, Message, MessageQuery, PartialMessage};
 
@@ -20,7 +20,12 @@ pub trait AbstractMessages: Sync + Send {
     async fn fetch_messages_by_id(&self, ids: &[String]) -> Result<Vec<Message>>;
 
     /// Update a given message with new information
-    async fn update_message(&self, id: &str, message: &PartialMessage, remove: Vec<FieldsMessage>) -> Result<()>;
+    async fn update_message(
+        &self,
+        id: &str,
+        message: &PartialMessage,
+        remove: Vec<FieldsMessage>,
+    ) -> Result<()>;
 
     /// Append information to a given message
     async fn append_message(&self, id: &str, append: &AppendMessage) -> Result<()>;

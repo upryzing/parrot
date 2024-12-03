@@ -5,9 +5,9 @@ use authifier::{
 use futures::StreamExt;
 use rand::Rng;
 use redis_kiss::redis::aio::PubSub;
-use revolt_database::{events::client::EventV1, Database, User, AMQP};
-use revolt_models::v0;
 use rocket::local::asynchronous::Client;
+use upryzing_database::{events::client::EventV1, Database, User, AMQP};
+use upryzing_models::v0;
 
 pub struct TestHarness {
     pub client: Client,
@@ -20,7 +20,7 @@ pub struct TestHarness {
 
 impl TestHarness {
     pub async fn new() -> TestHarness {
-        let config = revolt_config::config().await;
+        let config = upryzing_config::config().await;
 
         let client = Client::tracked(crate::web().await)
             .await

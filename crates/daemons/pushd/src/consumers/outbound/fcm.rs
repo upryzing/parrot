@@ -9,9 +9,9 @@ use fcm_v1::{
     message::{Message, Notification},
     Client, Error as FcmError,
 };
-use revolt_database::{events::rabbit::*, Database};
-use revolt_models::v0::{Channel, PushNotification};
 use serde_json::Value;
+use upryzing_database::{events::rabbit::*, Database};
+use upryzing_models::v0::{Channel, PushNotification};
 
 pub struct FcmOutboundConsumer {
     db: Database,
@@ -39,7 +39,7 @@ impl FcmOutboundConsumer {
 
 impl FcmOutboundConsumer {
     pub async fn new(db: Database) -> Result<FcmOutboundConsumer, &'static str> {
-        let config = revolt_config::config().await;
+        let config = upryzing_config::config().await;
 
         Ok(FcmOutboundConsumer {
             db,
@@ -79,7 +79,7 @@ impl AsyncConsumer for FcmOutboundConsumer {
         let content = String::from_utf8(content).unwrap();
         let payload: PayloadToService = serde_json::from_str(content.as_str()).unwrap();
 
-        let config = revolt_config::config().await;
+        let config = upryzing_config::config().await;
 
         #[allow(clippy::needless_late_init)]
         let resp: Result<Message, FcmError>;
@@ -187,11 +187,11 @@ impl AsyncConsumer for FcmOutboundConsumer {
                         .remove_push_subscription_by_session_id(&payload.session_id)
                         .await
                     {
-                        revolt_config::capture_error(&err);
+                        upryzing_config::capture_error(&err);
                     }
                 }
                 err => {
-                    revolt_config::capture_error(&err);
+                    upryzing_config::capture_error(&err);
                 }
             }
         }

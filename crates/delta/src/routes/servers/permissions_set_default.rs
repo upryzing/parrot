@@ -1,13 +1,13 @@
-use revolt_database::{
+use rocket::{serde::json::Json, State};
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Database, PartialServer, Server, User,
 };
-use revolt_models::v0;
-use revolt_permissions::{
+use upryzing_models::v0;
+use upryzing_permissions::{
     calculate_server_permissions, ChannelPermission, DataPermissionsValue, Override,
 };
-use revolt_result::Result;
-use rocket::{serde::json::Json, State};
+use upryzing_result::Result;
 
 /// # Set Default Permission
 ///

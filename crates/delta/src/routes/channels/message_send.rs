@@ -1,15 +1,15 @@
 use chrono::{Duration, Utc};
-use revolt_database::util::permissions::DatabasePermissionQuery;
-use revolt_database::{
-    util::idempotency::IdempotencyKey, util::reference::Reference, Database, User,
-};
-use revolt_database::{Interactions, Message, AMQP};
-use revolt_models::v0;
-use revolt_permissions::PermissionQuery;
-use revolt_permissions::{calculate_channel_permissions, ChannelPermission};
-use revolt_result::{create_error, Result};
 use rocket::serde::json::Json;
 use rocket::State;
+use upryzing_database::util::permissions::DatabasePermissionQuery;
+use upryzing_database::{
+    util::idempotency::IdempotencyKey, util::reference::Reference, Database, User,
+};
+use upryzing_database::{Interactions, Message, AMQP};
+use upryzing_models::v0;
+use upryzing_permissions::PermissionQuery;
+use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
+use upryzing_result::{create_error, Result};
 use validator::Validate;
 
 /// # Send Message
@@ -84,7 +84,7 @@ pub async fn message_send(
     // Create model user / members
     let model_user = user
         .clone()
-        .into_known_static(revolt_presence::is_online(&user.id).await);
+        .into_known_static(upryzing_presence::is_online(&user.id).await);
 
     let model_member: Option<v0::Member> = query
         .member_ref()
@@ -115,12 +115,12 @@ mod test {
     use std::collections::HashMap;
 
     use crate::{rocket, util::test::TestHarness};
-    use revolt_database::{
+    use upryzing_database::{
         util::{idempotency::IdempotencyKey, reference::Reference},
         Channel, Member, Message, PartialChannel, PartialMember, Role, Server,
     };
-    use revolt_models::v0::{self, DataCreateServerChannel};
-    use revolt_permissions::{ChannelPermission, OverrideField};
+    use upryzing_models::v0::{self, DataCreateServerChannel};
+    use upryzing_permissions::{ChannelPermission, OverrideField};
 
     #[rocket::async_test]
     async fn message_mention_constraints() {

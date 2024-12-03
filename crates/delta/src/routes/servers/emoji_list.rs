@@ -1,11 +1,11 @@
-use revolt_database::{
+use rocket::{serde::json::Json, State};
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Database, User,
 };
-use revolt_models::v0;
-use revolt_permissions::PermissionQuery;
-use revolt_result::{create_error, Result};
-use rocket::{serde::json::Json, State};
+use upryzing_models::v0;
+use upryzing_permissions::PermissionQuery;
+use upryzing_result::{create_error, Result};
 
 /// # Fetch Server Emoji
 ///

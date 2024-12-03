@@ -8,14 +8,14 @@ extern crate serde_json;
 pub mod routes;
 pub mod util;
 
-use revolt_config::config;
-use revolt_database::events::client::EventV1;
-use revolt_database::AMQP;
 use rocket::{Build, Rocket};
 use rocket_cors::{AllowedOrigins, CorsOptions};
 use rocket_prometheus::PrometheusMetrics;
 use std::net::Ipv4Addr;
 use std::str::FromStr;
+use upryzing_config::config;
+use upryzing_database::events::client::EventV1;
+use upryzing_database::AMQP;
 
 use amqprs::{
     channel::ExchangeDeclareArguments,
@@ -33,7 +33,10 @@ pub async fn web() -> Rocket<Build> {
     config.preflight_checks();
 
     // Setup database
-    let db = revolt_database::DatabaseInfo::Auto.connect().await.unwrap();
+    let db = upryzing_database::DatabaseInfo::Auto
+        .connect()
+        .await
+        .unwrap();
     db.migrate_database().await.unwrap();
 
     // Setup Authifier event channel
@@ -104,7 +107,7 @@ pub async fn web() -> Rocket<Build> {
     let amqp = AMQP::new(connection, channel);
 
     // Launch background task workers
-    revolt_database::tasks::start_workers(db.clone(), amqp.clone());
+    upryzing_database::tasks::start_workers(db.clone(), amqp.clone());
 
     // Configure Rocket
     let rocket = rocket::build();
@@ -133,7 +136,7 @@ pub async fn web() -> Rocket<Build> {
 #[launch]
 async fn rocket() -> _ {
     // Configure logging and environment
-    revolt_config::configure!(api);
+    upryzing_config::configure!(api);
 
     // Start web server
     web().await

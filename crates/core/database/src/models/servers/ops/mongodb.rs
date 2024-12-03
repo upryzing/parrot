@@ -1,6 +1,6 @@
 use bson::{to_document, Bson, Document};
 use futures::StreamExt;
-use revolt_result::Result;
+use upryzing_result::Result;
 
 use crate::{FieldsRole, FieldsServer, PartialRole, PartialServer, Role, Server};
 use crate::{IntoDocumentPath, MongoDb};

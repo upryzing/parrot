@@ -1,7 +1,7 @@
 use super::{Channel, File, RE_COLOUR};
 
-use revolt_permissions::{Override, OverrideField};
 use std::collections::HashMap;
+use upryzing_permissions::{Override, OverrideField};
 
 #[cfg(feature = "validator")]
 use validator::Validate;

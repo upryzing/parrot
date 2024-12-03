@@ -1,6 +1,6 @@
 [package]
-name = "revolt-delta"
-version = "0.8.0"
+name = "upryzing-delta"
+version = "0.1.0"
 license = "AGPL-3.0-or-later"
 authors = ["Paul Makles <paulmakles@gmail.com>"]
 edition = "2018"
@@ -67,19 +67,19 @@ amqprs = { version = "1.7.0" }
 
 # core
 authifier = "1.0.9"
-revolt-config = { path = "../core/config" }
-revolt-database = { path = "../core/database", features = [
+upryzing-config = { path = "../core/config" }
+upryzing-database = { path = "../core/database", features = [
     "rocket-impl",
     "redis-is-patched",
 ] }
-revolt-models = { path = "../core/models", features = [
+upryzing-models = { path = "../core/models", features = [
     "schemas",
     "validator",
     "rocket",
 ] }
-revolt-presence = { path = "../core/presence" }
-revolt-result = { path = "../core/result", features = ["rocket", "okapi"] }
-revolt-permissions = { path = "../core/permissions", features = ["schemas"] }
+upryzing-presence = { path = "../core/presence" }
+upryzing-result = { path = "../core/result", features = ["rocket", "okapi"] }
+upryzing-permissions = { path = "../core/permissions", features = ["schemas"] }
 
 [build-dependencies]
 vergen = "7.5.0"

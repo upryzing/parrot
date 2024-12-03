@@ -12,14 +12,14 @@ redis = "redis://127.0.0.1:14079/"
 [hosts]
 # Web locations of various services
 # Defaults assume all services are reverse-proxied
-# See https://github.com/revoltchat/self-hosted/blob/master/Caddyfile
+# See https://github.com/revoltchat/self-hosted/blob/main/Caddyfile
 #
 # Remember to change these to https/wss where appropriate in production!
 app = "http://local.revolt.chat:14701"
 api = "http://local.revolt.chat:14702"
 events = "ws://local.revolt.chat:14703"
-autumn = "http://local.revolt.chat:14704"
-january = "http://local.revolt.chat:14705"
+pigeon = "http://local.revolt.chat:14704"
+dove = "http://local.revolt.chat:14705"
 voso_legacy = ""
 voso_legacy_ws = ""
 
@@ -42,8 +42,8 @@ endpoint = "http://127.0.0.1:14009"
 # S3 region name
 region = "minio"
 # S3 protocol key ID
-access_key_id = "minioautumn"
+access_key_id = "miniopigeon"
 # S3 protocol access key
-secret_access_key = "minioautumn"
+secret_access_key = "miniopigeon"
 # Bucket to upload to by default
-default_bucket = "revolt-uploads"
+default_bucket = "upryzing-uploads"

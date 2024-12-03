@@ -1,5 +1,5 @@
 {
-  "name": "revolt-nodejs-bindings",
+  "name": "upryzing-nodejs-bindings",
   "version": "0.7.15-rev0.0.3",
   "description": "Node.js bindings for the Revolt software",
   "main": "index.node",
@@ -20,16 +20,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/revoltchat/backend"
+    "url": "git+https://github.com/upryzing/parrot"
   },
   "keywords": [
     "revolt",
     "chat"
   ],
   "bugs": {
-    "url": "https://github.com/revoltchat/backend/issues"
+    "url": "https://github.com/upryzing/parrot/issues"
   },
-  "homepage": "https://github.com/revoltchat/backend#readme",
+  "homepage": "https://github.com/upryzing/parrot#readme",
   "dependencies": {
     "revolt-api": "^0.7.15"
   }

@@ -1,6 +1,6 @@
 use axum::{extract::FromRequestParts, http::request::Parts};
 
-use revolt_result::{create_error, Error, Result};
+use upryzing_result::{create_error, Error, Result};
 
 use crate::{Database, User};
 

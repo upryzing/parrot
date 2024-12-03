@@ -1,8 +1,8 @@
 use axum::{extract::Query, response::IntoResponse, routing::get, Json, Router};
 use reqwest::header;
-use revolt_models::v0::Embed;
-use revolt_result::{create_error, Result};
 use serde::{Deserialize, Serialize};
+use upryzing_models::v0::Embed;
+use upryzing_result::{create_error, Result};
 use utoipa::ToSchema;
 
 use crate::requests::Request;
@@ -19,7 +19,7 @@ pub async fn router() -> Router {
 /// Successful root response
 #[derive(Serialize, Debug, ToSchema)]
 pub struct RootResponse {
-    january: &'static str,
+    dove: &'static str,
     version: &'static str,
 }
 
@@ -36,7 +36,7 @@ static CRATE_VERSION: &str = env!("CARGO_PKG_VERSION");
 )]
 async fn root() -> Json<RootResponse> {
     Json(RootResponse {
-        january: "Hello, I am a media proxy server!",
+        dove: "Hello, I am a media proxy server!",
         version: CRATE_VERSION,
     })
 }

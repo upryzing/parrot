@@ -1,11 +1,11 @@
-use revolt_database::{
+use rocket::{serde::json::Json, State};
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Channel, Database, PartialChannel, User,
 };
-use revolt_models::v0::{self, DataDefaultChannelPermissions};
-use revolt_permissions::{calculate_channel_permissions, ChannelPermission};
-use revolt_result::{create_error, Result};
-use rocket::{serde::json::Json, State};
+use upryzing_models::v0::{self, DataDefaultChannelPermissions};
+use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
+use upryzing_result::{create_error, Result};
 
 /// # Set Default Permission
 ///

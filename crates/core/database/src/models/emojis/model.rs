@@ -2,8 +2,8 @@ use std::collections::HashSet;
 use std::str::FromStr;
 
 use once_cell::sync::Lazy;
-use revolt_result::Result;
 use ulid::Ulid;
+use upryzing_result::Result;
 
 use crate::events::client::EventV1;
 use crate::Database;

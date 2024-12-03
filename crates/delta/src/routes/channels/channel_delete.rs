@@ -1,12 +1,12 @@
-use revolt_database::{
+use rocket::State;
+use rocket_empty::EmptyResponse;
+use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Channel, Database, PartialChannel, User, AMQP,
 };
-use revolt_models::v0;
-use revolt_permissions::{calculate_channel_permissions, ChannelPermission};
-use revolt_result::{create_error, Result};
-use rocket::State;
-use rocket_empty::EmptyResponse;
+use upryzing_models::v0;
+use upryzing_permissions::{calculate_channel_permissions, ChannelPermission};
+use upryzing_result::{create_error, Result};
 
 /// # Close Channel
 ///
@@ -59,9 +59,9 @@ pub async fn delete(
 #[cfg(test)]
 mod test {
     use crate::{rocket, util::test::TestHarness};
-    use revolt_database::{events::client::EventV1, Channel};
-    use revolt_models::v0::DataCreateGroup;
     use rocket::http::{Header, Status};
+    use upryzing_database::{events::client::EventV1, Channel};
+    use upryzing_models::v0::DataCreateGroup;
 
     #[rocket::async_test]
     async fn success_delete_group() {

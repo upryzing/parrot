@@ -32,14 +32,14 @@ deps() {
     crates/core/permissions/src \
     crates/core/presence/src \
     crates/core/result/src \
-    crates/services/autumn/src \
-    crates/services/january/src \
+    crates/services/pigeon/src \
+    crates/services/dove/src \
     crates/daemons/pushd/src
   echo 'fn main() { panic!("stub"); }' |
     tee crates/bonfire/src/main.rs |
     tee crates/delta/src/main.rs |
-    tee crates/services/autumn/src/main.rs |
-    tee crates/services/january/src/main.rs |
+    tee crates/services/pigeon/src/main.rs |
+    tee crates/services/dove/src/main.rs |
     tee crates/daemons/pushd/src/main.rs
   echo '' |
     tee crates/bindings/node/src/lib.rs |

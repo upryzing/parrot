@@ -2,8 +2,8 @@ use std::net::{Ipv4Addr, SocketAddr};
 
 use axum::Router;
 
-use revolt_database::DatabaseInfo;
 use tokio::net::TcpListener;
+use upryzing_database::DatabaseInfo;
 use utoipa::{
     openapi::security::{ApiKey, ApiKeyValue, SecurityScheme},
     Modify, OpenApi,
@@ -19,7 +19,7 @@ pub mod mime_type;
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {
     // Configure logging and environment
-    revolt_config::configure!(files);
+    upryzing_config::configure!(files);
 
     // Wait for ClamAV
     clamav::init().await;
@@ -36,8 +36,8 @@ async fn main() -> Result<(), std::io::Error> {
         ),
         components(
             schemas(
-                revolt_result::Error,
-                revolt_result::ErrorType,
+                upryzing_result::Error,
+                upryzing_result::ErrorType,
                 api::RootResponse,
                 api::Tag,
                 api::UploadPayload,

@@ -1,7 +1,7 @@
-use revolt_database::{util::reference::Reference, Database, RemovalIntention, User};
-use revolt_models::v0;
-use revolt_result::Result;
 use rocket::State;
+use upryzing_database::{util::reference::Reference, Database, RemovalIntention, User};
+use upryzing_models::v0;
+use upryzing_result::Result;
 
 use rocket_empty::EmptyResponse;
 

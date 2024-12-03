@@ -1,12 +1,12 @@
 [package]
-name = "revolt-pushd"
-version = "0.8.0"
+name = "upryzing-pushd"
+version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-revolt-config = { version = "0.8.0", path = "../../core/config" }
-revolt-database = { version = "0.8.0", path = "../../core/database" }
-revolt-models = { version = "0.8.0", path = "../../core/models", features = [
+upryzing-config = { version = "0.1.0", path = "../../core/config" }
+upryzing-database = { version = "0.1.0", path = "../../core/database" }
+upryzing-models = { version = "0.1.0", path = "../../core/models", features = [
     "validator",
 ] }
 

@@ -2,9 +2,9 @@ use authifier::{
     models::{Session, WebPushSubscription},
     Authifier,
 };
-use revolt_result::{create_database_error, Result};
 use rocket::{serde::json::Json, State};
 use rocket_empty::EmptyResponse;
+use upryzing_result::{create_database_error, Result};
 
 /// # Push Subscribe
 ///
