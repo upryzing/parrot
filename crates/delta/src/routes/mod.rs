@@ -190,7 +190,7 @@ fn custom_openapi_spec() -> OpenApi {
                 ..Default::default()
             },
             Server {
-                url: "http://local.revolt.chat:8000".to_owned(),
+                url: "http://local.revolt.chat:14702".to_owned(),
                 description: Some("Local Revolt Environment".to_owned()),
                 ..Default::default()
             },
