@@ -21,7 +21,7 @@ jobs:
     name: Rust project
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Install latest stable
         uses: actions-rs/toolchain@v1
         with:
@@ -29,10 +29,9 @@ jobs:
           override: true
           components: rustfmt, clippy
       - name: Install cargo-nextest
-        uses: baptiste0928/cargo-install@v1
+        uses: baptiste0928/cargo-install@v3
         with:
           crate: cargo-nextest
-          locked: true
 
       - name: Run cargo build
         uses: actions-rs/cargo@v1
@@ -71,7 +70,7 @@ jobs:
 
       - name: Checkout API repository
         if: github.event_name != 'pull_request' && github.ref_name == 'main'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: upryzing/api-typescript
           path: api
