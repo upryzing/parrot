@@ -53,6 +53,10 @@ auto_derived_partial!(
         #[serde(skip_serializing_if = "Option::is_none")]
         pub bot: Option<BotInformation>,
 
+        /// The pronouns that the User uses
+        #[serde(skip_serializing_if = "Option::is_none")]
+        pub pronouns: Option<Vec<String>>,
+
         /// Time until user is unsuspended
         #[serde(skip_serializing_if = "Option::is_none")]
         pub suspended_until: Option<Timestamp>,
@@ -69,6 +73,7 @@ auto_derived!(
         ProfileContent,
         ProfileBackground,
         DisplayName,
+        Pronouns,
 
         // internal fields
         Suspension,
@@ -173,6 +178,7 @@ impl Default for User {
             badges: Default::default(),
             status: Default::default(),
             profile: Default::default(),
+            pronouns: Default::default(),
             flags: Default::default(),
             privileged: Default::default(),
             bot: Default::default(),
@@ -679,6 +685,7 @@ impl User {
                     x.background = None;
                 }
             }
+            FieldsUser::Pronouns => self.pronouns = None,
             FieldsUser::DisplayName => self.display_name = None,
             FieldsUser::Suspension => self.suspended_until = None,
             FieldsUser::None => {}
@@ -795,6 +802,7 @@ impl User {
                 FieldsUser::StatusPresence,
                 FieldsUser::ProfileContent,
                 FieldsUser::ProfileBackground,
+                FieldsUser::Pronouns,
                 FieldsUser::Suspension,
             ],
         )
