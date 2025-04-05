@@ -4,7 +4,7 @@ use regex::Regex;
 use super::File;
 
 #[cfg(feature = "validator")]
-use validator::Validate;
+use validator::{Validate, ValidationError};
 
 /// Regex for valid usernames
 ///
@@ -17,6 +17,24 @@ pub static RE_USERNAME: Lazy<Regex> = Lazy::new(|| Regex::new(r"^(\p{L}|[\d_.-])
 /// Block zero width space
 /// Block newline and carriage return
 pub static RE_DISPLAY_NAME: Lazy<Regex> = Lazy::new(|| Regex::new(r"^[^\u200B\n\r]+$").unwrap());
+
+fn validate_pronouns(pronouns: &Vec<String>) -> Result<(), ValidationError> {
+    if pronouns.len() < 1 || pronouns.len() > 4 {
+        return Err(ValidationError::new(
+            "Cannot have more than 4 or less than 1 pronouns",
+        ));
+    }
+
+    for pronoun in pronouns {
+        if pronoun.len() > 15 {
+            return Err(ValidationError::new(
+                "Pronouns can't be more than 15 characters long",
+            ));
+        }
+    }
+
+    Ok(())
+}
 
 auto_derived_partial!(
     /// User
@@ -34,6 +52,10 @@ auto_derived_partial!(
         #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Option::is_none"))]
         /// Avatar attachment
         pub avatar: Option<File>,
+
+        /// Pronouns
+        pub pronouns: Option<Vec<String>>,
+
         /// Relationships with other users
         #[cfg_attr(
             feature = "serde",
@@ -88,6 +110,7 @@ auto_derived!(
         ProfileContent,
         ProfileBackground,
         DisplayName,
+        Pronouns,
 
         /// Internal field, ignore this.
         Internal,
@@ -236,6 +259,14 @@ auto_derived!(
         /// This is applied as a partial.
         #[cfg_attr(feature = "validator", validate)]
         pub profile: Option<DataUserProfile>,
+
+        /// The pronouns that the User uses
+        #[cfg_attr(
+            feature = "validator",
+            validate(custom(function = "validate_pronouns"))
+        )]
+        #[serde(skip_serializing_if = "Option::is_none")]
+        pub pronouns: Option<Vec<String>>,
 
         /// Bitfield of user badges
         #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Option::is_none"))]

@@ -54,6 +54,7 @@ pub async fn edit(
         && data.badges.is_none()
         && data.flags.is_none()
         && data.remove.is_none()
+        && data.pronouns.is_none()
     {
         return Ok(Json(user.into_self(false).await));
     }
@@ -84,6 +85,7 @@ pub async fn edit(
         display_name: data.display_name,
         badges: data.badges,
         flags: data.flags,
+        pronouns: data.pronouns,
         ..Default::default()
     };
 
