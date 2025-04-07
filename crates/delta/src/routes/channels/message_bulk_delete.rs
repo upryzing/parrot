@@ -1,7 +1,6 @@
 use chrono::Utc;
 use rocket::{serde::json::Json, State};
 use rocket_empty::EmptyResponse;
-use serde::Deserialize;
 use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Database, Message, User,

@@ -1,7 +1,7 @@
 use rocket::{serde::json::Json, State};
 use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
-    Database, PartialServer, Server, User,
+    Database, PartialServer, User,
 };
 use upryzing_models::v0;
 use upryzing_permissions::{

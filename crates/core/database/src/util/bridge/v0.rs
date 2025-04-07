@@ -1,7 +1,7 @@
 use upryzing_models::v0::*;
 use upryzing_permissions::{calculate_user_permissions, UserPermission};
 
-use crate::{util::permissions::DatabasePermissionQuery, Database, FileUsedFor};
+use crate::{util::permissions::DatabasePermissionQuery, Database};
 
 impl crate::Bot {
     pub fn into_public_bot(self, user: crate::User) -> PublicBot {

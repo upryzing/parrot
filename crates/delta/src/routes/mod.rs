@@ -2,7 +2,7 @@ use revolt_rocket_okapi::{revolt_okapi::openapi3::OpenApi, settings::OpenApiSett
 pub use rocket::http::Status;
 pub use rocket::response::Redirect;
 use rocket::{Build, Rocket};
-use upryzing_config::{config, Settings};
+use upryzing_config::Settings;
 
 mod bots;
 mod channels;

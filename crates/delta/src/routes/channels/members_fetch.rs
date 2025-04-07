@@ -1,4 +1,3 @@
-use futures::future::join_all;
 use rocket::{serde::json::Json, State};
 use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},

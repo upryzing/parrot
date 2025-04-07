@@ -5,9 +5,8 @@ use upryzing_database::{
 use upryzing_models::v0;
 
 use rocket::{serde::json::Json, State};
-use serde::{Deserialize, Serialize};
 use upryzing_permissions::{
-    calculate_channel_permissions, calculate_server_permissions, ChannelPermission,
+    calculate_server_permissions, ChannelPermission,
 };
 use upryzing_result::{create_error, Result};
 use validator::Validate;

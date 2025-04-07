@@ -1,6 +1,5 @@
 use iso8601_timestamp::Timestamp;
 use rocket::{serde::json::Json, State};
-use upryzing_config::config;
 use upryzing_database::{
     tasks,
     util::{permissions::DatabasePermissionQuery, reference::Reference},

@@ -1,5 +1,4 @@
 use rocket::{serde::json::Json, State};
-use serde::{Deserialize, Serialize};
 use upryzing_database::{
     util::{permissions::DatabasePermissionQuery, reference::Reference},
     Database, PartialRole, User,

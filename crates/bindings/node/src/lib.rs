@@ -1,7 +1,6 @@
 #[macro_use]
 extern crate serde;
 
-use std::sync::OnceLock;
 
 use neon::prelude::*;
 use upryzing_database::{Database, DatabaseInfo};

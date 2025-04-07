@@ -1,5 +1,4 @@
 use axum::{http::StatusCode, response::IntoResponse, Json};
-use rocket::http::Status;
 
 use crate::{Error, ErrorType};
 

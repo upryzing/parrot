@@ -1,8 +1,6 @@
 use rocket::{serde::json::Json, State};
-use serde::Deserialize;
 use upryzing_database::{
-    util::{permissions::DatabasePermissionQuery, reference::Reference},
-    Channel, Database, User,
+    util::{permissions::DatabasePermissionQuery, reference::Reference}, Database, User,
 };
 use upryzing_models::v0;
 use upryzing_permissions::{calculate_channel_permissions, ChannelPermission, Override};
