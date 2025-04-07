@@ -15,7 +15,7 @@ default = ["test"]
 
 [dependencies]
 # Utility
-config = "0.13.3"
+config = { version = "0.15.11", default-features = false, features = ["toml"] }
 cached = "0.44.0"
 once_cell = "1.18.0"
 
