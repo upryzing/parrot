@@ -32,8 +32,8 @@ jobs:
     strategy:
       matrix:
         platform:
-          - linux/amd64
-          - linux/arm64
+          - amd64
+          - arm64
     steps:
       # Configure build environment
       - name: Checkout
@@ -55,10 +55,10 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          platforms: ${{ matrix.platform }} # linux/arm64 #,linux/amd64
+          platforms: linux/${{ matrix.platform }} # linux/arm64 #,linux/amd64
           tags: ghcr.io/${{ github.repository_owner }}/base:latest-${{ matrix.platform }}
           cache-from: type=gha,scope=buildx-base-arch
-          cache-to: type=gha,scope=buildx-base-arch-${{ matrix.platform }},mode=max
+          cache-to: type=gha,scope=buildx-base-arch-linux/${{ matrix.platform }},mode=max
 
   publish:
     needs: [base]
@@ -68,8 +68,8 @@ jobs:
       matrix:
         project: [delta, bonfire, pigeon, dove, pushd]
         platform:
-          - linux/amd64
-          - linux/arm64
+          - amd64
+          - arm64
     name: Build ${{ matrix.project }} image (${{ matrix.platform }})
     steps:
       # Configure build environment
@@ -137,7 +137,7 @@ jobs:
         with:
           context: .
           push: true
-          platforms: ${{ matrix.platform }} #linux/arm64 #,linux/amd64
+          platforms: linux/${{ matrix.platform }} #linux/arm64 #,linux/amd64
           file: ${{ steps.export.outputs.path }}/Dockerfile
           tags: ${{ steps.meta.outputs.tags }}-${{ matrix.platform }}
           build-args: |
