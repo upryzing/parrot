@@ -28,12 +28,7 @@ permissions:
 jobs:
   base:
     runs-on: ubuntu-latest
-    name: Build base image (${{ matrix.platform }})
-    strategy:
-      matrix:
-        platform:
-          - amd64
-          - arm64
+    name: Build base image
     steps:
       # Configure build environment
       - name: Checkout
@@ -55,10 +50,10 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          platforms: linux/${{ matrix.platform }} # linux/arm64 #,linux/amd64
-          tags: ghcr.io/${{ github.repository_owner }}/base:latest-${{ matrix.platform }}
-          cache-from: type=gha,scope=buildx-base-arch
-          cache-to: type=gha,scope=buildx-base-arch-linux/${{ matrix.platform }},mode=max
+          platforms: linux/arm64 #,linux/amd64
+          tags: ghcr.io/${{ github.repository_owner }}/base:latest
+          cache-from: type=gha,scope=buildx-base-multi-arch
+          cache-to: type=gha,scope=buildx-base-multi-arch,mode=max
 
   publish:
     needs: [base]
@@ -67,10 +62,7 @@ jobs:
     strategy:
       matrix:
         project: [delta, bonfire, pigeon, dove, pushd]
-        platform:
-          - amd64
-          - arm64
-    name: Build ${{ matrix.project }} image (${{ matrix.platform }})
+    name: Build ${{ matrix.project }} image
     steps:
       # Configure build environment
       - name: Checkout
@@ -137,9 +129,9 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/${{ matrix.platform }} #linux/arm64 #,linux/amd64
+          platforms: linux/arm64 #,linux/amd64
           file: ${{ steps.export.outputs.path }}/Dockerfile
-          tags: ${{ steps.meta.outputs.tags }}-${{ matrix.platform }}
+          tags: ${{ steps.meta.outputs.tags }}
           build-args: |
-            BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest-${{ matrix.platform }}
+            BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
           labels: ${{ steps.meta.outputs.labels }}
