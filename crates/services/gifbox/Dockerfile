@@ -1,5 +1,5 @@
 # Build Stage
-FROM ghcr.io/revoltchat/base:latest AS builder
+FROM ghcr.io/stoatchat/base:latest AS builder
 
 # Bundle Stage
 FROM gcr.io/distroless/cc-debian12:nonroot
