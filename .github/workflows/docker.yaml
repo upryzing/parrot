@@ -49,13 +49,6 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       # Authenticate with Docker Hub and GHCR
-      - name: Login to DockerHub
-        uses: docker/login-action@v2
-        with:
-          registry: docker.io
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
       - name: Login to Github Container Registry
         uses: docker/login-action@v2
         with:
@@ -72,14 +65,13 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: ghcr.io/${{ github.repository_owner }}/base:latest
 
-      # revoltchat/server
+      # stoatchat/api
       - name: Docker meta
         id: meta-delta
         uses: docker/metadata-action@v4
         with:
           images: |
-            docker.io/revoltchat/server
-            ghcr.io/revoltchat/server
+            ghcr.io/stoatchat/api
       - name: Publish
         uses: docker/build-push-action@v4
         with:
@@ -92,14 +84,13 @@ jobs:
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
           labels: ${{ steps.meta-delta.outputs.labels }}
 
-      # revoltchat/bonfire
+      # stoatchat/events
       - name: Docker meta
         id: meta-bonfire
         uses: docker/metadata-action@v4
         with:
           images: |
-            docker.io/revoltchat/bonfire
-            ghcr.io/revoltchat/bonfire
+            ghcr.io/stoatchat/events
       - name: Publish
         uses: docker/build-push-action@v4
         with:
@@ -112,14 +103,13 @@ jobs:
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
           labels: ${{ steps.meta-bonfire.outputs.labels }}
 
-      # revoltchat/autumn
+      # stoatchat/file-server
       - name: Docker meta
         id: meta-autumn
         uses: docker/metadata-action@v4
         with:
           images: |
-            docker.io/revoltchat/autumn
-            ghcr.io/revoltchat/autumn
+            ghcr.io/stoatchat/file-server
       - name: Publish
         uses: docker/build-push-action@v4
         with:
@@ -132,14 +122,13 @@ jobs:
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
           labels: ${{ steps.meta-autumn.outputs.labels }}
 
-      # revoltchat/january
+      # stoatchat/proxy
       - name: Docker meta
         id: meta-january
         uses: docker/metadata-action@v4
         with:
           images: |
-            docker.io/revoltchat/january
-            ghcr.io/revoltchat/january
+            ghcr.io/stoatchat/proxy
       - name: Publish
         uses: docker/build-push-action@v4
         with:
@@ -152,14 +141,13 @@ jobs:
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
           labels: ${{ steps.meta-january.outputs.labels }}
 
-      # revoltchat/gifbox
+      # stoatchat/gifbox
       - name: Docker meta
         id: meta-gifbox
         uses: docker/metadata-action@v4
         with:
           images: |
-            docker.io/revoltchat/gifbox
-            ghcr.io/revoltchat/gifbox
+            ghcr.io/stoatchat/gifbox
       - name: Publish
         uses: docker/build-push-action@v4
         with:
@@ -172,14 +160,13 @@ jobs:
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
           labels: ${{ steps.meta-gifbox.outputs.labels }}
 
-      # revoltchat/crond
+      # stoatchat/crond
       - name: Docker meta
         id: meta-crond
         uses: docker/metadata-action@v4
         with:
           images: |
-            docker.io/revoltchat/crond
-            ghcr.io/revoltchat/crond
+            ghcr.io/stoatchat/crond
       - name: Publish
         uses: docker/build-push-action@v4
         with:
@@ -192,14 +179,13 @@ jobs:
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
           labels: ${{ steps.meta-crond.outputs.labels }}
 
-      # revoltchat/pushd
+      # stoatchat/pushd
       - name: Docker meta
         id: meta-pushd
         uses: docker/metadata-action@v4
         with:
           images: |
-            docker.io/revoltchat/pushd
-            ghcr.io/revoltchat/pushd
+            ghcr.io/stoatchat/pushd
       - name: Publish
         uses: docker/build-push-action@v4
         with:
