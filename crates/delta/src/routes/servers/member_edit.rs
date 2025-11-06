@@ -32,11 +32,16 @@ pub async fn edit(
 
     // Fetch server and member
     let mut server = server.as_server(db).await?;
+    let target_user = member.as_user(db).await?;
     let mut member = member.as_member(db, &server.id).await?;
 
     // Fetch our currrent permissions
     let mut query = DatabasePermissionQuery::new(db, &user).server(&server);
     let permissions = calculate_server_permissions(&mut query).await;
+
+    // Fetch target permissions
+    let mut target_query = DatabasePermissionQuery::new(db, &target_user).server(&server).member(&member);
+    let target_permissions = calculate_server_permissions(&mut target_query).await;
 
     // Check permissions in server
     if data.nickname.is_some() || data.remove.contains(&v0::FieldsMember::Nickname) {
@@ -60,8 +65,14 @@ pub async fn edit(
     }
 
     if data.timeout.is_some() || data.remove.contains(&v0::FieldsMember::Timeout) {
-        if data.timeout.is_some() && member.id.user == user.id {
-            return Err(create_error!(CannotTimeoutYourself));
+        if data.timeout.is_some() {
+            if member.id.user == user.id {
+                return Err(create_error!(CannotTimeoutYourself));
+            }
+
+            if target_permissions.has_channel_permission(ChannelPermission::TimeoutMembers) {
+                return Err(create_error!(IsElevated))
+            }
         }
 
         permissions.throw_if_lacking_channel_permission(ChannelPermission::TimeoutMembers)?;
