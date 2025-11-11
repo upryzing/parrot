@@ -32,7 +32,7 @@ jobs:
         uses: baptiste0928/cargo-install@v1
         with:
           crate: cargo-nextest
-          locked: true
+          args: --locked
 
       - name: Run cargo build
         uses: actions-rs/cargo@v1
@@ -75,7 +75,7 @@ jobs:
         with:
           repository: stoatchat/javascript-client-api
           path: api
-          token: ${{ secrets.PAT }}
+          ssh-key: ${{ secrets.DEPLOY_KEY_JAVASCRIPT_CLIENT_API }}
 
       - name: Download OpenAPI specification
         if: github.event_name != 'pull_request' && github.ref_name == 'main'
