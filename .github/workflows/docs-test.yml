@@ -1,0 +1,29 @@
+name: Documentation (test)
+
+on:
+  pull_request:
+
+jobs:
+  test-deploy:
+    name: Test deployment
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./docs
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: ./docs/package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: pnpm
+          cache-dependency-path: ./docs/pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install
+      - name: Test build website
+        run: pnpm run build
