@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Send release notification webhook
         run: |
-          RELEASE_URL="https://github.com/${{ github.repository }}/releases/tag/${{ needs.release-please.outputs.tag_name }}"
+          RELEASE_URL="https://github.com/${{ github.repository }}/releases/tag/${{ github.event.release.tag_name }}"
           curl -X POST "${{ secrets.STOAT_WEBHOOK_UPDATES_URL }}" \
             -H "Content-Type: application/json" \
             -d "{\"content\": \"$RELEASE_URL\"}"
