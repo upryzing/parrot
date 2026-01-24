@@ -1,0 +1,19 @@
+name: Git Town
+
+on:
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  git-town:
+    name: Display the branch stack
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - uses: git-town/action@e483957e6d4827e62413707d4c8f9678c9dc19f1 # v1.3.2
