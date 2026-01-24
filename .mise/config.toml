@@ -7,6 +7,8 @@ gh = "2.25.0"
 rust = "1.92.0"
 "cargo:cargo-nextest" = "0.9.122"
 
+"github:git-town/git-town" = "22.4.0"
+
 [settings]
 experimental = true
 idiomatic_version_file_enable_tools = ["rust"]
