@@ -16,4 +16,4 @@ jobs:
 
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-      - uses: git-town/action@e483957e6d4827e62413707d4c8f9678c9dc19f1 # v1.3.2
+      - uses: stoatchat/action-git-town@24aa7d79612041f56486d8f34e9bc2c7a58bcb7b
