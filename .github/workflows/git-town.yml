@@ -8,7 +8,7 @@ on:
 jobs:
   git-town:
     name: Display the branch stack
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
 
     permissions:
       contents: read
@@ -16,4 +16,4 @@ jobs:
 
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-      - uses: stoatchat/action-git-town@976a691cb87648a96528d952e77aebd48ff1cd97
+      - uses: stoatchat/action-git-town@4bc5c942e4603bffa0806b51d5fe5f0bc5deb0ac
