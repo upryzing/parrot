@@ -2,13 +2,13 @@ name: Git Town
 
 on:
   pull_request:
-    branches-ignore:
-      - 'release-please--**'
 
 jobs:
   git-town:
     name: Display the branch stack
     runs-on: ubuntu-slim
+
+    if: ${{ !startsWith(github.head_ref, 'release-please--') }}
 
     permissions:
       contents: read
