@@ -2,9 +2,8 @@ name: Git Town
 
 on:
   pull_request:
-    branches:
-      - '**'
-      - '!release-please--**'
+    branches-ignore:
+      - 'release-please--**'
 
 jobs:
   git-town:
