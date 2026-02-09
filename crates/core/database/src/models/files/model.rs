@@ -14,13 +14,13 @@ auto_derived_partial!(
         /// Original filename
         pub filename: String,
         /// Hash of this file
-        pub hash: Option<String>, // these are Option<>s to not break file uploads on legacy Autumn
+        pub hash: Option<String>, // these are Option<>s to not break file uploads on legacy Pigeon
 
         /// When this file was uploaded
-        pub uploaded_at: Option<Timestamp>, // these are Option<>s to not break file uploads on legacy Autumn
+        pub uploaded_at: Option<Timestamp>, // these are Option<>s to not break file uploads on legacy Pigeon
         /// ID of user who uploaded this file
         #[serde(skip_serializing_if = "Option::is_none")]
-        pub uploader_id: Option<String>, // these are Option<>s to not break file uploads on legacy Autumn
+        pub uploader_id: Option<String>, // these are Option<>s to not break file uploads on legacy Pigeon
 
         /// What the file was used for
         #[serde(skip_serializing_if = "Option::is_none")]

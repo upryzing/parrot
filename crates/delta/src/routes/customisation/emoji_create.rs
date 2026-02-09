@@ -9,7 +9,7 @@ use rocket::{serde::json::Json, State};
 
 /// # Create New Emoji
 ///
-/// Create an emoji by its Autumn upload id.
+/// Create an emoji by its Pigeon upload id.
 #[openapi(tag = "Emojis")]
 #[put("/emoji/<id>", data = "<data>")]
 pub async fn create_emoji(

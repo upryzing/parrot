@@ -1,9 +1,9 @@
 use axum::http::{request::Parts, Method};
 use revolt_ratelimits::ratelimiter::RatelimitResolver;
 
-pub struct AutumnRatelimits;
+pub struct PigeonRatelimits;
 
-impl RatelimitResolver<Parts> for AutumnRatelimits {
+impl RatelimitResolver<Parts> for PigeonRatelimits {
     fn resolve_bucket<'a>(&self, parts: &'a Parts) -> (&'a str, Option<&'a str>) {
         let path = parts
             .uri

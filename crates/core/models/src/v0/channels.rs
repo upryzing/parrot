@@ -176,7 +176,7 @@ auto_derived!(
 
         /// Icon
         ///
-        /// Provide an Autumn attachment Id.
+        /// Provide an Pigeon attachment Id.
         #[cfg_attr(feature = "validator", validate(length(min = 1, max = 128)))]
         pub icon: Option<String>,
 

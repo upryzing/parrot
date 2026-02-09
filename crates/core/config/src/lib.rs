@@ -453,7 +453,7 @@ pub async fn config() -> Settings {
     }
 
     // auto-detect production nodes
-    if config.hosts.api.contains("https") && config.hosts.api.contains("revolt.chat") {
+    if config.hosts.api.contains("https") && config.hosts.api.contains("upryzing.app") {
         config.production = true;
     }
 

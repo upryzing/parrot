@@ -78,7 +78,7 @@ async fn main() -> Result<(), std::io::Error> {
 
     // Connect to the database
     let db = DatabaseInfo::Auto.connect().await.unwrap();
-    let ratelimits = ratelimiter::RatelimitStorage::new(ratelimits::AutumnRatelimits);
+    let ratelimits = ratelimiter::RatelimitStorage::new(ratelimits::PigeonRatelimits);
 
     let state = AppState {
         database: db,
