@@ -66,7 +66,7 @@ jobs:
         with:
           repository: upryzing/api-typescript
           path: api
-          ssh-key: ${{ secrets.PAT }}
+          token: ${{ secrets.PAT }}
 
       - name: Download OpenAPI specification
         if: github.event_name != 'pull_request' && github.ref_name == 'main'
