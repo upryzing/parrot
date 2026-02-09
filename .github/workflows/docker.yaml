@@ -68,13 +68,13 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: ghcr.io/${{ github.repository_owner }}/base:latest
 
-      # stoatchat/api
+      # upryzing/api
       - name: Docker meta
         id: meta-delta
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/stoatchat/api
+            ghcr.io/upryzing/api
       - name: Publish
         uses: docker/build-push-action@v4
         with:
@@ -87,13 +87,13 @@ jobs:
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
           labels: ${{ steps.meta-delta.outputs.labels }}
 
-      # stoatchat/events
+      # upryzing/events
       - name: Docker meta
         id: meta-bonfire
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/stoatchat/events
+            ghcr.io/upryzing/events
       - name: Publish
         uses: docker/build-push-action@v4
         with:
@@ -106,13 +106,13 @@ jobs:
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
           labels: ${{ steps.meta-bonfire.outputs.labels }}
 
-      # stoatchat/file-server
+      # upryzing/file-server
       - name: Docker meta
         id: meta-pigeon
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/stoatchat/file-server
+            ghcr.io/upryzing/file-server
       - name: Publish
         uses: docker/build-push-action@v4
         with:
@@ -125,13 +125,13 @@ jobs:
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
           labels: ${{ steps.meta-pigeon.outputs.labels }}
 
-      # stoatchat/proxy
+      # upryzing/proxy
       - name: Docker meta
         id: meta-dove
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/stoatchat/proxy
+            ghcr.io/upryzing/proxy
       - name: Publish
         uses: docker/build-push-action@v4
         with:
@@ -144,13 +144,13 @@ jobs:
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
           labels: ${{ steps.meta-dove.outputs.labels }}
 
-      # stoatchat/gifbox
+      # upryzing/gifbox
       - name: Docker meta
         id: meta-gifbox
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/stoatchat/gifbox
+            ghcr.io/upryzing/gifbox
       - name: Publish
         uses: docker/build-push-action@v4
         with:
@@ -163,13 +163,13 @@ jobs:
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
           labels: ${{ steps.meta-gifbox.outputs.labels }}
 
-      # stoatchat/crond
+      # upryzing/crond
       - name: Docker meta
         id: meta-crond
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/stoatchat/crond
+            ghcr.io/upryzing/crond
       - name: Publish
         uses: docker/build-push-action@v4
         with:
@@ -182,13 +182,13 @@ jobs:
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
           labels: ${{ steps.meta-crond.outputs.labels }}
 
-      # stoatchat/pushd
+      # upryzing/pushd
       - name: Docker meta
         id: meta-pushd
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/stoatchat/pushd
+            ghcr.io/upryzing/pushd
       - name: Publish
         uses: docker/build-push-action@v4
         with:
@@ -201,13 +201,13 @@ jobs:
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
           labels: ${{ steps.meta-pushd.outputs.labels }}
 
-      # stoatchat/voice-ingress
+      # upryzing/voice-ingress
       - name: Docker meta
         id: meta-voice-ingress
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/stoatchat/voice-ingress
+            ghcr.io/upryzing/voice-ingress
       - name: Publish
         uses: docker/build-push-action@v4
         with:

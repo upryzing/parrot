@@ -5,7 +5,7 @@ edition = "2021"
 license = "MIT"
 authors = ["Paul Makles <me@insrt.uk>", "Zomatree <me@zomatree.live>"]
 description = "Revolt Backend: Coalescion service"
-repository = "https://github.com/stoatchat/stoatchat"
+repository = "https://github.com/upryzing/upryzing"
 
 [features]
 tokio = ["dep:tokio"]
