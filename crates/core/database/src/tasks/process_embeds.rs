@@ -55,7 +55,7 @@ pub async fn worker(db: Database) {
             let config = config().await;
             let embeds = generate(
                 task.content,
-                &config.hosts.january,
+                &config.hosts.dove,
                 config.features.limits.global.message_embeds,
                 semaphore,
             )
@@ -132,7 +132,7 @@ pub async fn generate(
         return Err(create_error!(LabelMe));
     }
 
-    // TODO: batch request to january
+    // TODO: batch request to dove
     let mut tasks = Vec::new();
 
     for link in links {

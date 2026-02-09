@@ -24,9 +24,9 @@ The services and libraries that power the Revolt service.<br/>
 | `core/coalesced`   | [crates/core/coalesced](crates/core/coalesced)     | Core: Coalescion service            | ![Crates.io Version](https://img.shields.io/crates/v/revolt-coalesced) ![Crates.io Version](https://img.shields.io/crates/msrv/revolt-coalesced) ![Crates.io Version](https://img.shields.io/crates/size/revolt-coalesced) ![Crates.io License](https://img.shields.io/crates/l/revolt-coalesced)         |
 | `delta`            | [crates/delta](crates/delta)                       | REST API server                     | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
 | `bonfire`          | [crates/bonfire](crates/bonfire)                   | WebSocket events server             | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
-| `services/january` | [crates/services/january](crates/services/january) | Proxy server                        | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
+| `services/dove` | [crates/services/dove](crates/services/dove) | Proxy server                        | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
 | `services/gifbox`  | [crates/services/gifbox](crates/services/gifbox)   | Tenor proxy server                  | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
-| `services/autumn`  | [crates/services/autumn](crates/services/autumn)   | File server                         | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
+| `services/pigeon`  | [crates/services/pigeon](crates/services/pigeon)   | File server                         | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
 | `daemons/crond`    | [crates/daemons/crond](crates/daemons/crond)       | Timed data clean up daemon server   | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
 | `daemons/pushd`    | [crates/daemons/pushd](crates/daemons/pushd)       | Push notification daemon server     | ![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)                                                                                                                                                                                                                                |
 
@@ -63,8 +63,8 @@ As a heads-up, the development environment uses the following ports:
 | RabbitMQ                  | 5672<br>15672  |
 | `crates/delta`            |     14702      |
 | `crates/bonfire`          |     14703      |
-| `crates/services/autumn`  |     14704      |
-| `crates/services/january` |     14705      |
+| `crates/services/pigeon`  |     14704      |
+| `crates/services/dove` |     14705      |
 | `crates/services/gifbox`  |     14706      |
 
 Now you can clone and build the project:
@@ -138,9 +138,9 @@ cargo run --bin revolt-delta
 # run the events server
 cargo run --bin revolt-bonfire
 # run the file server
-cargo run --bin revolt-autumn
+cargo run --bin revolt-pigeon
 # run the proxy server
-cargo run --bin revolt-january
+cargo run --bin revolt-dove
 # run the tenor proxy
 cargo run --bin revolt-gifbox
 # run the push daemon (not usually needed in regular development)

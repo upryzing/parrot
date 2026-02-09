@@ -6797,7 +6797,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "revolt-autumn"
+name = "revolt-pigeon"
 version = "0.10.2"
 dependencies = [
  "axum",
@@ -7055,7 +7055,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "revolt-january"
+name = "revolt-dove"
 version = "0.10.2"
 dependencies = [
  "async-recursion",

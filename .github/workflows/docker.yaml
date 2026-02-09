@@ -108,7 +108,7 @@ jobs:
 
       # stoatchat/file-server
       - name: Docker meta
-        id: meta-autumn
+        id: meta-pigeon
         uses: docker/metadata-action@v4
         with:
           images: |
@@ -119,15 +119,15 @@ jobs:
           context: .
           push: true
           platforms: linux/amd64,linux/arm64
-          file: crates/services/autumn/Dockerfile
-          tags: ${{ steps.meta-autumn.outputs.tags }}
+          file: crates/services/pigeon/Dockerfile
+          tags: ${{ steps.meta-pigeon.outputs.tags }}
           build-args: |
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
-          labels: ${{ steps.meta-autumn.outputs.labels }}
+          labels: ${{ steps.meta-pigeon.outputs.labels }}
 
       # stoatchat/proxy
       - name: Docker meta
-        id: meta-january
+        id: meta-dove
         uses: docker/metadata-action@v4
         with:
           images: |
@@ -138,11 +138,11 @@ jobs:
           context: .
           push: true
           platforms: linux/amd64,linux/arm64
-          file: crates/services/january/Dockerfile
-          tags: ${{ steps.meta-january.outputs.tags }}
+          file: crates/services/dove/Dockerfile
+          tags: ${{ steps.meta-dove.outputs.tags }}
           build-args: |
             BASE_IMAGE=ghcr.io/${{ github.repository_owner }}/base:latest
-          labels: ${{ steps.meta-january.outputs.labels }}
+          labels: ${{ steps.meta-dove.outputs.labels }}
 
       # stoatchat/gifbox
       - name: Docker meta

@@ -29,8 +29,8 @@ COPY crates/core/presence/Cargo.toml ./crates/core/presence/
 COPY crates/core/result/Cargo.toml ./crates/core/result/
 COPY crates/core/coalesced/Cargo.toml ./crates/core/coalesced/
 COPY crates/core/ratelimits/Cargo.toml ./crates/core/ratelimits/
-COPY crates/services/autumn/Cargo.toml ./crates/services/autumn/
-COPY crates/services/january/Cargo.toml ./crates/services/january/
+COPY crates/services/pigeon/Cargo.toml ./crates/services/pigeon/
+COPY crates/services/dove/Cargo.toml ./crates/services/dove/
 COPY crates/services/gifbox/Cargo.toml ./crates/services/gifbox/
 COPY crates/daemons/crond/Cargo.toml ./crates/daemons/crond/
 COPY crates/daemons/pushd/Cargo.toml ./crates/daemons/pushd/

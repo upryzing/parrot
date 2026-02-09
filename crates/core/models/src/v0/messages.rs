@@ -459,7 +459,7 @@ impl PushNotification {
 
         let icon = if let Some(author) = &author {
             if let Some(avatar) = author.avatar() {
-                format!("{}/avatars/{}", config.hosts.autumn, avatar)
+                format!("{}/avatars/{}", config.hosts.pigeon, avatar)
             } else {
                 format!("{}/users/{}/default_avatar", config.hosts.api, author.id())
             }
@@ -470,7 +470,7 @@ impl PushNotification {
         let image = msg.attachments.as_ref().and_then(|attachments| {
             attachments
                 .first()
-                .map(|v| format!("{}/attachments/{}", config.hosts.autumn, v.id))
+                .map(|v| format!("{}/attachments/{}", config.hosts.pigeon, v.id))
         });
 
         let body = if let Some(ref sys) = msg.system {

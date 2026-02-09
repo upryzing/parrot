@@ -49,9 +49,9 @@ pub struct RevoltFeatures {
     /// Whether this server is invite only
     pub invite_only: bool,
     /// File server service configuration
-    pub autumn: Feature,
+    pub pigeon: Feature,
     /// Proxy service configuration
-    pub january: Feature,
+    pub dove: Feature,
     /// Voice server configuration
     pub livekit: VoiceFeature,
 }
@@ -105,13 +105,13 @@ pub async fn root() -> Result<Json<RevoltConfig>> {
             },
             email: !config.api.smtp.host.is_empty(),
             invite_only: config.api.registration.invite_only,
-            autumn: Feature {
-                enabled: !config.hosts.autumn.is_empty(),
-                url: config.hosts.autumn.clone(),
+            pigeon: Feature {
+                enabled: !config.hosts.pigeon.is_empty(),
+                url: config.hosts.pigeon.clone(),
             },
-            january: Feature {
-                enabled: !config.hosts.january.is_empty(),
-                url: config.hosts.january.clone(),
+            dove: Feature {
+                enabled: !config.hosts.dove.is_empty(),
+                url: config.hosts.dove.clone(),
             },
             livekit: VoiceFeature {
                 enabled: !config.hosts.livekit.is_empty(),

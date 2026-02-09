@@ -90,7 +90,7 @@ async fn retrieve_file_by_hash(hash: &FileHash) -> Result<Vec<u8>> {
 /// Successful root response
 #[derive(Serialize, Debug, ToSchema)]
 pub struct RootResponse {
-    autumn: &'static str,
+    pigeon: &'static str,
     version: &'static str,
 }
 
@@ -107,7 +107,7 @@ static CRATE_VERSION: &str = env!("CARGO_PKG_VERSION");
 )]
 async fn root() -> Json<RootResponse> {
     Json(RootResponse {
-        autumn: "Hello, I am a file server!",
+        pigeon: "Hello, I am a file server!",
         version: CRATE_VERSION,
     })
 }

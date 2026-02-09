@@ -34,8 +34,8 @@ deps() {
     crates/core/result/src \
     crates/core/coalesced/src \
     crates/core/ratelimits/src \
-    crates/services/autumn/src \
-    crates/services/january/src \
+    crates/services/pigeon/src \
+    crates/services/dove/src \
     crates/services/gifbox/src \
     crates/daemons/crond/src \
     crates/daemons/pushd/src \
@@ -43,8 +43,8 @@ deps() {
   echo 'fn main() { panic!("stub"); }' |
     tee crates/bonfire/src/main.rs |
     tee crates/delta/src/main.rs |
-    tee crates/services/autumn/src/main.rs |
-    tee crates/services/january/src/main.rs |
+    tee crates/services/pigeon/src/main.rs |
+    tee crates/services/dove/src/main.rs |
     tee crates/services/gifbox/src/main.rs |
     tee crates/daemons/crond/src/main.rs |
     tee crates/daemons/pushd/src/main.rs |

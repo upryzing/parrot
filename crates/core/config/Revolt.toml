@@ -17,8 +17,8 @@ redis = "redis://redis/"
 app = "http://local.revolt.chat"
 api = "http://local.revolt.chat/api"
 events = "ws://local.revolt.chat/ws"
-autumn = "http://local.revolt.chat/autumn"
-january = "http://local.revolt.chat/january"
+pigeon = "http://local.revolt.chat/pigeon"
+dove = "http://local.revolt.chat/dove"
 voso_legacy = ""
 voso_legacy_ws = ""
 
@@ -187,9 +187,9 @@ path_style_buckets = false
 # S3 region name
 region = "minio"
 # S3 protocol key ID
-access_key_id = "minioautumn"
+access_key_id = "miniopigeon"
 # S3 protocol access key
-secret_access_key = "minioautumn"
+secret_access_key = "miniopigeon"
 default_bucket = "revolt-uploads"
 
 

@@ -118,8 +118,8 @@ exceptions = [
     { allow = ["AGPL-3.0"], crate = "revolt-crond" },
     { allow = ["AGPL-3.0"], crate = "revolt-delta" },
     { allow = ["AGPL-3.0"], crate = "revolt-bonfire" },
-    { allow = ["AGPL-3.0"], crate = "revolt-autumn" },
-    { allow = ["AGPL-3.0"], crate = "revolt-january" },
+    { allow = ["AGPL-3.0"], crate = "revolt-pigeon" },
+    { allow = ["AGPL-3.0"], crate = "revolt-dove" },
 ]
 
 # Some crates don't have (easily) machine readable licensing information,

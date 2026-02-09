@@ -23,8 +23,8 @@ echo "Building images, will tag for ghcr.io with $TAG!"
 docker build -t ghcr.io/stoatchat/base:latest -f Dockerfile.useCurrentArch .
 docker build -t ghcr.io/stoatchat/server:$TAG - < crates/delta/Dockerfile
 docker build -t ghcr.io/stoatchat/bonfire:$TAG - < crates/bonfire/Dockerfile
-docker build -t ghcr.io/stoatchat/autumn:$TAG - < crates/services/autumn/Dockerfile
-docker build -t ghcr.io/stoatchat/january:$TAG - < crates/services/january/Dockerfile
+docker build -t ghcr.io/stoatchat/pigeon:$TAG - < crates/services/pigeon/Dockerfile
+docker build -t ghcr.io/stoatchat/dove:$TAG - < crates/services/dove/Dockerfile
 docker build -t ghcr.io/stoatchat/gifbox:$TAG - < crates/services/gifbox/Dockerfile
 docker build -t ghcr.io/stoatchat/crond:$TAG - < crates/daemons/crond/Dockerfile
 docker build -t ghcr.io/stoatchat/pushd:$TAG - < crates/daemons/pushd/Dockerfile
@@ -36,8 +36,8 @@ fi
 
 docker push ghcr.io/stoatchat/server:$TAG
 docker push ghcr.io/stoatchat/bonfire:$TAG
-docker push ghcr.io/stoatchat/autumn:$TAG
-docker push ghcr.io/stoatchat/january:$TAG
+docker push ghcr.io/stoatchat/pigeon:$TAG
+docker push ghcr.io/stoatchat/dove:$TAG
 docker push ghcr.io/stoatchat/gifbox:$TAG
 docker push ghcr.io/stoatchat/crond:$TAG
 docker push ghcr.io/stoatchat/pushd:$TAG

@@ -132,8 +132,8 @@ pub struct Hosts {
     pub app: String,
     pub api: String,
     pub events: String,
-    pub autumn: String,
-    pub january: String,
+    pub pigeon: String,
+    pub dove: String,
     pub livekit: HashMap<String, String>,
 }
 
