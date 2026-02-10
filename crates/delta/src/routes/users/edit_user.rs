@@ -54,6 +54,7 @@ pub async fn edit(
         && data.badges.is_none()
         && data.flags.is_none()
         && data.remove.is_empty()
+        && data.pronouns.is_none()
     {
         return Ok(Json(user.into_self(false).await));
     }
@@ -80,6 +81,7 @@ pub async fn edit(
 
     let mut partial: PartialUser = PartialUser {
         display_name: data.display_name,
+        pronouns: data.pronouns,
         badges: data.badges,
         flags: data.flags,
         ..Default::default()

@@ -27,8 +27,11 @@ auto_derived_partial!(
         /// Display name
         #[serde(skip_serializing_if = "Option::is_none")]
         pub display_name: Option<String>,
+        /// Preferred pronouns
         #[serde(skip_serializing_if = "Option::is_none")]
+        pub pronouns: Option<Vec<String>>,
         /// Avatar attachment
+        #[serde(skip_serializing_if = "Option::is_none")]
         pub avatar: Option<File>,
         /// Relationships with other users
         #[serde(skip_serializing_if = "Option::is_none")]
@@ -72,6 +75,7 @@ auto_derived!(
         ProfileContent,
         ProfileBackground,
         DisplayName,
+        Pronouns,
 
         // internal fields
         Suspension,
@@ -171,6 +175,7 @@ impl Default for User {
             username: Default::default(),
             discriminator: Default::default(),
             display_name: Default::default(),
+            pronouns: Default::default(),
             avatar: Default::default(),
             relations: Default::default(),
             badges: Default::default(),
@@ -690,6 +695,7 @@ impl User {
                 }
             }
             FieldsUser::DisplayName => self.display_name = None,
+            FieldsUser::Pronouns => self.pronouns = None,
             FieldsUser::Suspension => self.suspended_until = None,
             FieldsUser::None => {}
         }

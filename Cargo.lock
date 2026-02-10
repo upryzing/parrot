@@ -6797,44 +6797,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "revolt-pigeon"
-version = "0.10.2"
-dependencies = [
- "axum",
- "axum-macros",
- "axum_typed_multipart",
- "ffprobe",
- "image",
- "imagesize",
- "infer",
- "jxl-oxide 0.8.1",
- "kamadak-exif",
- "lazy_static",
- "moka",
- "nanoid",
- "revolt-config",
- "revolt-database",
- "revolt-files",
- "revolt-ratelimits",
- "revolt-result",
- "revolt_clamav-client",
- "serde",
- "serde_json",
- "sha2",
- "simdutf8",
- "strum_macros",
- "tempfile",
- "tokio 1.49.0",
- "tower-http 0.5.2",
- "tracing",
- "tracing-subscriber",
- "ulid 1.2.1",
- "utoipa",
- "utoipa-scalar",
- "webp",
-]
-
-[[package]]
 name = "revolt-bonfire"
 version = "0.10.2"
 dependencies = [
@@ -7004,6 +6966,34 @@ dependencies = [
 ]
 
 [[package]]
+name = "revolt-dove"
+version = "0.10.2"
+dependencies = [
+ "async-recursion",
+ "axum",
+ "axum-extra",
+ "encoding_rs",
+ "lazy_static",
+ "mime",
+ "moka",
+ "regex",
+ "reqwest 0.12.23",
+ "revolt-config",
+ "revolt-files",
+ "revolt-models",
+ "revolt-result",
+ "scraper",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "tokio 1.49.0",
+ "tracing",
+ "tracing-subscriber",
+ "utoipa",
+ "utoipa-scalar",
+]
+
+[[package]]
 name = "revolt-files"
 version = "0.10.2"
 dependencies = [
@@ -7055,34 +7045,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "revolt-dove"
-version = "0.10.2"
-dependencies = [
- "async-recursion",
- "axum",
- "axum-extra",
- "encoding_rs",
- "lazy_static",
- "mime",
- "moka",
- "regex",
- "reqwest 0.12.23",
- "revolt-config",
- "revolt-files",
- "revolt-models",
- "revolt-result",
- "scraper",
- "serde",
- "serde_json",
- "tempfile",
- "tokio 1.49.0",
- "tracing",
- "tracing-subscriber",
- "utoipa",
- "utoipa-scalar",
-]
-
-[[package]]
 name = "revolt-models"
 version = "0.10.2"
 dependencies = [
@@ -7121,6 +7083,44 @@ dependencies = [
  "revolt-result",
  "schemars 0.8.22",
  "serde",
+]
+
+[[package]]
+name = "revolt-pigeon"
+version = "0.10.2"
+dependencies = [
+ "axum",
+ "axum-macros",
+ "axum_typed_multipart",
+ "ffprobe",
+ "image",
+ "imagesize",
+ "infer",
+ "jxl-oxide 0.8.1",
+ "kamadak-exif",
+ "lazy_static",
+ "moka",
+ "nanoid",
+ "revolt-config",
+ "revolt-database",
+ "revolt-files",
+ "revolt-ratelimits",
+ "revolt-result",
+ "revolt_clamav-client",
+ "serde",
+ "serde_json",
+ "sha2",
+ "simdutf8",
+ "strum_macros",
+ "tempfile",
+ "tokio 1.49.0",
+ "tower-http 0.5.2",
+ "tracing",
+ "tracing-subscriber",
+ "ulid 1.2.1",
+ "utoipa",
+ "utoipa-scalar",
+ "webp",
 ]
 
 [[package]]
