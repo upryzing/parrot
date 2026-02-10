@@ -78,6 +78,6 @@ jobs:
         with:
           cwd: "api"
           add: "*.json"
-          author_name: Stoat CI
-          author_email: stoat-ci@users.noreply.github.com
+          author_name: Upryzing CI
+          author_email: upryzing-ci@users.noreply.github.com
           message: "chore: generate OpenAPI specification"
