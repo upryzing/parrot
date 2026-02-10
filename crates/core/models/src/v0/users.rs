@@ -5,7 +5,28 @@ use regex::Regex;
 use super::File;
 
 #[cfg(feature = "validator")]
-use validator::Validate;
+use validator::{Validate, ValidationError};
+
+/// Validate user pronouns
+///
+/// Ensure there are no more than 4 sets of pronouns, and each one is under 15 characters
+fn validate_pronouns(pronouns: &Vec<String>) -> Result<(), ValidationError> {
+    if pronouns.is_empty() || pronouns.len() > 4 {
+        return Err(ValidationError::new(
+            "Cannot have more than 4 or less than 1 set of pronouns.",
+        ));
+    }
+
+    for pronoun in pronouns {
+        if pronoun.len() > 15 {
+            return Err(ValidationError::new(
+                "Pronouns cannot be more than 15 characters long.",
+            ));
+        }
+    }
+
+    Ok(())
+}
 
 /// Regex for valid usernames
 ///
@@ -32,6 +53,9 @@ auto_derived_partial!(
         /// Display name
         #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Option::is_none"))]
         pub display_name: Option<String>,
+        /// Preferred pronouns
+        #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Option::is_none"))]
+        pub pronouns: Option<Vec<String>>,
         #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Option::is_none"))]
         /// Avatar attachment
         pub avatar: Option<File>,
@@ -89,6 +113,7 @@ auto_derived!(
         ProfileContent,
         ProfileBackground,
         DisplayName,
+        Pronouns,
 
         /// Internal field, ignore this.
         Internal,
@@ -225,6 +250,12 @@ auto_derived!(
             validate(length(min = 2, max = 32), regex = "RE_DISPLAY_NAME")
         )]
         pub display_name: Option<String>,
+        #[cfg_attr(
+            feature = "validator",
+            validate(custom(function = "validate_pronouns"))
+        )]
+        #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Option::is_none"))]
+        pub pronouns: Option<Vec<String>>,
         /// Attachment Id for avatar
         #[cfg_attr(feature = "validator", validate(length(min = 1, max = 128)))]
         pub avatar: Option<String>,
