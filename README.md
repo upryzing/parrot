@@ -1,15 +1,15 @@
 <div align="center">
 <h1>
-  Revolt Backend
+  Upryzing Backend
   
-  [![Stars](https://img.shields.io/github/stars/revoltchat/backend?style=flat-square&logoColor=white)](https://github.com/revoltchat/backend/stargazers)
-  [![Forks](https://img.shields.io/github/forks/revoltchat/backend?style=flat-square&logoColor=white)](https://github.com/revoltchat/backend/network/members)
-  [![Pull Requests](https://img.shields.io/github/issues-pr/revoltchat/backend?style=flat-square&logoColor=white)](https://github.com/revoltchat/backend/pulls)
-  [![Issues](https://img.shields.io/github/issues/revoltchat/backend?style=flat-square&logoColor=white)](https://github.com/revoltchat/backend/issues)
-  [![Contributors](https://img.shields.io/github/contributors/revoltchat/backend?style=flat-square&logoColor=white)](https://github.com/revoltchat/backend/graphs/contributors)
-  [![License](https://img.shields.io/github/license/revoltchat/backend?style=flat-square&logoColor=white)](https://github.com/revoltchat/backend/blob/main/LICENSE)
+  [![Stars](https://img.shields.io/github/stars/upryzing/parrot?style=flat-square&logoColor=white)](https://github.com/upryzing/parrot/stargazers)
+  [![Forks](https://img.shields.io/github/forks/upryzing/parrot?style=flat-square&logoColor=white)](https://github.com/upryzing/parrot/network/members)
+  [![Pull Requests](https://img.shields.io/github/issues-pr/upryzing/parrot?style=flat-square&logoColor=white)](https://github.com/upryzing/parrot/pulls)
+  [![Issues](https://img.shields.io/github/issues/upryzing/parrot?style=flat-square&logoColor=white)](https://github.com/upryzing/parrot/issues)
+  [![Contributors](https://img.shields.io/github/contributors/upryzing/parrot?style=flat-square&logoColor=white)](https://github.com/upryzing/parrot/graphs/contributors)
+  [![License](https://img.shields.io/github/license/upryzing/parrot?style=flat-square&logoColor=white)](https://github.com/upryzing/parrot/blob/main/LICENSE)
 </h1>
-The services and libraries that power the Revolt service.<br/>
+The services and libraries that power the Upryzing service.<br/>
 <br/>
 
 | Crate              | Path                                               | Description                         |                                                                                                                                                                                                                                                                                                           |
@@ -70,7 +70,7 @@ As a heads-up, the development environment uses the following ports:
 Now you can clone and build the project:
 
 ```bash
-git clone https://github.com/revoltchat/backend revolt-backend
+git clone https://github.com/upryzing/parrot revolt-backend
 cd revolt-backend
 mise build
 ```
@@ -198,7 +198,7 @@ Tag and push a new release by running:
 just release
 ```
 
-If you have bumped the crate versions, proceed to [GitHub releases](https://github.com/revoltchat/backend/releases/new) to create a changelog.
+If you have bumped the crate versions, proceed to [GitHub releases](https://github.com/upryzing/parrot/releases/new) to create a changelog.
 
 ## Testing
 
@@ -217,6 +217,6 @@ TEST_DB=MONGODB cargo nextest run
 
 ## License
 
-The Revolt backend is generally licensed under the [GNU Affero General Public License v3.0](https://github.com/revoltchat/backend/blob/master/LICENSE).
+The Revolt backend is generally licensed under the [GNU Affero General Public License v3.0](https://github.com/upryzing/parrot/blob/master/LICENSE).
 
 **Individual crates may supply their own licenses!**
