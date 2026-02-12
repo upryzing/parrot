@@ -365,6 +365,7 @@ async fn fetch_preview(
     State(db): State<Database>,
     Path((tag, file_id)): Path<(Tag, String)>,
 ) -> Result<Response> {
+    let config = config().await;
     let tag_str: &'static str = tag.clone().into();
     let file = db.fetch_attachment(tag_str, &file_id).await?;
 
@@ -387,7 +388,7 @@ async fn fetch_preview(
         || (is_animated && !matches!(tag, Tag::avatars | Tag::icons))
     {
         return Ok(
-            Redirect::permanent(&format!("/{tag_str}/{file_id}/{}", file.filename)).into_response(),
+            Redirect::permanent(&format!("{}/{tag_str}/{file_id}/{}", config.hosts.pigeon, file.filename)).into_response(),
         );
     }
 
@@ -433,6 +434,7 @@ async fn fetch_file(
     State(db): State<Database>,
     Path((tag, file_id, file_name)): Path<(Tag, String, String)>,
 ) -> Result<Response> {
+    let config = config().await;
     let tag: &'static str = tag.clone().into();
     let file = db.fetch_attachment(tag, &file_id).await?;
 
@@ -450,7 +452,7 @@ async fn fetch_file(
     if file_name != file.filename {
         if file_name == "original" {
             return Ok(
-                Redirect::permanent(&format!("/{tag}/{file_id}/{}", file.filename)).into_response(),
+                Redirect::permanent(&format!("{}/{tag}/{file_id}/{}", config.hosts.pigeon, file.filename)).into_response(),
             );
         }
 
