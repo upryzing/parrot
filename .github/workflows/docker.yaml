@@ -35,7 +35,7 @@ jobs:
         with:
           context: .
           push: false
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm64
           tags: ghcr.io/${{ github.repository_owner }}/base:latest
           cache-from: type=gha,scope=buildx-base-multi-arch
           cache-to: type=gha,scope=buildx-base-multi-arch,mode=max
@@ -65,7 +65,7 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm64
           tags: ghcr.io/${{ github.repository_owner }}/base:latest
 
       # upryzing/api
@@ -80,7 +80,7 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm64
           file: crates/delta/Dockerfile
           tags: ${{ steps.meta-delta.outputs.tags }}
           build-args: |
@@ -99,7 +99,7 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm64
           file: crates/bonfire/Dockerfile
           tags: ${{ steps.meta-bonfire.outputs.tags }}
           build-args: |
@@ -118,7 +118,7 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm64
           file: crates/services/pigeon/Dockerfile
           tags: ${{ steps.meta-pigeon.outputs.tags }}
           build-args: |
@@ -137,7 +137,7 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm64
           file: crates/services/dove/Dockerfile
           tags: ${{ steps.meta-dove.outputs.tags }}
           build-args: |
@@ -156,7 +156,7 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm64
           file: crates/services/gifbox/Dockerfile
           tags: ${{ steps.meta-gifbox.outputs.tags }}
           build-args: |
@@ -175,7 +175,7 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm64
           file: crates/daemons/crond/Dockerfile
           tags: ${{ steps.meta-crond.outputs.tags }}
           build-args: |
@@ -194,7 +194,7 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm64
           file: crates/daemons/pushd/Dockerfile
           tags: ${{ steps.meta-pushd.outputs.tags }}
           build-args: |
@@ -213,7 +213,7 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm64
           file: crates/daemons/voice-ingress/Dockerfile
           tags: ${{ steps.meta-voice-ingress.outputs.tags }}
           build-args: |
