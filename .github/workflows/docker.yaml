@@ -44,6 +44,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
     name: Publish Docker images
+    env:
+      CARGO_NET_GIT_FETCH_WITH_CLI: true
     steps:
       # Configure build environment
       - name: Checkout
